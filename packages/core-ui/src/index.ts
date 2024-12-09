@@ -1,1 +1,1 @@
-import './styles/library.css'
+import './styles/library.css';
