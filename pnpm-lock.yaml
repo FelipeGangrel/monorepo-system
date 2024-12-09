@@ -19,6 +19,16 @@ importers:
         version: 2.3.3
 
   packages/core-ui:
+    dependencies:
+      eslint-config:
+        specifier: workspace:*
+        version: link:../eslint-config
+      tailwind-config:
+        specifier: workspace:*
+        version: link:../tailwind-config
+      typescript-config:
+        specifier: workspace:*
+        version: link:../typescript-config
     devDependencies:
       '@types/react':
         specifier: ^19.0.1
