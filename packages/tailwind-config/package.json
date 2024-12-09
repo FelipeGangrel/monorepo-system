@@ -1,10 +1,9 @@
 {
-  "name": "@felipegangrel/tailwind-config",
-  "version": "0.1.0",
+  "name": "tailwind-config",
+  "version": "0.0.0",
   "private": true,
-  "license": "MIT",
-  "repository": {
-    "url": "https://github.com/FelipeGangrel/turborepo-design-system.git"
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules"
   },
   "exports": {
     ".": "./tailwind.config.ts"
