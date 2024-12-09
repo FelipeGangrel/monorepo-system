@@ -1,9 +1,12 @@
 {
   "name": "@felipegangrel/core-ui",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
   "repository": {
-    "url": "https://github.com/FelipeGangrel/turborepo-design-system.git"
+    "url": "https://github.com/FelipeGangrel/design-system.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "type": "module",
   "scripts": {
