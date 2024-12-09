@@ -1,7 +1,10 @@
 {
-  "name": "core-ui",
+  "name": "@felipegangrel/core-ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/FelipeGangrel/turborepo-design-system.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "tsup --watch",
