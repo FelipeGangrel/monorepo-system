@@ -1,0 +1,19 @@
+{
+  "name": "@felipegangrel/tailwind-config",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/FelipeGangrel/turborepo-design-system.git"
+  },
+  "exports": {
+    ".": "./tailwind.config.ts"
+  },
+  "devDependencies": {
+    "typescript-config": "workspace:*",
+    "tailwindcss": "^3.4.16"
+  },
+  "dependencies": {
+    "tailwindcss-animate": "^1.0.7"
+  }
+}
