@@ -41,3 +41,15 @@ turbo run build --filter=core-ui^... && changeset publish
    - `changeset publish`:
      - This command publishes the packages using `changeset`, a tool for maintaining and releasing versions in monorepos.
      - `changeset publish` reads changeset files created earlier (most likely during a versioning or changeset generation step) and publishes the changes to the package registry, updating the versions of packages as defined.
+
+## Syncpack 
+
+[Syncpack](https://jamiemason.github.io/syncpack/) is a command-line tool to manage multiple package.json files.
+
+- `syncpack list-mismatches` to see more detail about mismatching versions
+- `syncpack fix-mismatches` to fix version mismatches automatically
+- `syncpack format` to sort and prettify your package.json files
+- `syncpack update` to choose updates from the npm registry
+- `syncpack --help` for everything else
+
+

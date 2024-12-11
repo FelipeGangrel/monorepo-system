@@ -1,18 +1,18 @@
 {
   "name": "tailwind-config",
   "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "clean": "rm -rf .turbo && rm -rf node_modules"
+  "dependencies": {
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.16",
+    "typescript-config": "workspace:*"
   },
   "exports": {
     ".": "./tailwind.config.ts"
   },
-  "devDependencies": {
-    "typescript-config": "workspace:*",
-    "tailwindcss": "^3.4.16"
-  },
-  "dependencies": {
-    "tailwindcss-animate": "^1.0.7"
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf .turbo && rm -rf node_modules"
   }
 }
