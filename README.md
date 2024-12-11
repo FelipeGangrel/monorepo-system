@@ -5,9 +5,10 @@
 ### Creating a Github Personal Token
 
 1. Create a Personal Access Token with read and write permissions for repos.
-You can follow the link https://github.com/settings/tokens/new to create one
+   You can follow the link https://github.com/settings/tokens/new to create one
 
 1. Update (or create) your `.npmrc` file on your `$HOME` directory root
+
 ```
 //npm.pkg.github.com/:_authToken=<YOUR_TOKEN>
 ```
@@ -30,12 +31,13 @@ turbo run build --filter=core-ui^... && changeset publish
 ```
 
 1. **Turbo Command**:
-    - `turbo run build --filter=core-ui^...`:
-        - This command uses `turbo`, a tool for speeding up builds in monorepos, to run the `build` script.
-        - The `--filter=core-ui^...` option specifies that it should include the `core-ui` package and all its dependents in the build process.
-        - The caret `^` character denotes that it will include only the dependencies related to `core-ui` for building, which means it's focusing on a specific part of the codebase associated with `core-ui`.
+
+   - `turbo run build --filter=core-ui^...`:
+     - This command uses `turbo`, a tool for speeding up builds in monorepos, to run the `build` script.
+     - The `--filter=core-ui^...` option specifies that it should include the `core-ui` package and all its dependents in the build process.
+     - The caret `^` character denotes that it will include only the dependencies related to `core-ui` for building, which means it's focusing on a specific part of the codebase associated with `core-ui`.
 
 2. **Changeset Command**:
-    - `changeset publish`:
-        - This command publishes the packages using `changeset`, a tool for maintaining and releasing versions in monorepos.
-        - `changeset publish` reads changeset files created earlier (most likely during a versioning or changeset generation step) and publishes the changes to the package registry, updating the versions of packages as defined.
+   - `changeset publish`:
+     - This command publishes the packages using `changeset`, a tool for maintaining and releasing versions in monorepos.
+     - `changeset publish` reads changeset files created earlier (most likely during a versioning or changeset generation step) and publishes the changes to the package registry, updating the versions of packages as defined.
