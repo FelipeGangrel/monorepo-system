@@ -12,14 +12,14 @@
   "packageManager": "pnpm@8.15.6",
   "scripts": {
     "build": "turbo run build",
-    "changeset": "changeset",
     "clean": "turbo run clean && rm -rf node_modules",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
-    "release": "turbo run build && changeset publish",
+    "packages:changeset": "changeset",
+    "packages:release": "turbo run build && changeset publish",
+    "packages:version": "changeset version",
     "storybook": "turbo run storybook",
-    "test": "turbo run test",
-    "version-packages": "changeset version"
+    "test": "turbo run test"
   }
 }

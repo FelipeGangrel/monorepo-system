@@ -79,7 +79,7 @@
     "build-storybook": "storybook build",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "tsup --watch",
-    "lint": "eslint ",
+    "lint": "eslint --fix",
     "storybook": "storybook dev -p 6006",
     "test": "jest"
   },

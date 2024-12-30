@@ -30,4 +30,3 @@ type Story = StoryObj<unknown>;
 export const Default: Story = {
   args: {},
 };
-
