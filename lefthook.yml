@@ -1,0 +1,30 @@
+# Global configurations
+common:
+  verbose: true  # Enable verbose output to debug issues
+
+# Default configuration for hooks
+pre-commit:
+  parallel: true # Run all tasks in parallel to speed up execution
+  commands:
+    # Run ESLint across changed files
+    lint:
+      run: pnpm exec eslint --fix
+      include: "**/*.{js,jsx,ts,tsx}"
+
+    # Run Prettier in write-mode
+    prettier:
+      run: pnpm exec prettier --write
+      include: "**/*.{js,jsx,ts,tsx,json,css,scss,md,yaml}"
+
+    # Run unit tests (optional: you can limit to staged files)
+    test:
+      run: pnpm exec jest --bail --findRelatedTests
+      include: "**/*.{js,jsx,ts,tsx}"
+
+# Pre-push hook
+pre-push:
+  parallel: false # Recommended to run sequentially for safety
+  commands:
+    # Ensure all tests pass before pushing
+    test:
+      run: pnpm run test
