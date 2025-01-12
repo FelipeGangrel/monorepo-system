@@ -20,6 +20,8 @@
     "packages:release": "turbo run build && changeset publish",
     "packages:version": "changeset version",
     "storybook": "turbo run storybook",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "test:cov": "turbo run test:cov",
+    "ui": "pnpm --filter @felipegangrel/core-ui ui"
   }
 }

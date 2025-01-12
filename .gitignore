@@ -23,3 +23,6 @@ storybook-static/
 # Environment files
 *.local
 .env
+
+# tests
+coverage

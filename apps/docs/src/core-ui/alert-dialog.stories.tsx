@@ -27,6 +27,6 @@ export default meta;
 
 type Story = StoryObj<unknown>;
 
-export const Default: Story = {
+export const AlertDialogDemo: Story = {
   args: {},
 };

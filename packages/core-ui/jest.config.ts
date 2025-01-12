@@ -14,7 +14,16 @@ const config: Config = {
   coveragePathIgnorePatterns: [],
   setupFilesAfterEnv: ['./jest.setup.ts'],
   transform: {
-    '^.+\\.(ts|tsx)$': '@swc/jest',
+    '^.+\\.(ts|tsx)$': [
+      '@swc/jest',
+      {
+        jsc: {
+          transform: {
+            react: { runtime: 'automatic' },
+          },
+        },
+      },
+    ],
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
