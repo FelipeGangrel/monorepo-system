@@ -7,6 +7,11 @@
       "outputs": ["dist/**", "storybook-static/**"],
       "dependsOn": ["^build"]
     },
+    "build-storybook": {
+      "inputs": [".storybook/**", "src/**"],
+      "outputs": ["storybook-static"],
+      "dependsOn": ["^build"]
+    },
     "lint": {
       "dependsOn": ["^lint"]
     },

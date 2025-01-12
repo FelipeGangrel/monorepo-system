@@ -27,7 +27,7 @@ jobs:
         run: pnpm install
 
       - name: Build Storybook
-        run: pnpm --filter docs build-storybook
+        run: pnpm build-storybook
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

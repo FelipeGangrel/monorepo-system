@@ -12,6 +12,7 @@
   "packageManager": "pnpm@8.15.6",
   "scripts": {
     "build": "turbo run build",
+    "build-storybook": "turbo run build-storybook",
     "clean": "turbo run clean && rm -rf node_modules",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
