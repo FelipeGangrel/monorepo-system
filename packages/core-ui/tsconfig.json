@@ -4,7 +4,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/core-ui/*": ["./src/*"]
     }
   },
   "exclude": ["dist", "build", "node_modules"]

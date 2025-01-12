@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { SmileIcon } from 'lucide-react';
-import { Button } from '@felipegangrel/core-ui';
+import { Button } from '@/core-ui/components/ui/button';
 
 const meta: Meta<typeof Button> = {
   title: 'core-ui/Button',

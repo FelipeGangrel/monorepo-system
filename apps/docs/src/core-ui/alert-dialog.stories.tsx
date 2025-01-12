@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, AlertDialog } from '@felipegangrel/core-ui';
+import { AlertDialog } from '@/core-ui/components/ui/alert-dialog';
+import { Button } from '@/core-ui/components/ui/button';
 
 const meta: Meta<unknown> = {
   title: 'core-ui/AlertDialog',

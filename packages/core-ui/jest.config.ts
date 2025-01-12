@@ -26,7 +26,7 @@ const config: Config = {
     ],
   },
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@/core-ui/(.*)$': '<rootDir>/src/$1',
   },
 };
 
