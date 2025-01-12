@@ -1,9 +1,9 @@
-import { AlertDialog } from './alert-dialog';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@/components/ui/button/button';
+import { Button, AlertDialog } from '@felipegangrel/core-ui';
 
 const meta: Meta<unknown> = {
-  title: 'UI/AlertDialog',
+  title: 'core-ui/AlertDialog',
+  tags: ['autodocs'],
   component: () => {
     return (
       <AlertDialog.Root>

@@ -31,6 +31,7 @@ export function ThemeProvider({
   );
 
   useEffect(() => {
+    console.log(theme);
     const root = window.document.documentElement;
 
     root.classList.remove('light', 'dark');

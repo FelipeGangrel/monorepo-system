@@ -5,7 +5,7 @@ pre-commit:
   commands:
     prettier:
       glob: "*.{ts,tsx,md}"
-      run: git diff --name-only --cached --relative | grep '\.\(ts\|tsx\|md\)$' | xargs pnpm prettier --write && git add
+      run: pnpm format
     lint:
       glob: "*.{js,jsx,ts,tsx}"
       run: pnpm lint

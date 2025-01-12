@@ -1,5 +1,5 @@
-import './styles/library.css';
+import './styles.css';
 
-export * from '@/components/ui/alert-dialog/alert-dialog';
-export * from '@/components/ui/badge/badge';
-export * from '@/components/ui/button/button';
+export * from '@/components/ui/alert-dialog';
+export * from '@/components/ui/badge';
+export * from '@/components/ui/button';
