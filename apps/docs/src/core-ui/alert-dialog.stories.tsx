@@ -2,12 +2,23 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AlertDialog } from '@/core-ui/components/ui/alert-dialog';
 import { Button } from '@/core-ui/components/ui/button';
 
-const meta: Meta<unknown> = {
+const meta: Meta<typeof AlertDialog.Root> = {
   title: 'core-ui/AlertDialog',
   tags: ['autodocs'],
-  component: () => {
-    return (
-      <AlertDialog.Root>
+  component: AlertDialog.Root,
+  parameters: {
+    layout: 'centered',
+  },
+};
+
+export default meta;
+
+type Story = StoryObj<typeof AlertDialog.Root>;
+
+export const Default: Story = {
+  args: {
+    children: (
+      <>
         <AlertDialog.Trigger asChild>
           <Button>Trigger</Button>
         </AlertDialog.Trigger>
@@ -16,18 +27,8 @@ const meta: Meta<unknown> = {
           <AlertDialog.Description>Description</AlertDialog.Description>
           <AlertDialog.Action>Action</AlertDialog.Action>
         </AlertDialog.Content>
-      </AlertDialog.Root>
-    );
+      </>
+    ),
   },
-  parameters: {
-    layout: 'centered',
-  },
-};
-
-export default meta;
-
-type Story = StoryObj<unknown>;
-
-export const AlertDialogDemo: Story = {
-  args: {},
+  render: (args) => <AlertDialog.Root {...args} />,
 };
