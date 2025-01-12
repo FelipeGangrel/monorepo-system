@@ -1,0 +1,7 @@
+<meta http-equiv="refresh" content="0;url=/monorepo-system/" />
+<script>
+  // Redirect all 404 requests to the index.html file
+  const url = new URL(window.location);
+  const path = url.pathname.replace('/monorepo-system/', '/');
+  window.location.href = '/monorepo-system/' + path;
+</script>
