@@ -50,15 +50,15 @@ Alternatively, you can use your own component as a description by assigning it a
 
 For more information, see https://radix-ui.com/primitives/docs/components/alert-dialog`;return i.useEffect(()=>{var r;document.getElementById((r=e.current)==null?void 0:r.getAttribute("aria-describedby"))||console.warn(t)},[t,e]),null},_r=gt,Mr=ht,Ir=yt,Rt=Et,Pt=bt,Tt=wt,Ot=Nt,_t=At,Mt=St;const Lr=_r,jr=Mr,It=Ir,he=i.forwardRef(({className:e,...t},n)=>d.jsx(Rt,{className:I("fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",e),...t,ref:n}));he.displayName=Rt.displayName;const Lt=i.forwardRef(({className:e,...t},n)=>d.jsxs(It,{children:[d.jsx(he,{}),d.jsx(Pt,{ref:n,className:I("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg",e),...t})]}));Lt.displayName=Pt.displayName;const jt=({className:e,...t})=>d.jsx("div",{className:I("flex flex-col space-y-2 text-center sm:text-left",e),...t});jt.displayName="AlertDialogHeader";const Ft=({className:e,...t})=>d.jsx("div",{className:I("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",e),...t});Ft.displayName="AlertDialogFooter";const kt=i.forwardRef(({className:e,...t},n)=>d.jsx(_t,{ref:n,className:I("text-lg font-semibold",e),...t}));kt.displayName=_t.displayName;const Wt=i.forwardRef(({className:e,...t},n)=>d.jsx(Mt,{ref:n,className:I("text-sm text-muted-foreground",e),...t}));Wt.displayName=Mt.displayName;const Bt=i.forwardRef(({className:e,...t},n)=>d.jsx(Tt,{ref:n,className:I(Ie(),e),...t}));Bt.displayName=Tt.displayName;const $t=i.forwardRef(({className:e,...t},n)=>d.jsx(Ot,{ref:n,className:I(Ie({variant:"outline"}),"mt-2 sm:mt-0",e),...t}));$t.displayName=Ot.displayName;const L={Root:Lr,Trigger:jr,Portal:It,Overlay:he,Content:Lt,Header:jt,Footer:Ft,Title:kt,Description:Wt,Action:Bt,Cancel:$t},Vr={title:"core-ui/AlertDialog",tags:["autodocs"],component:L.Root,parameters:{layout:"centered"}},X={args:{children:d.jsxs(d.Fragment,{children:[d.jsx(L.Trigger,{asChild:!0,children:d.jsx(Kt,{children:"Trigger"})}),d.jsxs(L.Content,{children:[d.jsx(L.Title,{children:"Title"}),d.jsx(L.Description,{children:"Description"}),d.jsx(L.Action,{children:"Action"})]})]})},render:e=>d.jsx(L.Root,{...e})};var Te,Oe,_e;X.parameters={...X.parameters,docs:{...(Te=X.parameters)==null?void 0:Te.docs,source:{originalSource:`{
   args: {
-    children: <>\r
-        <AlertDialog.Trigger asChild>\r
-          <Button>Trigger</Button>\r
-        </AlertDialog.Trigger>\r
-        <AlertDialog.Content>\r
-          <AlertDialog.Title>Title</AlertDialog.Title>\r
-          <AlertDialog.Description>Description</AlertDialog.Description>\r
-          <AlertDialog.Action>Action</AlertDialog.Action>\r
-        </AlertDialog.Content>\r
+    children: <>
+        <AlertDialog.Trigger asChild>
+          <Button>Trigger</Button>
+        </AlertDialog.Trigger>
+        <AlertDialog.Content>
+          <AlertDialog.Title>Title</AlertDialog.Title>
+          <AlertDialog.Description>Description</AlertDialog.Description>
+          <AlertDialog.Action>Action</AlertDialog.Action>
+        </AlertDialog.Content>
       </>
   },
   render: args => <AlertDialog.Root {...args} />
