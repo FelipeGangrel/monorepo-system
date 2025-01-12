@@ -1,5 +1,7 @@
 # Monorepo System Example
 
+[📘 Docs](https://felipegangrel.github.io/monorepo-system)
+
 ### Creating a Github Personal Token
 
 1. Create a Personal Access Token with read and write permissions for packages.
