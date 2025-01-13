@@ -1,0 +1,17 @@
+# Ignore dependencies
+node_modules/
+
+# Ignore build artifacts
+dist/
+build/
+storybook-static/
+
+# Ignore environment files
+.env
+
+# Ignore specific files
+*.log
+*.min.js
+
+# Ignore any directory named "coverage"
+coverage/

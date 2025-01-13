@@ -108,6 +108,9 @@ catalogs:
     eslint-plugin-react-refresh:
       specifier: ^0.4.14
       version: 0.4.18
+    eslint-plugin-simple-import-sort:
+      specifier: ^12.1.1
+      version: 12.1.1
     eslint-plugin-storybook:
       specifier: ^0.11.1
       version: 0.11.2
@@ -458,6 +461,9 @@ importers:
       eslint-plugin-react-hooks:
         specifier: 'catalog:'
         version: 5.1.0(eslint@9.18.0(jiti@1.21.7))
+      eslint-plugin-simple-import-sort:
+        specifier: 'catalog:'
+        version: 12.1.1(eslint@9.18.0(jiti@1.21.7))
       eslint-plugin-turbo:
         specifier: 'catalog:'
         version: 2.3.3(eslint@9.18.0(jiti@1.21.7))
@@ -2497,6 +2503,11 @@ packages:
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
+
+  eslint-plugin-simple-import-sort@12.1.1:
+    resolution: {integrity: sha512-6nuzu4xwQtE3332Uz0to+TxDQYRLTKRESSc2hefVT48Zc8JthmN23Gx9lnYhu0FtkRSL1oxny3kJ2aveVhmOVA==}
+    peerDependencies:
+      eslint: '>=5.0.0'
 
   eslint-plugin-storybook@0.11.2:
     resolution: {integrity: sha512-0Z4DUklJrC+GHjCRXa7PYfPzWC15DaVnwaOYenpgXiCEijXPZkLKCms+rHhtoRcWccP7Z8DpOOaP1gc3P9oOwg==}
@@ -6974,6 +6985,10 @@ snapshots:
       semver: 6.3.1
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
+
+  eslint-plugin-simple-import-sort@12.1.1(eslint@9.18.0(jiti@1.21.7)):
+    dependencies:
+      eslint: 9.18.0(jiti@1.21.7)
 
   eslint-plugin-storybook@0.11.2(eslint@9.18.0(jiti@1.21.7))(typescript@5.6.3):
     dependencies:
