@@ -5,7 +5,7 @@ pre-commit:
   commands:
     prettier:
       glob: "*.{ts,tsx,md}"
-      run: pnpm format
+      run: pnpm format:check
     lint:
       glob: "*.{js,jsx,ts,tsx}"
       run: pnpm lint

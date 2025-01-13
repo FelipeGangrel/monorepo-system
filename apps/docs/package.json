@@ -53,7 +53,8 @@
     "build-storybook": "storybook build",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "storybook dev -p 6006",
-    "lint": "eslint --fix",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "storybook": "storybook dev -p 6006"
   },
   "type": "module"
