@@ -1,7 +1,9 @@
 import '@felipegangrel/core-ui/styles.css';
 import '@/core-ui/styles.css';
+
 import type { Preview } from '@storybook/react';
 import { themes } from '@storybook/theming';
+
 import { DocsContainer } from './docs-container';
 
 const preview: Preview = {
