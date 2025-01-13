@@ -1,5 +1,3 @@
-common:
-  verbose: true  # Enable verbose output to debug issues
 pre-commit:
   parallel: true
   commands:
@@ -8,7 +6,7 @@ pre-commit:
       run: pnpm format:check
     lint:
       glob: "*.{js,jsx,ts,tsx}"
-      run: pnpm lint
+      run: pnpm lint:check
     test:
       run: pnpm test --bail
       glob: "**/*.{js,jsx,ts,tsx}"

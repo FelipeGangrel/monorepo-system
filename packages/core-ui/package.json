@@ -66,8 +66,8 @@
     "build": "tsup",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "dev": "tsup --watch",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix",
+    "lint:check": "eslint",
+    "lint": "eslint --fix",
     "test": "jest",
     "test:cov": "jest --coverage",
     "ui": "pnpm dlx shadcn@latest"

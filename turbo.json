@@ -12,12 +12,8 @@
       "outputs": ["storybook-static"],
       "dependsOn": ["^build"]
     },
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
-    "lint:fix": {
-      "dependsOn": ["^lint:fix"]
-    },
+    "lint": {},
+    "lint:check": {},
     "dev": {
       "cache": false,
       "persistent": true
