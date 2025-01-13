@@ -2,10 +2,10 @@
   "name": "tailwind-config",
   "version": "0.0.0",
   "dependencies": {
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "catalog:"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.16",
+    "tailwindcss": "catalog:",
     "typescript-config": "workspace:*"
   },
   "exports": {
