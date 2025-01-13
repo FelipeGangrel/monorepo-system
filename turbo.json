@@ -24,6 +24,7 @@
     },
     "test": {},
     "test:cov": {},
+    "test:cov-total": {},
     "test:watch": {
       "cache": false,
       "persistent": true
