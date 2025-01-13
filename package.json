@@ -2,10 +2,12 @@
   "name": "monorepo-system",
   "devDependencies": {
     "@changesets/cli": "catalog:",
+    "@types/node": "catalog:",
     "lefthook": "catalog:",
     "prettier": "catalog:",
     "prettier-plugin-tailwindcss": "catalog:",
     "syncpack": "catalog:",
+    "tsx": "catalog:",
     "turbo": "catalog:",
     "typescript": "catalog:"
   },
@@ -25,6 +27,7 @@
     "storybook": "turbo run storybook",
     "test": "turbo run test",
     "test:cov": "turbo run test:cov",
+    "test:cov-total": "turbo run test:cov && tsx scripts/coverage-total.ts",
     "ui": "pnpm --filter @felipegangrel/core-ui ui"
   }
 }
