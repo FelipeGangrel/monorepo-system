@@ -13,8 +13,8 @@
     "tailwindcss-animate": "catalog:"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "catalog:",
     "@eslint/js": "catalog:",
+    "@testing-library/jest-dom": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:react19",
     "@types/react-dom": "catalog:react19",
