@@ -27,7 +27,7 @@
     "storybook": "turbo run storybook",
     "test": "turbo run test",
     "test:cov": "turbo run test:cov",
-    "test:cov-total": "turbo run test:cov && tsx scripts/coverage-total.ts",
+    "test:cov-total": "turbo run test:cov && node scripts/coverage-total.js",
     "ui": "pnpm --filter @felipegangrel/core-ui ui"
   }
 }
