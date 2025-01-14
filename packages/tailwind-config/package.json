@@ -9,7 +9,8 @@
     "typescript-config": "workspace:*"
   },
   "exports": {
-    ".": "./tailwind.config.ts"
+    ".": "./tailwind.config.ts",
+    "./tailwind.css": "./tailwind.css"
   },
   "private": true,
   "scripts": {

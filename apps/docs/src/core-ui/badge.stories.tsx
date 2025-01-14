@@ -1,6 +1,5 @@
+import { Badge } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Badge } from '@/core-ui/components/ui/badge';
 
 const meta: Meta<typeof Badge> = {
   title: 'core-ui/Badge',

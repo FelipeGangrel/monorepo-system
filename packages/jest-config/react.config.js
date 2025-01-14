@@ -1,6 +1,5 @@
-import type { Config } from 'jest';
-
-const config: Config = {
+/** @type {import('jest').Config} */
+const config = {
   roots: ['<rootDir>/src'],
   modulePaths: ['<rootDir>/src'],
   testEnvironment: 'jsdom',
@@ -11,8 +10,8 @@ const config: Config = {
     '!src/**/*.stories.{ts,tsx}',
     '!src/**/*.mock.{ts,tsx}',
   ],
+  coverageReporters: ['json-summary', 'text'],
   coveragePathIgnorePatterns: [],
-  setupFilesAfterEnv: ['./jest.setup.ts'],
   transform: {
     '^.+\\.(ts|tsx)$': [
       '@swc/jest',
@@ -26,7 +25,7 @@ const config: Config = {
     ],
   },
   moduleNameMapper: {
-    '^@/core-ui/(.*)$': '<rootDir>/src/$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
 };
 

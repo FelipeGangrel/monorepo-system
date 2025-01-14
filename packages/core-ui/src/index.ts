@@ -1,4 +1,4 @@
-import './styles.css';
+import 'tailwind-config/tailwind.css';
 
 export * from './components/ui/alert';
 export * from './components/ui/alert-dialog';
