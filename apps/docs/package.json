@@ -51,7 +51,7 @@
   },
   "scripts": {
     "build-storybook": "storybook build",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf storybook-static",
     "dev": "storybook dev -p 6006",
     "lint:check": "eslint",
     "lint": "eslint --fix",
