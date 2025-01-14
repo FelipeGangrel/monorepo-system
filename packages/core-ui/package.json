@@ -50,7 +50,7 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": [
+  "files": [                                        `
     "dist"
   ],
   "publishConfig": {
