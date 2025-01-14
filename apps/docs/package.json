@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "dependencies": {
     "@felipegangrel/core-ui": "workspace:*",
+    "@hookform/resolvers": "^3.10.0",
     "@storybook/preview-api": "catalog:",
     "clsx": "catalog:",
     "lucide-react": "catalog:",
     "react": "catalog:react19",
-    "react-dom": "catalog:react19"
+    "react-dom": "catalog:react19",
+    "react-hook-form": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "catalog:",
