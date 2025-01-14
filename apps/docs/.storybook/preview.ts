@@ -1,5 +1,5 @@
 import '@felipegangrel/core-ui/styles.css';
-import '@/core-ui/styles.css';
+import 'tailwind-config/tailwind.css';
 
 import type { Preview } from '@storybook/react';
 import { themes } from '@storybook/theming';

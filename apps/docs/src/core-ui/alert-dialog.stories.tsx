@@ -1,7 +1,5 @@
+import { AlertDialog, Button } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { AlertDialog } from '@/core-ui/components/ui/alert-dialog';
-import { Button } from '@/core-ui/components/ui/button';
 
 const meta: Meta<typeof AlertDialog.Root> = {
   title: 'core-ui/AlertDialog',

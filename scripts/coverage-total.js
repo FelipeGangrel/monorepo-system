@@ -50,7 +50,12 @@ function getAllPathsForPackagesSummaries() {
   const appsSummaries = appsNames.reduce((summary, appName) => {
     return {
       ...summary,
-      [appName]: path.join(appsPath, appName, 'coverage', 'coverage-summary.json'),
+      [appName]: path.join(
+        appsPath,
+        appName,
+        'coverage',
+        'coverage-summary.json'
+      ),
     };
   }, {});
 
@@ -78,7 +83,9 @@ function getAllPathsForPackagesSummaries() {
  * their coverage summary paths.
  * @returns {ConsolidatedCoverageReport} The consolidated coverage report.
  */
-function readSummaryPerPackageAndCreateJoinedSummaryReportWithTotal(packagesSummaryPaths) {
+function readSummaryPerPackageAndCreateJoinedSummaryReportWithTotal(
+  packagesSummaryPaths
+) {
   return Object.keys(packagesSummaryPaths).reduce(
     (summary, packageName) => {
       const reportPath = packagesSummaryPaths[packageName];

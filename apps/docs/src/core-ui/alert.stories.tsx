@@ -1,7 +1,6 @@
+import { Alert } from '@felipegangrel/core-ui';
 import { Meta, StoryObj } from '@storybook/react';
 import { AlertTriangleIcon } from 'lucide-react';
-
-import { Alert } from '@/core-ui/components/ui/alert';
 
 const meta: Meta<typeof Alert.Root> = {
   title: 'core-ui/Alert',

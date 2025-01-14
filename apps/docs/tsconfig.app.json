@@ -26,7 +26,7 @@
     /* Paths */
     "baseUrl": ".",
     "paths": {
-      "@/core-ui/*": ["../../packages/core-ui/src/*"],
+      "@/*": ["./src/*"],
     }
   },
   "include": ["."],

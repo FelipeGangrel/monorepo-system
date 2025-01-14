@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@/core-ui': path.resolve(__dirname, '../../packages/core-ui/src'),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
 });

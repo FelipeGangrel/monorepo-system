@@ -22,7 +22,6 @@
     "@types/node": "catalog:",
     "@types/react": "catalog:react19",
     "@types/react-dom": "catalog:react19",
-    "@vitejs/plugin-react": "catalog:",
     "autoprefixer": "catalog:",
     "eslint": "catalog:",
     "eslint-config": "workspace:*",
@@ -50,7 +49,7 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": [                                        `
+  "files": [
     "dist"
   ],
   "publishConfig": {
