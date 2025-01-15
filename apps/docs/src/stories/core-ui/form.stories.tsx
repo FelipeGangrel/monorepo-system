@@ -1,6 +1,6 @@
 import { Button, Form, Input } from '@felipegangrel/core-ui';
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -10,12 +10,22 @@ const meta: Meta<typeof Form.Root> = {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+    docs: {
+      source: {
+        language: 'tsx',
+      },
+    },
   },
 };
 
 export default meta;
 
-const WithValidationTemplate = () => {
+export const WithValidation = () => {
+  // import { Button, Form, Input } from '@felipegangrel/core-ui';
+  // import { zodResolver } from '@hookform/resolvers/zod';
+  // import { useForm } from 'react-hook-form';
+  // import { z } from 'zod';
+
   const formSchema = z.object({
     populatedField: z.string().optional(),
     optionalField: z.string().optional(),
@@ -85,10 +95,4 @@ const WithValidationTemplate = () => {
       </Form.Root>
     </div>
   );
-};
-
-type Story = StoryObj<typeof Form.Root>;
-
-export const WithValidation: Story = {
-  render: () => <WithValidationTemplate />,
 };
