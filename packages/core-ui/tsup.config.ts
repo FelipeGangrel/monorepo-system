@@ -6,6 +6,7 @@ export default defineConfig((options) => ({
   clean: true,
   dts: true,
   sourcemap: true,
+  treeshake: true,
   external: ['react'],
   ...options,
 }));
