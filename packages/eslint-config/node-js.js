@@ -4,7 +4,7 @@ import tseslint from 'typescript-eslint';
 import globals from 'globals';
 import { baseConfig } from './base.js';
 
-export const nodeConfig = [
+export const nodeJs = [
   ...baseConfig,
   js.configs.recommended,
   eslintConfigPrettier,

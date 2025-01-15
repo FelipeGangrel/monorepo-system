@@ -16,8 +16,8 @@
   },
   "files": [
     "base.js",
-    "next.js",
-    "node.js",
+    "next-js.js",
+    "node-js.js",
     "react.js"
   ],
   "private": true,

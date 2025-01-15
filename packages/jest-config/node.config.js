@@ -5,14 +5,15 @@ const config = {
   testEnvironment: 'node',
   resetMocks: true,
   collectCoverageFrom: [
-    'src/**/*.{ts}',
+    'src/**/*.{ts,tsx}',
     '!src/**/*.d.ts',
-    '!src/**/*.mock.{ts}',
+    '!src/**/*.stories.{ts,tsx}',
+    '!src/**/*.mock.{ts,tsx}',
   ],
   coverageReporters: ['json-summary', 'text'],
   coveragePathIgnorePatterns: [],
   transform: {
-    '^.+\\.ts$': '@swc/jest',
+    '^.+\\.(ts|tsx)$': '@swc/jest',
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
