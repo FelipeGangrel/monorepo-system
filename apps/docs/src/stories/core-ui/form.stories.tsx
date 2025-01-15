@@ -21,11 +21,6 @@ const meta: Meta<typeof Form.Root> = {
 export default meta;
 
 export const WithValidation = () => {
-  // import { Button, Form, Input } from '@felipegangrel/core-ui';
-  // import { zodResolver } from '@hookform/resolvers/zod';
-  // import { useForm } from 'react-hook-form';
-  // import { z } from 'zod';
-
   const formSchema = z.object({
     populatedField: z.string().optional(),
     optionalField: z.string().optional(),
