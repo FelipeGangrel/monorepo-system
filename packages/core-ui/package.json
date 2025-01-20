@@ -51,8 +51,10 @@
     }
   },
   "files": [
-    "dist"
+    "dist/**"
   ],
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com/FelipeGangrel"
@@ -75,5 +77,6 @@
   "sideEffects": [
     "**/*.css"
   ],
-  "type": "module"
+  "type": "module",
+  "types": "dist/index.d.ts"
 }

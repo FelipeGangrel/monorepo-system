@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "@felipegangrel/core-ui": "workspace:*",
-    "@hookform/resolvers": "^3.10.0",
+    "@hookform/resolvers": "catalog:",
     "@storybook/preview-api": "catalog:",
     "clsx": "catalog:",
     "lucide-react": "catalog:",
