@@ -7,7 +7,7 @@ import globals from 'globals';
 import pluginNext from '@next/eslint-plugin-next';
 import { baseConfig } from './base.js';
 
-export const nextConfig = [
+export const nextJs = [
   ...baseConfig,
   js.configs.recommended,
   eslintConfigPrettier,

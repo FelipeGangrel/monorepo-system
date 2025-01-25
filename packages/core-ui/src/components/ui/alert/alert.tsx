@@ -30,7 +30,7 @@ const AlertRoot = React.forwardRef<
     {...props}
   />
 ));
-AlertRoot.displayName = 'Alert';
+AlertRoot.displayName = 'Alert.Root';
 
 const AlertTitle = React.forwardRef<
   HTMLParagraphElement,
@@ -42,7 +42,7 @@ const AlertTitle = React.forwardRef<
     {...props}
   />
 ));
-AlertTitle.displayName = 'AlertTitle';
+AlertTitle.displayName = 'Alert.Title';
 
 const AlertDescription = React.forwardRef<
   HTMLParagraphElement,
@@ -54,7 +54,7 @@ const AlertDescription = React.forwardRef<
     {...props}
   />
 ));
-AlertDescription.displayName = 'AlertDescription';
+AlertDescription.displayName = 'Alert.Description';
 
 export const Alert = {
   Root: AlertRoot,
