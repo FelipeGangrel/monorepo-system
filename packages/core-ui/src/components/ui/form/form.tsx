@@ -82,7 +82,7 @@ const FormItem = React.forwardRef<
     </FormItemContext.Provider>
   );
 });
-FormItem.displayName = 'FormItem';
+FormItem.displayName = 'Form.Item';
 
 const FormLabel = React.forwardRef<
   React.ComponentRef<typeof LabelPrimitive.Root>,
@@ -99,7 +99,7 @@ const FormLabel = React.forwardRef<
     />
   );
 });
-FormLabel.displayName = 'FormLabel';
+FormLabel.displayName = 'Form.Label';
 
 const FormControl = React.forwardRef<
   React.ComponentRef<typeof Slot>,
@@ -122,7 +122,7 @@ const FormControl = React.forwardRef<
     />
   );
 });
-FormControl.displayName = 'FormControl';
+FormControl.displayName = 'Form.Control';
 
 const FormDescription = React.forwardRef<
   HTMLParagraphElement,
@@ -139,7 +139,7 @@ const FormDescription = React.forwardRef<
     />
   );
 });
-FormDescription.displayName = 'FormDescription';
+FormDescription.displayName = 'Form.Description';
 
 const FormMessage = React.forwardRef<
   HTMLParagraphElement,
@@ -163,7 +163,7 @@ const FormMessage = React.forwardRef<
     </p>
   );
 });
-FormMessage.displayName = 'FormMessage';
+FormMessage.displayName = 'Form.Message';
 
 export { useFormField };
 
