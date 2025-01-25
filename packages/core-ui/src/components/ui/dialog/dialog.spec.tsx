@@ -5,13 +5,13 @@ import { Dialog } from './dialog';
 describe('Dialog Component', () => {
   it('renders the DialogTrigger and opens the dialog when clicked', () => {
     render(
-      <Dialog.Root>
+      <Dialog>
         <Dialog.Trigger>Open Dialog</Dialog.Trigger>
         <Dialog.Content>
           <Dialog.Title>Dialog Title</Dialog.Title>
           <Dialog.Description>This is a dialog description.</Dialog.Description>
         </Dialog.Content>
-      </Dialog.Root>
+      </Dialog>
     );
 
     const trigger = screen.getByText(/open dialog/i);
@@ -29,13 +29,13 @@ describe('Dialog Component', () => {
 
   it('closes the dialog when the close button is clicked', () => {
     render(
-      <Dialog.Root>
+      <Dialog>
         <Dialog.Trigger>Open Dialog</Dialog.Trigger>
         <Dialog.Content>
           <Dialog.Title>Dialog Title</Dialog.Title>
           <Dialog.Description>This is a dialog description.</Dialog.Description>
         </Dialog.Content>
-      </Dialog.Root>
+      </Dialog>
     );
 
     const trigger = screen.getByText(/open dialog/i);
@@ -54,7 +54,7 @@ describe('Dialog Component', () => {
 
   it('renders DialogHeader and DialogFooter correctly', () => {
     render(
-      <Dialog.Root>
+      <Dialog>
         <Dialog.Trigger>Open Dialog</Dialog.Trigger>
         <Dialog.Content>
           <Dialog.Header>
@@ -66,7 +66,7 @@ describe('Dialog Component', () => {
             <button>Footer Button</button>
           </Dialog.Footer>
         </Dialog.Content>
-      </Dialog.Root>
+      </Dialog>
     );
 
     const triggerButton = screen.getByText(/open dialog/i);
@@ -78,13 +78,13 @@ describe('Dialog Component', () => {
 
   it('applies custom classes to dialog components', () => {
     render(
-      <Dialog.Root>
+      <Dialog>
         <Dialog.Trigger>Open Dialog</Dialog.Trigger>
         <Dialog.Content className="custom-content-class">
           <Dialog.Title>Test Dialog Title</Dialog.Title>
           <Dialog.Description>Dialog Description</Dialog.Description>
         </Dialog.Content>
-      </Dialog.Root>
+      </Dialog>
     );
 
     const triggerButton = screen.getByText(/open dialog/i);
@@ -95,12 +95,12 @@ describe('Dialog Component', () => {
 
   it('renders DialogTitle and DialogDescription with proper text', () => {
     render(
-      <Dialog.Root open>
+      <Dialog open>
         <Dialog.Content>
           <Dialog.Title>Test Dialog Title</Dialog.Title>
           <Dialog.Description>Test Dialog Description</Dialog.Description>
         </Dialog.Content>
-      </Dialog.Root>
+      </Dialog>
     );
 
     expect(screen.getByText(/test dialog title/i)).toBeInTheDocument();

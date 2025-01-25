@@ -1,9 +1,9 @@
 import { Accordion } from '@felipegangrel/core-ui';
 import { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof Accordion.Root> = {
+const meta: Meta<typeof Accordion> = {
   title: 'core-ui/Accordion',
-  component: Accordion.Root,
+  component: Accordion,
   tags: ['autodocs'],
   args: {
     type: 'single',
@@ -26,11 +26,11 @@ const meta: Meta<typeof Accordion.Root> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Accordion.Root>;
+type Story = StoryObj<typeof Accordion>;
 
 export const Default: Story = {
   render: (args) => (
-    <Accordion.Root {...args}>
+    <Accordion {...args}>
       <Accordion.Item value="item-1">
         <Accordion.Trigger>Accordion Title 1</Accordion.Trigger>
         <Accordion.Content>
@@ -49,7 +49,7 @@ export const Default: Story = {
           This is the content for the third item.
         </Accordion.Content>
       </Accordion.Item>
-    </Accordion.Root>
+    </Accordion>
   ),
 };
 
@@ -58,7 +58,7 @@ export const MultipleItems: Story = {
     type: 'multiple',
   },
   render: (args) => (
-    <Accordion.Root {...args}>
+    <Accordion {...args}>
       <Accordion.Item value="item-1">
         <Accordion.Trigger>Accordion Item 1</Accordion.Trigger>
         <Accordion.Content>
@@ -77,7 +77,7 @@ export const MultipleItems: Story = {
           Content for multiple accordion item 3.
         </Accordion.Content>
       </Accordion.Item>
-    </Accordion.Root>
+    </Accordion>
   ),
 };
 
@@ -87,7 +87,7 @@ export const NonCollapsible: Story = {
     collapsible: false,
   },
   render: (args) => (
-    <Accordion.Root {...args}>
+    <Accordion {...args}>
       <Accordion.Item value="item-1">
         <Accordion.Trigger>Accordion Title 1</Accordion.Trigger>
         <Accordion.Content>
@@ -100,6 +100,6 @@ export const NonCollapsible: Story = {
           Second item that cannot be collapsed once opened.
         </Accordion.Content>
       </Accordion.Item>
-    </Accordion.Root>
+    </Accordion>
   ),
 };

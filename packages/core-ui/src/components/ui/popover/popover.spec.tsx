@@ -3,12 +3,12 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { Popover } from './popover';
 
 describe('Popover Component', () => {
-  it('renders Popover.Root without crashing', () => {
+  it('renders Popover without crashing', () => {
     render(
-      <Popover.Root>
+      <Popover>
         <Popover.Trigger>Open Popover</Popover.Trigger>
         <Popover.Content>This is Popover Content</Popover.Content>
-      </Popover.Root>
+      </Popover>
     );
 
     expect(screen.getByText('Open Popover')).toBeInTheDocument();
@@ -16,12 +16,12 @@ describe('Popover Component', () => {
 
   it('displays Popover.Content when Popover.Trigger is clicked', () => {
     render(
-      <Popover.Root>
+      <Popover>
         <Popover.Trigger>Open Popover</Popover.Trigger>
         <Popover.Content data-testid="popover-content">
           This is Popover Content
         </Popover.Content>
-      </Popover.Root>
+      </Popover>
     );
 
     const trigger = screen.getByText('Open Popover');
@@ -38,12 +38,12 @@ describe('Popover Component', () => {
 
   it('applies custom class names to Popover.Content', () => {
     render(
-      <Popover.Root>
+      <Popover>
         <Popover.Trigger>Open Popover</Popover.Trigger>
         <Popover.Content data-testid="popover-content" className="custom-class">
           Custom Content
         </Popover.Content>
-      </Popover.Root>
+      </Popover>
     );
 
     fireEvent.click(screen.getByText('Open Popover'));

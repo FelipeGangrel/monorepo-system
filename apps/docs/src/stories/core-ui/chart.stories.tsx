@@ -2,9 +2,9 @@ import { Chart, type ChartConfig } from '@felipegangrel/core-ui';
 import { Meta, StoryObj } from '@storybook/react';
 import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts';
 
-const meta: Meta<typeof Chart.Container> = {
+const meta: Meta<typeof Chart> = {
   title: 'core-ui/Chart',
-  component: Chart.Container,
+  component: Chart,
   parameters: {
     layout: 'centered',
   },
@@ -32,7 +32,7 @@ const barChartData = [
   { month: 'June', desktop: 214, mobile: 140 },
 ];
 
-type Story = StoryObj<typeof Chart.Container>;
+type Story = StoryObj<typeof Chart>;
 
 export const BarChartExample: Story = {
   args: {
@@ -45,7 +45,7 @@ export const BarChartExample: Story = {
       </BarChart>
     ),
   },
-  render: (args) => <Chart.Container {...args} />,
+  render: (args) => <Chart {...args} />,
 };
 
 export const BarChartExampleWithGrid: Story = {
@@ -60,7 +60,7 @@ export const BarChartExampleWithGrid: Story = {
       </BarChart>
     ),
   },
-  render: (args) => <Chart.Container {...args} />,
+  render: (args) => <Chart {...args} />,
 };
 
 export const BarChartExampleWithXAxis: Story = {
@@ -82,7 +82,7 @@ export const BarChartExampleWithXAxis: Story = {
       </BarChart>
     ),
   },
-  render: (args) => <Chart.Container {...args} />,
+  render: (args) => <Chart {...args} />,
 };
 
 export const BarChartExampleWithTooltip: Story = {
@@ -105,7 +105,7 @@ export const BarChartExampleWithTooltip: Story = {
       </BarChart>
     ),
   },
-  render: (args) => <Chart.Container {...args} />,
+  render: (args) => <Chart {...args} />,
 };
 
 export const BarChartExampleWithLegend: Story = {
@@ -129,5 +129,5 @@ export const BarChartExampleWithLegend: Story = {
       </BarChart>
     ),
   },
-  render: (args) => <Chart.Container {...args} />,
+  render: (args) => <Chart {...args} />,
 };

@@ -1,10 +1,10 @@
 import { AlertDialog, Button } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof AlertDialog.Root> = {
+const meta: Meta<typeof AlertDialog> = {
   title: 'core-ui/AlertDialog',
   tags: ['autodocs'],
-  component: AlertDialog.Root,
+  component: AlertDialog,
   parameters: {
     layout: 'centered',
   },
@@ -12,7 +12,7 @@ const meta: Meta<typeof AlertDialog.Root> = {
 
 export default meta;
 
-type Story = StoryObj<typeof AlertDialog.Root>;
+type Story = StoryObj<typeof AlertDialog>;
 
 export const Default: Story = {
   args: {
@@ -29,5 +29,5 @@ export const Default: Story = {
       </>
     ),
   },
-  render: (args) => <AlertDialog.Root {...args} />,
+  render: (args) => <AlertDialog {...args} />,
 };

@@ -1,9 +1,9 @@
 import { Breadcrumb } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta = {
+const meta: Meta<typeof Breadcrumb> = {
   title: 'core-ui/Breadcrumb',
-  component: Breadcrumb.Root,
+  component: Breadcrumb,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -12,11 +12,11 @@ const meta: Meta = {
 
 export default meta;
 
-type Story = StoryObj<typeof Breadcrumb.Root>;
+type Story = StoryObj<typeof Breadcrumb>;
 
 export const Default: Story = {
   render: (args) => (
-    <Breadcrumb.Root {...args}>
+    <Breadcrumb {...args}>
       <Breadcrumb.List>
         <Breadcrumb.Item>
           <Breadcrumb.Link href="/home">Home</Breadcrumb.Link>
@@ -30,13 +30,13 @@ export const Default: Story = {
           <Breadcrumb.Page>Current Page</Breadcrumb.Page>
         </Breadcrumb.Item>
       </Breadcrumb.List>
-    </Breadcrumb.Root>
+    </Breadcrumb>
   ),
 };
 
 export const CustomSeparator: Story = {
   render: (args) => (
-    <Breadcrumb.Root {...args}>
+    <Breadcrumb {...args}>
       <Breadcrumb.List>
         <Breadcrumb.Item>
           <Breadcrumb.Link href="/home">Home</Breadcrumb.Link>
@@ -50,13 +50,13 @@ export const CustomSeparator: Story = {
           <Breadcrumb.Page>Current Page</Breadcrumb.Page>
         </Breadcrumb.Item>
       </Breadcrumb.List>
-    </Breadcrumb.Root>
+    </Breadcrumb>
   ),
 };
 
 export const OverflowEllipsis: Story = {
   render: (args) => (
-    <Breadcrumb.Root {...args}>
+    <Breadcrumb {...args}>
       <Breadcrumb.List>
         <Breadcrumb.Item>
           <Breadcrumb.Link href="/level1">Level 1</Breadcrumb.Link>
@@ -72,13 +72,13 @@ export const OverflowEllipsis: Story = {
           <Breadcrumb.Page>Current Page</Breadcrumb.Page>
         </Breadcrumb.Item>
       </Breadcrumb.List>
-    </Breadcrumb.Root>
+    </Breadcrumb>
   ),
 };
 
 export const CustomLinks: Story = {
   render: (args) => (
-    <Breadcrumb.Root {...args}>
+    <Breadcrumb {...args}>
       <Breadcrumb.List>
         <Breadcrumb.Item>
           <Breadcrumb.Link asChild>
@@ -94,13 +94,13 @@ export const CustomLinks: Story = {
           <Breadcrumb.Page>Current Page</Breadcrumb.Page>
         </Breadcrumb.Item>
       </Breadcrumb.List>
-    </Breadcrumb.Root>
+    </Breadcrumb>
   ),
 };
 
 export const StyledBreadcrumb: Story = {
   render: (args) => (
-    <Breadcrumb.Root {...args} className="rounded-md bg-gray-100 p-4">
+    <Breadcrumb {...args} className="rounded-md bg-gray-100 p-4">
       <Breadcrumb.List>
         <Breadcrumb.Item>
           <Breadcrumb.Link
@@ -124,6 +124,6 @@ export const StyledBreadcrumb: Story = {
           <Breadcrumb.Page>Settings</Breadcrumb.Page>
         </Breadcrumb.Item>
       </Breadcrumb.List>
-    </Breadcrumb.Root>
+    </Breadcrumb>
   ),
 };

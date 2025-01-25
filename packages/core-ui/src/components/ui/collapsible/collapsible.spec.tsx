@@ -6,10 +6,10 @@ import { Collapsible } from './collapsible';
 describe('Collapsible Component', () => {
   it('should render the Collapsible without crashing', () => {
     render(
-      <Collapsible.Root>
+      <Collapsible>
         <Collapsible.Trigger>Toggle</Collapsible.Trigger>
         <Collapsible.Content>Content Here</Collapsible.Content>
-      </Collapsible.Root>
+      </Collapsible>
     );
 
     const trigger = screen.getByRole('button', {
@@ -25,10 +25,10 @@ describe('Collapsible Component', () => {
 
   it('should toggle content visibility when Trigger is clicked', async () => {
     render(
-      <Collapsible.Root>
+      <Collapsible>
         <Collapsible.Trigger>Toggle</Collapsible.Trigger>
         <Collapsible.Content>Content here</Collapsible.Content>
-      </Collapsible.Root>
+      </Collapsible>
     );
 
     const trigger = screen.getByRole('button', {
@@ -53,10 +53,10 @@ describe('Collapsible Component', () => {
 
   it('should work with defaultOpen property', () => {
     render(
-      <Collapsible.Root defaultOpen>
+      <Collapsible defaultOpen>
         <Collapsible.Trigger>Toggle</Collapsible.Trigger>
         <Collapsible.Content>Content here</Collapsible.Content>
-      </Collapsible.Root>
+      </Collapsible>
     );
 
     const content = screen.getByText('Content here');
@@ -68,10 +68,10 @@ describe('Collapsible Component', () => {
     const ControlledCollapsible = () => {
       const [open, setOpen] = React.useState(false);
       return (
-        <Collapsible.Root open={open} onOpenChange={setOpen}>
+        <Collapsible open={open} onOpenChange={setOpen}>
           <Collapsible.Trigger>Toggle</Collapsible.Trigger>
           <Collapsible.Content>Content here</Collapsible.Content>
-        </Collapsible.Root>
+        </Collapsible>
       );
     };
 

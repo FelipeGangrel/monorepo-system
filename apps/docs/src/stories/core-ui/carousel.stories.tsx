@@ -2,9 +2,9 @@ import { Card, Carousel, type CarouselApi } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
-const meta: Meta<typeof Carousel.Root> = {
+const meta: Meta<typeof Carousel> = {
   title: 'core-ui/Carousel',
-  component: Carousel.Root,
+  component: Carousel,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -13,7 +13,7 @@ const meta: Meta<typeof Carousel.Root> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Carousel.Root>;
+type Story = StoryObj<typeof Carousel>;
 
 export const Default: Story = {
   args: {
@@ -25,11 +25,11 @@ export const Default: Story = {
           {Array.from({ length: 5 }).map((_, index) => (
             <Carousel.Item key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
-                <Card.Root>
+                <Card>
                   <Card.Content className="flex aspect-square items-center justify-center p-6">
                     <span className="text-3xl font-semibold">{index + 1}</span>
                   </Card.Content>
-                </Card.Root>
+                </Card>
               </div>
             </Carousel.Item>
           ))}
@@ -39,7 +39,7 @@ export const Default: Story = {
       </>
     ),
   },
-  render: (args) => <Carousel.Root {...args} />,
+  render: (args) => <Carousel {...args} />,
 };
 
 export const VerticalOrientationAndLoop: Story = {
@@ -53,11 +53,11 @@ export const VerticalOrientationAndLoop: Story = {
           {Array.from({ length: 5 }).map((_, index) => (
             <Carousel.Item key={index} className="pt-1 md:basis-1/2">
               <div className="p-1">
-                <Card.Root>
+                <Card>
                   <Card.Content className="flex items-center justify-center p-6">
                     <span className="text-3xl font-semibold">{index + 1}</span>
                   </Card.Content>
-                </Card.Root>
+                </Card>
               </div>
             </Carousel.Item>
           ))}
@@ -69,7 +69,7 @@ export const VerticalOrientationAndLoop: Story = {
   },
   render: (args) => (
     <div className="my-6">
-      <Carousel.Root {...args} />
+      <Carousel {...args} />
     </div>
   ),
 };
@@ -94,21 +94,21 @@ export const WithApi = () => {
 
   return (
     <div className="mx-auto max-w-xs">
-      <Carousel.Root setApi={setApi} className="w-full max-w-xs">
+      <Carousel setApi={setApi} className="w-full max-w-xs">
         <Carousel.Content>
           {Array.from({ length: 5 }).map((_, index) => (
             <Carousel.Item key={index}>
-              <Card.Root>
+              <Card>
                 <Card.Content className="flex aspect-square items-center justify-center p-6">
                   <span className="text-4xl font-semibold">{index + 1}</span>
                 </Card.Content>
-              </Card.Root>
+              </Card>
             </Carousel.Item>
           ))}
         </Carousel.Content>
         <Carousel.Previous />
         <Carousel.Next />
-      </Carousel.Root>
+      </Carousel>
       <div className="text-muted-foreground py-2 text-center text-sm">
         Slide {current} of {count}
       </div>

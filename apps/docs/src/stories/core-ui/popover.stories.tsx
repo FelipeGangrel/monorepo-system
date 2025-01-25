@@ -1,9 +1,9 @@
 import { Button, Popover } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof Popover.Root> = {
+const meta: Meta<typeof Popover> = {
   title: 'core-ui/Popover',
-  component: Popover.Root,
+  component: Popover,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -12,7 +12,7 @@ const meta: Meta<typeof Popover.Root> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Popover.Root>;
+type Story = StoryObj<typeof Popover>;
 
 export const Default: Story = {
   args: {

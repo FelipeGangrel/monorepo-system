@@ -10,9 +10,9 @@ import {
 } from 'lucide-react';
 import * as React from 'react';
 
-const meta: Meta<typeof Command.Root> = {
+const meta: Meta<typeof Command> = {
   title: 'core-ui/Command',
-  component: Command.Root,
+  component: Command,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -21,7 +21,7 @@ const meta: Meta<typeof Command.Root> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Command.Root>;
+type Story = StoryObj<typeof Command>;
 
 export const Default: Story = {
   args: {

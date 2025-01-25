@@ -1,9 +1,9 @@
 import { Button, Dialog } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof Dialog.Root> = {
+const meta: Meta<typeof Dialog> = {
   title: 'core-ui/Dialog',
-  component: Dialog.Root,
+  component: Dialog,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -12,7 +12,7 @@ const meta: Meta<typeof Dialog.Root> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Dialog.Root>;
+type Story = StoryObj<typeof Dialog>;
 
 export const Default: Story = {
   args: {

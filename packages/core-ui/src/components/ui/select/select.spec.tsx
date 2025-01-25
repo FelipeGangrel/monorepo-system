@@ -7,7 +7,7 @@ describe('Select Component', () => {
 
   const renderSelect = (value: string, onChange: (value: string) => void) => {
     render(
-      <Select.Root value={value} onValueChange={onChange}>
+      <Select value={value} onValueChange={onChange}>
         <Select.Trigger>
           <Select.Value placeholder="Select an option" />
         </Select.Trigger>
@@ -16,7 +16,7 @@ describe('Select Component', () => {
           <Select.Item value="option2">Option 2</Select.Item>
           <Select.Item value="option3">Option 3</Select.Item>
         </Select.Content>
-      </Select.Root>
+      </Select>
     );
   };
 
@@ -57,7 +57,7 @@ describe('Select Component', () => {
 
   it('handles re-renders when the value prop changes', () => {
     const { rerender } = render(
-      <Select.Root value="option1" onValueChange={mockOnChange}>
+      <Select value="option1" onValueChange={mockOnChange}>
         <Select.Trigger>
           <Select.Value placeholder="Select an option" />
         </Select.Trigger>
@@ -66,13 +66,13 @@ describe('Select Component', () => {
           <Select.Item value="option2">Option 2</Select.Item>
           <Select.Item value="option3">Option 3</Select.Item>
         </Select.Content>
-      </Select.Root>
+      </Select>
     );
 
     expect(screen.getByText('Option 1')).toBeInTheDocument();
 
     rerender(
-      <Select.Root value="option3" onValueChange={mockOnChange}>
+      <Select value="option3" onValueChange={mockOnChange}>
         <Select.Trigger>
           <Select.Value placeholder="Select an option" />
         </Select.Trigger>
@@ -81,7 +81,7 @@ describe('Select Component', () => {
           <Select.Item value="option2">Option 2</Select.Item>
           <Select.Item value="option3">Option 3</Select.Item>
         </Select.Content>
-      </Select.Root>
+      </Select>
     );
 
     expect(screen.getByText('Option 3')).toBeInTheDocument();

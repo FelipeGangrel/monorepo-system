@@ -14,7 +14,7 @@ const FormWrapper = ({ children }: { readonly children: React.ReactNode }) => {
     },
   });
 
-  return <Form.Root {...methods}>{children}</Form.Root>;
+  return <Form {...methods}>{children}</Form>;
 };
 
 describe('Form Component', () => {
@@ -70,7 +70,7 @@ describe('Form Component', () => {
         });
       }, [methods]);
 
-      return <Form.Root {...methods}>{children}</Form.Root>;
+      return <Form {...methods}>{children}</Form>;
     };
 
     render(

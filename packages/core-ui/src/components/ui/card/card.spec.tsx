@@ -3,8 +3,8 @@ import { render } from '@testing-library/react';
 import { Card } from './card';
 
 describe('Card Component', () => {
-  it('renders the Card.Root component with children', () => {
-    const { getByText } = render(<Card.Root>Test Content</Card.Root>);
+  it('renders the Card component with children', () => {
+    const { getByText } = render(<Card>Test Content</Card>);
     expect(getByText('Test Content')).toBeInTheDocument();
   });
 
@@ -37,14 +37,14 @@ describe('Card Component', () => {
 
   it('renders a fully nested Card component structure', () => {
     const { getByText } = render(
-      <Card.Root>
+      <Card>
         <Card.Header>
           <Card.Title>Title</Card.Title>
           <Card.Description>Description</Card.Description>
         </Card.Header>
         <Card.Content>Main Content</Card.Content>
         <Card.Footer>Footer Content</Card.Footer>
-      </Card.Root>
+      </Card>
     );
 
     expect(getByText('Title')).toBeInTheDocument();

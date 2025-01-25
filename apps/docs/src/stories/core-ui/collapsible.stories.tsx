@@ -2,9 +2,9 @@ import { Button, Collapsible } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ChevronsUpDown } from 'lucide-react';
 
-const meta: Meta<typeof Collapsible.Root> = {
+const meta: Meta<typeof Collapsible> = {
   title: 'core-ui/Collapsible',
-  component: Collapsible.Root,
+  component: Collapsible,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -13,7 +13,7 @@ const meta: Meta<typeof Collapsible.Root> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Collapsible.Root>;
+type Story = StoryObj<typeof Collapsible>;
 
 export const Default: Story = {
   args: {
@@ -25,7 +25,7 @@ export const Default: Story = {
       </>
     ),
   },
-  render: (args) => <Collapsible.Root {...args} />,
+  render: (args) => <Collapsible {...args} />,
 };
 
 export const WithButtonAndIcon: Story = {
@@ -58,5 +58,5 @@ export const WithButtonAndIcon: Story = {
       </>
     ),
   },
-  render: (args) => <Collapsible.Root {...args} />,
+  render: (args) => <Collapsible {...args} />,
 };
