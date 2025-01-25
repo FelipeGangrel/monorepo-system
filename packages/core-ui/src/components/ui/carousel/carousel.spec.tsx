@@ -34,12 +34,12 @@ describe('Carousel Component', () => {
 
   it('renders the carousel structure correctly', () => {
     render(
-      <Carousel.Root>
+      <Carousel>
         <Carousel.Content>
           <Carousel.Item>Slide 1</Carousel.Item>
           <Carousel.Item>Slide 2</Carousel.Item>
         </Carousel.Content>
-      </Carousel.Root>
+      </Carousel>
     );
 
     // check for the carousel region
@@ -61,10 +61,10 @@ describe('Carousel Component', () => {
 
   it('renders the Previous and Next buttons', () => {
     render(
-      <Carousel.Root>
+      <Carousel>
         <Carousel.Previous />
         <Carousel.Next />
-      </Carousel.Root>
+      </Carousel>
     );
 
     expect(
@@ -79,9 +79,9 @@ describe('Carousel Component', () => {
     mockCanScrollPrev.mockReturnValue(true);
 
     render(
-      <Carousel.Root>
+      <Carousel>
         <Carousel.Previous />
-      </Carousel.Root>
+      </Carousel>
     );
 
     const prevButton = screen.getByRole('button', { name: /previous slide/i });
@@ -94,9 +94,9 @@ describe('Carousel Component', () => {
     mockCanScrollNext.mockReturnValue(true);
 
     render(
-      <Carousel.Root>
+      <Carousel>
         <Carousel.Next />
-      </Carousel.Root>
+      </Carousel>
     );
 
     const nextButton = screen.getByRole('button', { name: /next slide/i });
@@ -109,9 +109,9 @@ describe('Carousel Component', () => {
     mockCanScrollPrev.mockReturnValue(false);
 
     render(
-      <Carousel.Root>
+      <Carousel>
         <Carousel.Previous />
-      </Carousel.Root>
+      </Carousel>
     );
 
     const prevButton = screen.getByRole('button', { name: /previous slide/i });
@@ -122,9 +122,9 @@ describe('Carousel Component', () => {
     mockCanScrollNext.mockReturnValue(false);
 
     render(
-      <Carousel.Root>
+      <Carousel>
         <Carousel.Next />
-      </Carousel.Root>
+      </Carousel>
     );
 
     const nextButton = screen.getByRole('button', { name: /next slide/i });
@@ -136,12 +136,12 @@ describe('Carousel Component', () => {
     mockCanScrollNext.mockReturnValue(true);
 
     render(
-      <Carousel.Root>
+      <Carousel>
         <Carousel.Content>
           <Carousel.Item>Slide 1</Carousel.Item>
           <Carousel.Item>Slide 2</Carousel.Item>
         </Carousel.Content>
-      </Carousel.Root>
+      </Carousel>
     );
 
     const carouselRegion = screen.getByRole('region');

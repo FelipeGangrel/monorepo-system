@@ -3,13 +3,13 @@ import { render, screen } from '@testing-library/react';
 import { Breadcrumb } from './breadcrumb';
 
 describe('Breadcrumb Component', () => {
-  it('renders Breadcrumb.Root with correct aria-label', () => {
-    render(<Breadcrumb.Root data-testid="breadcrumb-root" />);
+  it('renders Breadcrumb with correct aria-label', () => {
+    render(<Breadcrumb data-testid="breadcrumb" />);
 
-    const breadcrumbRoot = screen.getByTestId('breadcrumb-root');
+    const breadcrumb = screen.getByTestId('breadcrumb');
 
-    expect(breadcrumbRoot).toBeInTheDocument();
-    expect(breadcrumbRoot).toHaveAttribute('aria-label', 'breadcrumb');
+    expect(breadcrumb).toBeInTheDocument();
+    expect(breadcrumb).toHaveAttribute('aria-label', 'breadcrumb');
   });
 
   it('renders Breadcrumb.List with provided className', () => {
@@ -115,7 +115,7 @@ describe('Breadcrumb Component', () => {
 
   it('ensures all components render correctly together', () => {
     render(
-      <Breadcrumb.Root>
+      <Breadcrumb>
         <Breadcrumb.List>
           <Breadcrumb.Item>
             <Breadcrumb.Link href="/home">Home</Breadcrumb.Link>
@@ -129,7 +129,7 @@ describe('Breadcrumb Component', () => {
             <Breadcrumb.Page>Current Page</Breadcrumb.Page>
           </Breadcrumb.Item>
         </Breadcrumb.List>
-      </Breadcrumb.Root>
+      </Breadcrumb>
     );
 
     const breadcrumbRoot = screen.getByRole('navigation', {

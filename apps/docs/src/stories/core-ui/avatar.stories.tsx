@@ -1,9 +1,9 @@
 import { Avatar } from '@felipegangrel/core-ui';
 import { Meta } from '@storybook/react';
 
-const meta: Meta<typeof Avatar.Root> = {
+const meta: Meta<typeof Avatar> = {
   title: 'core-ui/Avatar',
-  component: Avatar.Root,
+  component: Avatar,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -13,53 +13,53 @@ const meta: Meta<typeof Avatar.Root> = {
 export default meta;
 
 export const Default = () => (
-  <Avatar.Root>
+  <Avatar>
     <Avatar.Image
       src="https://avatar.iran.liara.run/public"
       alt="User Avatar"
     />
     <Avatar.Fallback>AB</Avatar.Fallback>
-  </Avatar.Root>
+  </Avatar>
 );
 
 export const WithFallback = () => (
-  <Avatar.Root>
+  <Avatar>
     <Avatar.Fallback>AB</Avatar.Fallback>
-  </Avatar.Root>
+  </Avatar>
 );
 
 export const CustomSize = () => (
-  <Avatar.Root className="h-16 w-16">
+  <Avatar className="h-16 w-16">
     <Avatar.Image
       src="https://avatar.iran.liara.run/public"
       alt="Custom Size Avatar"
     />
     <Avatar.Fallback>AB</Avatar.Fallback>
-  </Avatar.Root>
+  </Avatar>
 );
 
 export const WithoutImage = () => (
-  <Avatar.Root>
+  <Avatar>
     <Avatar.Fallback>JD</Avatar.Fallback>
-  </Avatar.Root>
+  </Avatar>
 );
 
 export const CustomStyle = () => (
-  <Avatar.Root className="border-2 border-blue-500 shadow-lg">
+  <Avatar className="border-2 border-blue-500 shadow-lg">
     <Avatar.Image
       src="https://avatar.iran.liara.run/public"
       alt="Styled Avatar"
     />
     <Avatar.Fallback>XY</Avatar.Fallback>
-  </Avatar.Root>
+  </Avatar>
 );
 
 export const WithBrokenImage = () => (
-  <Avatar.Root>
+  <Avatar>
     <Avatar.Image
       src="broken-link.jpg" // Intentionally broken link
       alt="Broken Avatar"
     />
     <Avatar.Fallback>??</Avatar.Fallback>
-  </Avatar.Root>
+  </Avatar>
 );

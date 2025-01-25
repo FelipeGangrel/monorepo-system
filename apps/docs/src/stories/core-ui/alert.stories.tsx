@@ -2,9 +2,9 @@ import { Alert } from '@felipegangrel/core-ui';
 import { Meta, StoryObj } from '@storybook/react';
 import { AlertTriangleIcon } from 'lucide-react';
 
-const meta: Meta<typeof Alert.Root> = {
+const meta: Meta<typeof Alert> = {
   title: 'core-ui/Alert',
-  component: Alert.Root,
+  component: Alert,
   tags: ['autodocs'],
   argTypes: {
     variant: {
@@ -19,7 +19,7 @@ const meta: Meta<typeof Alert.Root> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Alert.Root>;
+type Story = StoryObj<typeof Alert>;
 
 export const Default: Story = {
   args: {
@@ -31,7 +31,7 @@ export const Default: Story = {
       </>
     ),
   },
-  render: (args) => <Alert.Root {...args} />,
+  render: (args) => <Alert {...args} />,
 };
 
 export const Destructive: Story = {
@@ -46,7 +46,7 @@ export const Destructive: Story = {
       </>
     ),
   },
-  render: (args) => <Alert.Root {...args} />,
+  render: (args) => <Alert {...args} />,
 };
 
 export const WithCustomStyles: Story = {
@@ -62,7 +62,7 @@ export const WithCustomStyles: Story = {
       </>
     ),
   },
-  render: (args) => <Alert.Root {...args} />,
+  render: (args) => <Alert {...args} />,
 };
 
 export const WithoutTitle: Story = {
@@ -74,7 +74,7 @@ export const WithoutTitle: Story = {
       </Alert.Description>
     ),
   },
-  render: (args) => <Alert.Root {...args} />,
+  render: (args) => <Alert {...args} />,
 };
 
 export const WithIcon: Story = {
@@ -88,5 +88,5 @@ export const WithIcon: Story = {
       </>
     ),
   },
-  render: (args) => <Alert.Root {...args} />,
+  render: (args) => <Alert {...args} />,
 };

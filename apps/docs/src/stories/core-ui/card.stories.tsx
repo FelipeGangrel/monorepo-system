@@ -2,9 +2,9 @@ import { Button, Card, Switch } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import { BellRingIcon, CheckIcon } from 'lucide-react';
 
-const meta: Meta<typeof Card.Root> = {
+const meta: Meta<typeof Card> = {
   title: 'core-ui/Card',
-  component: Card.Root,
+  component: Card,
   tags: ['autodocs'],
   args: {
     className: 'w-screen max-w-[400px]',
@@ -16,7 +16,7 @@ const meta: Meta<typeof Card.Root> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Card.Root>;
+type Story = StoryObj<typeof Card>;
 
 export const Default: Story = {
   args: {

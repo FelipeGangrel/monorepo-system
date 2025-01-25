@@ -4,7 +4,7 @@ import { Alert } from './alert';
 
 describe('Alert Component', () => {
   it('should render the AlertRoot with default styles', () => {
-    render(<Alert.Root>Default Alert</Alert.Root>);
+    render(<Alert>Default Alert</Alert>);
     const alertRoot = screen.getByRole('alert');
 
     expect(alertRoot).toBeInTheDocument();
@@ -15,7 +15,7 @@ describe('Alert Component', () => {
   });
 
   it('should apply the destructive variant styles', () => {
-    render(<Alert.Root variant="destructive">Destructive Alert</Alert.Root>);
+    render(<Alert variant="destructive">Destructive Alert</Alert>);
     const alertRoot = screen.getByRole('alert');
 
     expect(alertRoot).toBeInTheDocument();
@@ -44,9 +44,7 @@ describe('Alert Component', () => {
   });
 
   it('should allow custom classNames for AlertRoot', () => {
-    render(
-      <Alert.Root className="custom-class">Custom Styled Alert</Alert.Root>
-    );
+    render(<Alert className="custom-class">Custom Styled Alert</Alert>);
     const alertRoot = screen.getByRole('alert');
 
     expect(alertRoot).toBeInTheDocument();
@@ -76,7 +74,7 @@ describe('Alert Component', () => {
   });
 
   it("should render the AlertRoot with provided role 'alert'", () => {
-    render(<Alert.Root>Alert with Role</Alert.Root>);
+    render(<Alert>Alert with Role</Alert>);
     const alertRoot = screen.getByRole('alert');
 
     expect(alertRoot).toBeInTheDocument();
@@ -85,9 +83,9 @@ describe('Alert Component', () => {
 
   it('should support additional HTML attributes on AlertRoot', () => {
     render(
-      <Alert.Root id="alert-id" data-testid="custom-alert">
+      <Alert id="alert-id" data-testid="custom-alert">
         Custom Attributes
-      </Alert.Root>
+      </Alert>
     );
     const alertRoot = screen.getByTestId('custom-alert');
 

@@ -11,7 +11,7 @@ describe('AlertDialog Component', () => {
     onCancel?: () => void;
   } = {}) => {
     render(
-      <AlertDialog.Root>
+      <AlertDialog>
         <AlertDialog.Trigger>Open Dialog</AlertDialog.Trigger>
         <AlertDialog.Portal>
           <AlertDialog.Overlay />
@@ -30,7 +30,7 @@ describe('AlertDialog Component', () => {
             </AlertDialog.Footer>
           </AlertDialog.Content>
         </AlertDialog.Portal>
-      </AlertDialog.Root>
+      </AlertDialog>
     );
   };
 

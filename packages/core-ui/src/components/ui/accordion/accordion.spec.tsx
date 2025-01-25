@@ -5,12 +5,12 @@ import { Accordion } from './accordion';
 describe('Accordion Component', () => {
   it('renders without crashing', async () => {
     render(
-      <Accordion.Root type="single">
+      <Accordion type="single">
         <Accordion.Item value="item-1">
           <Accordion.Trigger>Click me</Accordion.Trigger>
           <Accordion.Content>Hidden content</Accordion.Content>
         </Accordion.Item>
-      </Accordion.Root>
+      </Accordion>
     );
 
     // Ensure the trigger is rendered
@@ -20,12 +20,12 @@ describe('Accordion Component', () => {
 
   it('toggles content visibility when trigger is clicked', async () => {
     render(
-      <Accordion.Root type="single" collapsible>
+      <Accordion type="single" collapsible>
         <Accordion.Item value="item-1">
           <Accordion.Trigger>Click me</Accordion.Trigger>
           <Accordion.Content>Hidden content</Accordion.Content>
         </Accordion.Item>
-      </Accordion.Root>
+      </Accordion>
     );
 
     const trigger = screen.getByText('Click me');
@@ -48,7 +48,7 @@ describe('Accordion Component', () => {
 
   it('applies custom classes correctly', async () => {
     render(
-      <Accordion.Root type="single">
+      <Accordion type="single">
         <Accordion.Item value="item-1" className="custom-item-class">
           <Accordion.Trigger className="custom-trigger-class">
             Click me
@@ -57,7 +57,7 @@ describe('Accordion Component', () => {
             Hidden content
           </Accordion.Content>
         </Accordion.Item>
-      </Accordion.Root>
+      </Accordion>
     );
 
     const item = screen.getByText('Click me').closest('div');
@@ -74,7 +74,7 @@ describe('Accordion Component', () => {
 
   it('opens only one item at a time when type is single', async () => {
     render(
-      <Accordion.Root type="single">
+      <Accordion type="single">
         <Accordion.Item value="item-1">
           <Accordion.Trigger>Item 1</Accordion.Trigger>
           <Accordion.Content>Content 1</Accordion.Content>
@@ -83,7 +83,7 @@ describe('Accordion Component', () => {
           <Accordion.Trigger>Item 2</Accordion.Trigger>
           <Accordion.Content>Content 2</Accordion.Content>
         </Accordion.Item>
-      </Accordion.Root>
+      </Accordion>
     );
 
     const trigger1 = screen.getByText('Item 1');
@@ -109,7 +109,7 @@ describe('Accordion Component', () => {
 
   it('allows multiple items to open when type is multiple', async () => {
     render(
-      <Accordion.Root type="multiple">
+      <Accordion type="multiple">
         <Accordion.Item value="item-1">
           <Accordion.Trigger>Item 1</Accordion.Trigger>
           <Accordion.Content>Content 1</Accordion.Content>
@@ -118,7 +118,7 @@ describe('Accordion Component', () => {
           <Accordion.Trigger>Item 2</Accordion.Trigger>
           <Accordion.Content>Content 2</Accordion.Content>
         </Accordion.Item>
-      </Accordion.Root>
+      </Accordion>
     );
 
     const trigger1 = screen.getByText('Item 1');

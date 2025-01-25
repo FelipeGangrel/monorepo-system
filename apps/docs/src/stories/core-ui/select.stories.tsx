@@ -1,9 +1,9 @@
 import { Select } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof Select.Root> = {
+const meta: Meta<typeof Select> = {
   title: 'core-ui/Select',
-  component: Select.Root,
+  component: Select,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -12,7 +12,7 @@ const meta: Meta<typeof Select.Root> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Select.Root>;
+type Story = StoryObj<typeof Select>;
 
 export const Default: Story = {
   args: {

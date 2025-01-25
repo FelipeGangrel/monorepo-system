@@ -4,11 +4,11 @@ import { Command } from './command';
 
 describe('Command Component', () => {
   it('renders CommandRoot component with default styles and custom class', () => {
-    render(<Command.Root className="custom-class">Test Content</Command.Root>);
+    render(<Command className="custom-class">Test Content</Command>);
 
-    const commandRoot = screen.getByText('Test Content');
-    expect(commandRoot).toBeInTheDocument();
-    expect(commandRoot).toHaveClass('custom-class');
+    const command = screen.getByText('Test Content');
+    expect(command).toBeInTheDocument();
+    expect(command).toHaveClass('custom-class');
   });
 
   it('renders CommandShortcut with custom text and className', () => {

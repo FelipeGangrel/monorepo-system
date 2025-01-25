@@ -2,7 +2,6 @@ import { Calendar } from '@felipegangrel/core-ui';
 import { Meta, StoryObj } from '@storybook/react';
 import { addDays } from 'date-fns';
 
-// Default export for the story
 const meta: Meta<typeof Calendar> = {
   title: 'core-ui/Calendar',
   component: Calendar,

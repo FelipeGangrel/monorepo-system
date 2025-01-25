@@ -5,7 +5,7 @@ import { Avatar } from './avatar';
 describe('Avatar Component', () => {
   it('should pass additional classes to AvatarRoot', () => {
     const additionalClass = 'custom-class';
-    const { container } = render(<Avatar.Root className={additionalClass} />);
+    const { container } = render(<Avatar className={additionalClass} />);
     const rootElement = container.firstChild;
 
     expect(rootElement).toHaveClass(additionalClass);
@@ -13,9 +13,9 @@ describe('Avatar Component', () => {
 
   it('should render AvatarFallback', () => {
     const { getByText } = render(
-      <Avatar.Root>
+      <Avatar>
         <Avatar.Fallback>Fallback Text</Avatar.Fallback>
-      </Avatar.Root>
+      </Avatar>
     );
 
     const fallbackElement = getByText('Fallback Text');

@@ -2,7 +2,9 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
-const CardRoot = React.forwardRef<
+import type { CardComponent } from './types';
+
+const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -14,10 +16,10 @@ const CardRoot = React.forwardRef<
     )}
     {...props}
   />
-));
-CardRoot.displayName = 'Card.Root';
+)) as CardComponent;
+Card.displayName = 'Card';
 
-const CardHeader = React.forwardRef<
+Card.Header = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -27,9 +29,9 @@ const CardHeader = React.forwardRef<
     {...props}
   />
 ));
-CardHeader.displayName = 'Card.Header';
+Card.Header.displayName = 'Card.Header';
 
-const CardTitle = React.forwardRef<
+Card.Title = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -39,9 +41,9 @@ const CardTitle = React.forwardRef<
     {...props}
   />
 ));
-CardTitle.displayName = 'Card.Title';
+Card.Title.displayName = 'Card.Title';
 
-const CardDescription = React.forwardRef<
+Card.Description = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -51,17 +53,17 @@ const CardDescription = React.forwardRef<
     {...props}
   />
 ));
-CardDescription.displayName = 'Card.Description';
+Card.Description.displayName = 'Card.Description';
 
-const CardContent = React.forwardRef<
+Card.Content = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />
 ));
-CardContent.displayName = 'Card.Content';
+Card.Content.displayName = 'Card.Content';
 
-const CardFooter = React.forwardRef<
+Card.Footer = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -71,13 +73,6 @@ const CardFooter = React.forwardRef<
     {...props}
   />
 ));
-CardFooter.displayName = 'Card.Footer';
+Card.Footer.displayName = 'Card.Footer';
 
-export const Card = {
-  Root: CardRoot,
-  Header: CardHeader,
-  Title: CardTitle,
-  Description: CardDescription,
-  Content: CardContent,
-  Footer: CardFooter,
-};
+export { Card };

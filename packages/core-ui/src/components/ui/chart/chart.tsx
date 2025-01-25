@@ -3,22 +3,19 @@ import * as RechartsPrimitive from 'recharts';
 
 import { cn } from '@/lib/utils';
 
-// Format: { THEME_NAME: CSS_SELECTOR }
-const THEMES = { light: '', dark: '.dark' } as const;
-
-export type ChartConfig = {
-  [k in string]: {
-    label?: React.ReactNode;
-    icon?: React.ComponentType;
-  } & (
-    | { color?: string; theme?: never }
-    | { color?: never; theme: Record<keyof typeof THEMES, string> }
-  );
-};
-
-type ChartContextProps = {
-  config: ChartConfig;
-};
+import { THEMES } from './constants';
+import type {
+  ChartComponent,
+  ChartConfig,
+  ChartContextProps,
+  ChartLegendContentProps,
+  ChartLegendContentRef,
+  ChartProps,
+  ChartRef,
+  ChartStyleProps,
+  ChartTooltipContentProps,
+  ChartTooltipContentRef,
+} from './types';
 
 const ChartContext = React.createContext<ChartContextProps | null>(null);
 
@@ -32,40 +29,34 @@ function useChart() {
   return context;
 }
 
-const ChartContainer = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<'div'> & {
-    config: ChartConfig;
-    children: React.ComponentProps<
-      typeof RechartsPrimitive.ResponsiveContainer
-    >['children'];
+const Chart = React.forwardRef<ChartRef, ChartProps>(
+  ({ id, className, children, config, ...props }, ref) => {
+    const uniqueId = React.useId();
+    const chartId = `chart-${id || uniqueId.replace(/:/g, '')}`;
+
+    return (
+      <ChartContext.Provider value={{ config }}>
+        <div
+          data-chart={chartId}
+          ref={ref}
+          className={cn(
+            "[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border flex aspect-video justify-center text-xs [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none",
+            className
+          )}
+          {...props}
+        >
+          <ChartStyle id={chartId} config={config} />
+          <RechartsPrimitive.ResponsiveContainer>
+            {children}
+          </RechartsPrimitive.ResponsiveContainer>
+        </div>
+      </ChartContext.Provider>
+    );
   }
->(({ id, className, children, config, ...props }, ref) => {
-  const uniqueId = React.useId();
-  const chartId = `chart-${id || uniqueId.replace(/:/g, '')}`;
+) as ChartComponent;
+Chart.displayName = 'Chart';
 
-  return (
-    <ChartContext.Provider value={{ config }}>
-      <div
-        data-chart={chartId}
-        ref={ref}
-        className={cn(
-          "[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border flex aspect-video justify-center text-xs [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none",
-          className
-        )}
-        {...props}
-      >
-        <ChartStyle id={chartId} config={config} />
-        <RechartsPrimitive.ResponsiveContainer>
-          {children}
-        </RechartsPrimitive.ResponsiveContainer>
-      </div>
-    </ChartContext.Provider>
-  );
-});
-ChartContainer.displayName = 'Chart.Container';
-
-const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
+const ChartStyle = ({ id, config }: ChartStyleProps) => {
   const colorConfig = Object.entries(config).filter(
     ([, config]) => config.theme || config.color
   );
@@ -98,20 +89,14 @@ ${colorConfig
   );
 };
 ChartStyle.displayNeme = 'Chart.Style';
+Chart.Style = ChartStyle;
 
-const ChartTooltip = RechartsPrimitive.Tooltip;
-ChartTooltip.displayName = 'Chart.Tooltip';
+Chart.Tooltip = RechartsPrimitive.Tooltip;
+Chart.Tooltip.displayName = 'Chart.Tooltip';
 
-const ChartTooltipContent = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
-    React.ComponentProps<'div'> & {
-      hideLabel?: boolean;
-      hideIndicator?: boolean;
-      indicator?: 'line' | 'dot' | 'dashed';
-      nameKey?: string;
-      labelKey?: string;
-    }
+Chart.TooltipContent = React.forwardRef<
+  ChartTooltipContentRef,
+  ChartTooltipContentProps
 >(
   (
     {
@@ -254,18 +239,14 @@ const ChartTooltipContent = React.forwardRef<
     );
   }
 );
-ChartTooltipContent.displayName = 'Chart.TooltipContent';
+Chart.TooltipContent.displayName = 'Chart.TooltipContent';
 
-const ChartLegend = RechartsPrimitive.Legend;
-ChartLegend.displayName = 'Chart.Legend';
+Chart.Legend = RechartsPrimitive.Legend;
+Chart.Legend.displayName = 'Chart.Legend';
 
-const ChartLegendContent = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<'div'> &
-    Pick<RechartsPrimitive.LegendProps, 'payload' | 'verticalAlign'> & {
-      hideIcon?: boolean;
-      nameKey?: string;
-    }
+Chart.LegendContent = React.forwardRef<
+  ChartLegendContentRef,
+  ChartLegendContentProps
 >(
   (
     { className, hideIcon = false, payload, verticalAlign = 'bottom', nameKey },
@@ -315,7 +296,7 @@ const ChartLegendContent = React.forwardRef<
     );
   }
 );
-ChartLegendContent.displayName = 'Chart.LegendContent';
+Chart.LegendContent.displayName = 'Chart.LegendContent';
 
 // Helper to extract item config from a payload.
 function getPayloadConfigFromPayload(
@@ -356,11 +337,5 @@ function getPayloadConfigFromPayload(
     : config[key as keyof typeof config];
 }
 
-export const Chart = {
-  Container: ChartContainer,
-  Tooltip: ChartTooltip,
-  TooltipContent: ChartTooltipContent,
-  Legend: ChartLegend,
-  LegendContent: ChartLegendContent,
-  Style: ChartStyle,
-};
+export type { ChartConfig };
+export { Chart };

@@ -4,9 +4,9 @@ import type { Meta } from '@storybook/react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-const meta: Meta<typeof Form.Root> = {
+const meta: Meta<typeof Form> = {
   title: 'core-ui/Form',
-  component: Form.Root,
+  component: Form,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -44,7 +44,7 @@ export const WithValidation = () => {
 
   return (
     <div className="w-screen max-w-[400px]">
-      <Form.Root {...form}>
+      <Form {...form}>
         <form
           className="flex flex-col gap-4"
           onSubmit={form.handleSubmit(onSubmit)}
@@ -87,7 +87,7 @@ export const WithValidation = () => {
           </Button>
           <Button type="submit">Submit</Button>
         </form>
-      </Form.Root>
+      </Form>
     </div>
   );
 };
