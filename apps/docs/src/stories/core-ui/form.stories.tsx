@@ -1,14 +1,19 @@
 import {
   Button,
+  Calendar,
   Checkbox,
+  cn,
   Form,
   Input,
   Label,
+  Popover,
   Select,
   Switch,
 } from '@felipegangrel/core-ui';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { Meta } from '@storybook/react';
+import { format } from 'date-fns';
+import { CalendarIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -37,6 +42,7 @@ export const WithValidation = () => {
     select: z.string().optional(),
     multipleCheckbox: z.array(z.string()).optional(),
     switch: z.boolean(),
+    date: z.date().optional(),
   });
 
   const form = useForm({
@@ -47,6 +53,7 @@ export const WithValidation = () => {
       select: '',
       multipleCheckbox: [],
       switch: false,
+      date: undefined,
     },
   });
 
@@ -138,6 +145,50 @@ export const WithValidation = () => {
           />
           <Form.Field
             control={form.control}
+            name="date"
+            render={({ field }) => (
+              <Form.Item className="flex flex-col gap-2">
+                <Form.Label>Date of birth</Form.Label>
+                <Popover>
+                  <Popover.Trigger asChild>
+                    <Form.Control>
+                      <Button
+                        variant={'outline'}
+                        className={cn(
+                          'pl-3 text-left font-normal',
+                          !field.value && 'text-muted-foreground'
+                        )}
+                      >
+                        {field.value ? (
+                          format(field.value, 'PPP')
+                        ) : (
+                          <span>Pick a date</span>
+                        )}
+                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                      </Button>
+                    </Form.Control>
+                  </Popover.Trigger>
+                  <Popover.Content className="w-auto p-0" align="start">
+                    <Calendar
+                      mode="single"
+                      selected={field.value}
+                      onSelect={field.onChange}
+                      disabled={(date) =>
+                        date > new Date() || date < new Date('1900-01-01')
+                      }
+                      initialFocus
+                    />
+                  </Popover.Content>
+                </Popover>
+                <Form.Description>
+                  Your date of birth is used to calculate your age.
+                </Form.Description>
+                <Form.Message />
+              </Form.Item>
+            )}
+          />
+          <Form.Field
+            control={form.control}
             name="switch"
             render={({ field }) => (
               <Form.Item>
@@ -154,6 +205,7 @@ export const WithValidation = () => {
               </Form.Item>
             )}
           />
+
           <Button type="reset" variant="secondary" onClick={() => form.reset()}>
             Reset
           </Button>
