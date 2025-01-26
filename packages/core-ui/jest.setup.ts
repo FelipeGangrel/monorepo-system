@@ -1,6 +1,8 @@
-// @ts-ignore
-
 import '@testing-library/jest-dom';
+
+import MatchMediaMock from 'jest-matchmedia-mock';
+
+new MatchMediaMock();
 
 global.DOMRect = class DOMRect {
   constructor(
