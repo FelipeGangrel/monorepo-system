@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { AlertDialog } from './alert-dialog';
 
-describe('AlertDialog Component', () => {
+describe('AlertDialog component', () => {
   const renderComponent = ({
     onConfirm = jest.fn(),
     onCancel = jest.fn(),

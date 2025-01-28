@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import { Breadcrumb } from './breadcrumb';
 
-describe('Breadcrumb Component', () => {
+describe('Breadcrumb component', () => {
   it('renders Breadcrumb with correct aria-label', () => {
     render(<Breadcrumb data-testid="breadcrumb" />);
 

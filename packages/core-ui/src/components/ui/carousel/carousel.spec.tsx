@@ -9,7 +9,7 @@ jest.mock('embla-carousel-react', () => ({
   default: jest.fn(),
 }));
 
-describe('Carousel Component', () => {
+describe('Carousel component', () => {
   const mockScrollPrev = jest.fn();
   const mockScrollNext = jest.fn();
   const mockCanScrollPrev = jest.fn();

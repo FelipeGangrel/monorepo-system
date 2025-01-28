@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { Accordion } from './accordion';
 
-describe('Accordion Component', () => {
+describe('Accordion component', () => {
   it('renders without crashing', async () => {
     render(
       <Accordion type="single">

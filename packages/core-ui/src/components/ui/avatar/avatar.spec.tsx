@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 
 import { Avatar } from './avatar';
 
-describe('Avatar Component', () => {
+describe('Avatar component', () => {
   it('should pass additional classes to AvatarRoot', () => {
     const additionalClass = 'custom-class';
     const { container } = render(<Avatar className={additionalClass} />);

@@ -2,7 +2,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { Select } from './select';
 
-describe('Select Component', () => {
+describe('Select component', () => {
   const mockOnChange = jest.fn();
 
   const renderSelect = (value: string, onChange: (value: string) => void) => {

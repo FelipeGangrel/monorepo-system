@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 
 import { Card } from './card';
 
-describe('Card Component', () => {
+describe('Card component', () => {
   it('renders the Card component with children', () => {
     const { getByText } = render(<Card>Test Content</Card>);
     expect(getByText('Test Content')).toBeInTheDocument();

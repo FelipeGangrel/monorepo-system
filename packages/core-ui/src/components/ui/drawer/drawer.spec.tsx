@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Drawer } from './drawer';
 
-describe('Drawer Component', () => {
+describe('Drawer component', () => {
   it('renders the Drawer with default props', () => {
     render(
       <Drawer>

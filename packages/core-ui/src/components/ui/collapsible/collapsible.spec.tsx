@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { Collapsible } from './collapsible';
 
-describe('Collapsible Component', () => {
+describe('Collapsible component', () => {
   it('should render the Collapsible without crashing', () => {
     render(
       <Collapsible>

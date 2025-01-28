@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { Popover } from './popover';
 
-describe('Popover Component', () => {
+describe('Popover component', () => {
   it('renders Popover without crashing', () => {
     render(
       <Popover>

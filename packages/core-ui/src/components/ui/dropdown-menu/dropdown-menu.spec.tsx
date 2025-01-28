@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { DropdownMenu } from './dropdown-menu';
 
-describe('DropdownMenu Component', () => {
+describe('DropdownMenu component', () => {
   it('should render the dropdown trigger', () => {
     render(
       <DropdownMenu>

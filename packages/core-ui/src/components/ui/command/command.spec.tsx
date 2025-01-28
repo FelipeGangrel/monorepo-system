@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import { Command } from './command';
 
-describe('Command Component', () => {
+describe('Command component', () => {
   it('renders CommandRoot component with default styles and custom class', () => {
     render(<Command className="custom-class">Test Content</Command>);
 
