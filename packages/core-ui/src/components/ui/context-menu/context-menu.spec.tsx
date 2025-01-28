@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { ContextMenu } from './context-menu';
 
-describe('ContextMenu Component', () => {
+describe('ContextMenu component', () => {
   it('renders ContextMenu trigger correctly', () => {
     render(
       <ContextMenu>

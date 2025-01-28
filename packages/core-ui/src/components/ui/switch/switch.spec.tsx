@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { Switch } from './switch';
 
-describe('Switch Component', () => {
+describe('Switch component', () => {
   it('renders correctly', () => {
     render(<Switch aria-label="Example switch" />);
     const switchElement = screen.getByRole('switch', {

@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Label } from './label';
 
-describe('Label Component', () => {
+describe('Label component', () => {
   it('renders the label with default styles', () => {
     render(<Label>Test Label</Label>);
 

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import { Alert } from './alert';
 
-describe('Alert Component', () => {
+describe('Alert component', () => {
   it('should render the AlertRoot with default styles', () => {
     render(<Alert>Default Alert</Alert>);
     const alertRoot = screen.getByRole('alert');

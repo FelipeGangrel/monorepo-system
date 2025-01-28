@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { Dialog } from './dialog';
 
-describe('Dialog Component', () => {
+describe('Dialog component', () => {
   it('renders the DialogTrigger and opens the dialog when clicked', () => {
     render(
       <Dialog>

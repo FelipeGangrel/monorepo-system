@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import { Calendar } from './calendar';
 
-describe('Calendar Component', () => {
+describe('Calendar component', () => {
   it('shows navigation buttons', () => {
     render(<Calendar />);
     expect(

@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Input } from './input';
 
-describe('Input Component', () => {
+describe('Input component', () => {
   it('renders an input element with default class names', () => {
     render(<Input />);
 

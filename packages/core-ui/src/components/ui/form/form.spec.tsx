@@ -17,7 +17,7 @@ const FormWrapper = ({ children }: { readonly children: React.ReactNode }) => {
   return <Form {...methods}>{children}</Form>;
 };
 
-describe('Form Component', () => {
+describe('Form component', () => {
   it('renders the Form.Item component with its children', () => {
     render(
       <FormWrapper>
