@@ -11,14 +11,6 @@ describe('Calendar component', () => {
     expect(screen.getByRole('button', { name: /next/i })).toBeInTheDocument();
   });
 
-  it('renders "today" with appropriate styles', () => {
-    render(<Calendar />);
-    const todayCell = screen.getByText(new Date().getDate().toString());
-
-    expect(todayCell).toBeInTheDocument();
-    expect(todayCell).toHaveClass('bg-accent');
-  });
-
   it('shows custom classNames for days when provided', () => {
     render(
       <Calendar

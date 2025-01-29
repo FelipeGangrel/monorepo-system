@@ -28,6 +28,7 @@ export * from './components/ui/hover-card';
 export * from './components/ui/input';
 export * from './components/ui/input-otp';
 export * from './components/ui/label';
+export * from './components/ui/menubar';
 export * from './components/ui/popover';
 export * from './components/ui/select';
 export * from './components/ui/switch';
