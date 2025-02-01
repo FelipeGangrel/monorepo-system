@@ -15,6 +15,9 @@ catalogs:
     '@eslint/js':
       specifier: ^9.16.0
       version: 9.18.0
+    '@faker-js/faker':
+      specifier: ^9.4.0
+      version: 9.4.0
     '@hookform/resolvers':
       specifier: ^3.10.0
       version: 3.10.0
@@ -309,6 +312,9 @@ importers:
 
   apps/docs:
     dependencies:
+      '@faker-js/faker':
+        specifier: 'catalog:'
+        version: 9.4.0
       '@felipegangrel/core-ui':
         specifier: workspace:*
         version: link:../../packages/core-ui
@@ -318,6 +324,9 @@ importers:
       '@storybook/preview-api':
         specifier: 'catalog:'
         version: 8.4.7(storybook@8.4.7(prettier@3.4.2))
+      '@tanstack/react-table':
+        specifier: 'catalog:'
+        version: 8.20.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       clsx:
         specifier: 'catalog:'
         version: 2.1.1
@@ -1271,6 +1280,10 @@ packages:
   '@eslint/plugin-kit@0.2.5':
     resolution: {integrity: sha512-lB05FkqEdUg2AA0xEbUz0SnkXT1LcCTa438W4IWTUh4hdOnVbQyOJ81OrDXsJk/LSiJHubgGEFoR5EHq1NsH1A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@faker-js/faker@9.4.0':
+    resolution: {integrity: sha512-85+k0AxaZSTowL0gXp8zYWDIrWclTbRPg/pm/V0dSFZ6W6D4lhcG3uuZl4zLsEKfEvs69xDbLN2cHQudwp95JA==}
+    engines: {node: '>=18.0.0', npm: '>=9.0.0'}
 
   '@floating-ui/core@1.6.9':
     resolution: {integrity: sha512-uMXCuQ3BItDUbAMhIXw7UPXRfAlOAvZzdK9BWpE60MCn+Svt3aLn9jsPTi/WNGlRUu2uI0v5S7JiIUsbsvh3fw==}
@@ -6270,6 +6283,8 @@ snapshots:
     dependencies:
       '@eslint/core': 0.10.0
       levn: 0.4.1
+
+  '@faker-js/faker@9.4.0': {}
 
   '@floating-ui/core@1.6.9':
     dependencies:

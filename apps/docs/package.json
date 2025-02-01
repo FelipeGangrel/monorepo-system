@@ -2,9 +2,11 @@
   "name": "docs",
   "version": "0.0.0",
   "dependencies": {
+    "@faker-js/faker": "catalog:",
     "@felipegangrel/core-ui": "workspace:*",
     "@hookform/resolvers": "catalog:",
     "@storybook/preview-api": "catalog:",
+    "@tanstack/react-table": "catalog:",
     "clsx": "catalog:",
     "date-fns": "catalog:",
     "lucide-react": "catalog:",
