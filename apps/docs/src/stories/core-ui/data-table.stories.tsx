@@ -1,9 +1,5 @@
 import { faker } from '@faker-js/faker';
-import {
-  DataTable,
-  DataTableContent,
-  DataTablePagination,
-} from '@felipegangrel/core-ui';
+import { DataTable } from '@felipegangrel/core-ui';
 import type { Meta } from '@storybook/react';
 import { ColumnDef } from '@tanstack/react-table';
 
@@ -67,8 +63,8 @@ export const Default = () => {
   return (
     <div className="container mx-auto py-10">
       <DataTable columns={columns} data={payments}>
-        <DataTableContent />
-        <DataTablePagination />
+        <DataTable.Content />
+        <DataTable.Pagination />
       </DataTable>
     </div>
   );
