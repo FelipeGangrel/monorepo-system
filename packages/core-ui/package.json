@@ -18,6 +18,7 @@
     "@radix-ui/react-select": "catalog:",
     "@radix-ui/react-slot": "catalog:",
     "@radix-ui/react-switch": "catalog:",
+    "@tanstack/match-sorter-utils": "catalog:",
     "@tanstack/react-table": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
@@ -33,6 +34,7 @@
     "recharts": "catalog:",
     "tailwind-merge": "catalog:",
     "tailwindcss-animate": "catalog:",
+    "use-debounce": "catalog:",
     "vaul": "catalog:",
     "zod": "catalog:"
   },

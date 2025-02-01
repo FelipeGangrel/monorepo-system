@@ -11,9 +11,15 @@ import {
 import * as React from 'react';
 
 import { DataTableContext } from './context';
-import { Content, Filter, Pagination, ViewOptions } from './primitives';
+import {
+  Content,
+  Filter,
+  GlobalFilter,
+  Pagination,
+  ViewOptions,
+} from './primitives';
 import type { DataTableComponent, DataTableProps } from './types';
-import { getChildrenDisplayNames } from './utils';
+import { fuzzyFilter, fuzzySort, getChildrenDisplayNames } from './utils';
 
 const DataTable = Object.assign(
   <TData, TValue>({
@@ -26,6 +32,7 @@ const DataTable = Object.assign(
     const [sorting, setSorting] = React.useState<SortingState>([]);
     const [columnFilters, setColumnFilters] =
       React.useState<ColumnFiltersState>([]);
+    const [globalFilter, setGlobalFilter] = React.useState('');
     const [columnVisibility, setColumnVisibility] =
       React.useState<VisibilityState>({});
     const [rowSelection, setRowSelection] = React.useState({});
@@ -34,9 +41,11 @@ const DataTable = Object.assign(
       data,
       columns,
       onSortingChange: setSorting,
-      onColumnFiltersChange: setColumnFilters,
       onColumnVisibilityChange: setColumnVisibility,
       onRowSelectionChange: setRowSelection,
+      onColumnFiltersChange: setColumnFilters,
+      onGlobalFilterChange: setGlobalFilter,
+      globalFilterFn: 'fuzzy',
       getCoreRowModel: getCoreRowModel(),
       getSortedRowModel: getSortedRowModel(),
       getFilteredRowModel: getFilteredRowModel(),
@@ -46,13 +55,17 @@ const DataTable = Object.assign(
       state: {
         sorting,
         columnFilters,
+        globalFilter,
         columnVisibility,
         rowSelection,
+      },
+      filterFns: {
+        fuzzy: fuzzyFilter,
       },
     });
 
     return (
-      <DataTableContext.Provider value={{ ...table }}>
+      <DataTableContext.Provider value={{ table }}>
         {children}
       </DataTableContext.Provider>
     );
@@ -60,6 +73,7 @@ const DataTable = Object.assign(
   {
     Content,
     Filter,
+    GlobalFilter,
     Pagination,
     ViewOptions,
   }

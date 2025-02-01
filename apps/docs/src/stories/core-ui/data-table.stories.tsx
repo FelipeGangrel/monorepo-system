@@ -7,6 +7,13 @@ const meta: Meta<typeof DataTable> = {
   title: 'core-ui/DataTable',
   component: DataTable,
   tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <div className="container flex w-screen flex-col gap-4">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     layout: 'centered',
   },
@@ -19,12 +26,17 @@ type Payment = {
   amount: number;
   status: 'pending' | 'processing' | 'success' | 'failed';
   email: string;
+  name: string;
 };
 
 const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: 'status',
     header: 'Status',
+  },
+  {
+    accessorKey: 'name',
+    header: 'Name',
   },
   {
     accessorKey: 'email',
@@ -45,34 +57,73 @@ const columns: ColumnDef<Payment>[] = [
   },
 ];
 
-const payments: Payment[] = Array.from({ length: 30 }).map(() => {
+const payments: Payment[] = Array.from({ length: 1000 }).map(() => {
+  const firstName = faker.person.firstName();
+  const lastName = faker.person.lastName();
+
   return {
     id: faker.string.uuid(),
     amount: faker.number.float({ min: 20, max: 200 }),
+    name: `${firstName} ${lastName}`,
+    email: faker.internet.email({ firstName, lastName }).toLowerCase(),
     status: faker.helpers.arrayElement([
       'pending',
       'processing',
       'success',
       'failed',
     ]),
-    email: faker.internet.email().toLowerCase(),
   };
 });
 
 export const Default = () => {
   return (
-    <div className="container mx-auto py-10">
-      <DataTable columns={columns} data={payments}>
-        <div className="flex justify-between gap-4">
-          <DataTable.Filter
-            placeholder={'Filter by email'}
-            filterBy={'email'}
-          />
-          <DataTable.ViewOptions />
-        </div>
-        <DataTable.Content />
-        <DataTable.Pagination />
-      </DataTable>
-    </div>
+    <DataTable columns={columns} data={payments.slice(0, 10)}>
+      <DataTable.Content />
+    </DataTable>
+  );
+};
+
+export const WithViewOptions = () => {
+  return (
+    <DataTable columns={columns} data={payments.slice(0, 10)}>
+      <div className="flex justify-between gap-4">
+        <DataTable.ViewOptions />
+      </div>
+      <DataTable.Content />
+    </DataTable>
+  );
+};
+
+export const WithPagination = () => {
+  return (
+    <DataTable columns={columns} data={payments}>
+      <DataTable.Content />
+      <DataTable.Pagination />
+    </DataTable>
+  );
+};
+
+export const WithFilter = () => {
+  return (
+    <DataTable columns={columns} data={payments}>
+      <div className="flex justify-between gap-4">
+        <DataTable.Filter filterBy={'name'} placeholder={'Filter by name'} />
+      </div>
+      <DataTable.Content />
+      <DataTable.Pagination />
+    </DataTable>
+  );
+};
+
+export const WithGlobalFilter = () => {
+  return (
+    <DataTable columns={columns} data={payments}>
+      <div className="flex justify-between gap-4">
+        <DataTable.GlobalFilter placeholder={'Fuzzy filter'} />
+        <DataTable.ViewOptions />
+      </div>
+      <DataTable.Content />
+      <DataTable.Pagination />
+    </DataTable>
   );
 };

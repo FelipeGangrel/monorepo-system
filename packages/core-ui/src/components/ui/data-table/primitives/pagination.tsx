@@ -12,13 +12,16 @@ import { cn } from '@/lib/utils';
 
 import { DataTableContext } from '../context';
 
-type Props = React.HTMLAttributes<HTMLDivElement>;
+type Props = React.HTMLAttributes<HTMLDivElement> & {
+  pageSizes?: number[];
+};
 
 const Pagination: React.FunctionComponent<Props> = ({
   className,
+  pageSizes = [10, 20, 30, 40, 50],
   ...props
 }) => {
-  const table = React.useContext(DataTableContext);
+  const { table } = React.useContext(DataTableContext);
 
   return (
     <div
@@ -44,7 +47,7 @@ const Pagination: React.FunctionComponent<Props> = ({
               />
             </Select.Trigger>
             <Select.Content side="top">
-              {[10, 20, 30, 40, 50].map((pageSize) => (
+              {pageSizes.map((pageSize) => (
                 <Select.Item key={pageSize} value={`${pageSize}`}>
                   {pageSize}
                 </Select.Item>

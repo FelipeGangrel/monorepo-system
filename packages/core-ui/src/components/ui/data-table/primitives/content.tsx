@@ -9,7 +9,7 @@ import { DataTableContext } from '../context';
 type Props = React.HTMLAttributes<HTMLDivElement>;
 
 const Content: React.FunctionComponent<Props> = ({ className, ...props }) => {
-  const table = React.useContext(DataTableContext);
+  const { table } = React.useContext(DataTableContext);
 
   return (
     <div className={cn(className)} {...props}>

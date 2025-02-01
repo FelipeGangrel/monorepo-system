@@ -11,7 +11,7 @@ const ViewOptions: React.FunctionComponent<ButtonProps> = ({
   className,
   ...props
 }) => {
-  const table = React.useContext(DataTableContext);
+  const { table } = React.useContext(DataTableContext);
 
   return (
     <DropdownMenu>
