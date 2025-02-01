@@ -18,8 +18,7 @@ const ViewOptions: React.FunctionComponent<ButtonProps> = ({
       <DropdownMenu.Trigger asChild>
         <Button
           variant="outline"
-          size="sm"
-          className={cn('ml-auto h-8', className)}
+          className={cn('ml-auto', className)}
           {...props}
         >
           <Settings2 />

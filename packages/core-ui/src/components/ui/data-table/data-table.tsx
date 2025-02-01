@@ -8,15 +8,10 @@ import {
   useReactTable,
   VisibilityState,
 } from '@tanstack/react-table';
-import { Settings2 } from 'lucide-react';
 import * as React from 'react';
 
-import { Button } from '@/components/ui/button';
-import { DropdownMenu } from '@/components/ui/dropdown-menu';
-import { cn } from '@/lib/utils';
-
 import { DataTableContext } from './context';
-import { Content, Pagination, ViewOptions } from './primitives';
+import { Content, Filter, Pagination, ViewOptions } from './primitives';
 import type { DataTableComponent, DataTableProps } from './types';
 import { getChildrenDisplayNames } from './utils';
 
@@ -64,6 +59,7 @@ const DataTable = Object.assign(
   },
   {
     Content,
+    Filter,
     Pagination,
     ViewOptions,
   }

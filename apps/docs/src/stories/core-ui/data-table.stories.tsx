@@ -63,7 +63,11 @@ export const Default = () => {
   return (
     <div className="container mx-auto py-10">
       <DataTable columns={columns} data={payments}>
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-4">
+          <DataTable.Filter
+            placeholder={'Filter by email'}
+            filterBy={'email'}
+          />
           <DataTable.ViewOptions />
         </div>
         <DataTable.Content />
