@@ -1,6 +1,8 @@
 import type { ColumnDef } from '@tanstack/react-table';
 import * as React from 'react';
 
+import { Content, Pagination, ViewOptions } from './primitives';
+
 export type DataTableProps<TData, TValue> = {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
@@ -8,9 +10,9 @@ export type DataTableProps<TData, TValue> = {
 };
 
 export type DataTableContentProps = React.HTMLAttributes<HTMLDivElement>;
-export type DataTablePaginationProps = React.HTMLAttributes<HTMLDivElement>;
 
 export type DataTableComponent = React.FC<DataTableProps<any, any>> & {
-  Content: React.FunctionComponent<DataTableContentProps>;
-  Pagination: React.FunctionComponent<DataTablePaginationProps>;
+  Content: typeof Content;
+  Pagination: typeof Pagination;
+  ViewOptions: typeof ViewOptions;
 };

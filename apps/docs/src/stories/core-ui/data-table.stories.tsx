@@ -45,7 +45,7 @@ const columns: ColumnDef<Payment>[] = [
   },
 ];
 
-const payments: Payment[] = Array.from({ length: 100 }).map(() => {
+const payments: Payment[] = Array.from({ length: 30 }).map(() => {
   return {
     id: faker.string.uuid(),
     amount: faker.number.float({ min: 20, max: 200 }),
@@ -63,6 +63,9 @@ export const Default = () => {
   return (
     <div className="container mx-auto py-10">
       <DataTable columns={columns} data={payments}>
+        <div className="flex justify-between">
+          <DataTable.ViewOptions />
+        </div>
         <DataTable.Content />
         <DataTable.Pagination />
       </DataTable>
