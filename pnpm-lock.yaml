@@ -460,6 +460,9 @@ importers:
 
   packages/core-ui:
     dependencies:
+      '@felipegangrel/intl':
+        specifier: 'workspace:'
+        version: link:../intl
       '@radix-ui/react-accordion':
         specifier: 'catalog:'
         version: 1.2.2(@types/react-dom@19.0.3(@types/react@19.0.7))(@types/react@19.0.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)

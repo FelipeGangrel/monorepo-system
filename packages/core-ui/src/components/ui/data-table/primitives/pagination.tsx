@@ -8,9 +8,25 @@ import * as React from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Select } from '@/components/ui/select';
+import { intl } from '@/lib/intl';
 import { cn } from '@/lib/utils';
 
 import { DataTableContext } from '../context';
+
+const dictionary = intl.makeDictionary({
+  countOfTotalRowsSelected: {
+    enUS: '{count} of {total} row(s) selected',
+    ptBR: '{count} de {total} linha(s) selecionada(s)',
+  },
+  rowsPerPage: {
+    enUS: 'Rows per page',
+    ptBR: 'Linhas por página',
+  },
+  currentPageOfTotal: {
+    enUS: 'Page {current} of {total}',
+    ptBR: 'Página {current} de {total}',
+  },
+} as const);
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   pageSizes?: number[];
@@ -21,7 +37,11 @@ const Pagination: React.FunctionComponent<Props> = ({
   pageSizes = [10, 20, 30, 40, 50],
   ...props
 }) => {
-  const { table } = React.useContext(DataTableContext);
+  const { table, language } = React.useContext(DataTableContext);
+  const t = intl.makeTranslator({
+    dictionary,
+    language,
+  });
 
   return (
     <div
@@ -29,12 +49,14 @@ const Pagination: React.FunctionComponent<Props> = ({
       {...props}
     >
       <div className="text-muted-foreground flex-1 text-sm">
-        {table.getFilteredSelectedRowModel().rows.length} of{' '}
-        {table.getFilteredRowModel().rows.length} row(s) selected.
+        {t('countOfTotalRowsSelected', {
+          count: table.getFilteredSelectedRowModel().rows.length,
+          total: table.getFilteredRowModel().rows.length,
+        })}
       </div>
       <div className="flex items-center space-x-6 lg:space-x-8">
         <div className="flex items-center space-x-2">
-          <p className="text-sm font-medium">Rows per page</p>
+          <p className="text-sm font-medium">{t('rowsPerPage')}</p>
           <Select
             value={`${table.getState().pagination.pageSize}`}
             onValueChange={(value) => {
@@ -56,8 +78,10 @@ const Pagination: React.FunctionComponent<Props> = ({
           </Select>
         </div>
         <div className="flex w-[100px] items-center justify-center text-sm font-medium">
-          Page {table.getState().pagination.pageIndex + 1} of{' '}
-          {table.getPageCount()}
+          {t('currentPageOfTotal', {
+            current: table.getState().pagination.pageIndex + 1,
+            total: table.getPageCount(),
+          })}
         </div>
         <div className="flex items-center space-x-2">
           <Button

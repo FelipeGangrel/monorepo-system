@@ -1,6 +1,8 @@
 import type { ColumnDef } from '@tanstack/react-table';
 import * as React from 'react';
 
+import type { LanguageOption } from '@/lib/intl';
+
 import {
   Content,
   Filter,
@@ -14,6 +16,7 @@ export type DataTableProps<TData, TValue> = {
   data: TData[];
   children?: React.ReactNode;
   selectBy?: 'page' | 'all';
+  language?: LanguageOption;
 };
 
 export type DataTableComponent = React.FC<DataTableProps<any, any>> & {

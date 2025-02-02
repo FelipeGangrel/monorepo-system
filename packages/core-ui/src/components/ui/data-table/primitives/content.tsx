@@ -2,6 +2,7 @@ import { flexRender } from '@tanstack/react-table';
 import * as React from 'react';
 
 import { Table } from '@/components/ui/table';
+import { intl } from '@/lib/intl';
 import { cn } from '@/lib/utils';
 
 import { DataTableContext } from '../context';
@@ -9,7 +10,12 @@ import { DataTableContext } from '../context';
 type Props = React.HTMLAttributes<HTMLDivElement>;
 
 const Content: React.FunctionComponent<Props> = ({ className, ...props }) => {
-  const { table } = React.useContext(DataTableContext);
+  const { table, language } = React.useContext(DataTableContext);
+
+  const t = intl.makeTranslator({
+    dictionary: intl.defaultDictionary,
+    language,
+  });
 
   return (
     <div className={cn(className)} {...props}>
@@ -52,7 +58,7 @@ const Content: React.FunctionComponent<Props> = ({ className, ...props }) => {
                 colSpan={table.getAllColumns().length}
                 className="h-24 text-center"
               >
-                No results.
+                {t('noResultsFound')}
               </Table.Cell>
             </Table.Row>
           )}

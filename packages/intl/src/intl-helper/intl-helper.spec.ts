@@ -20,7 +20,7 @@ describe('IntlHelper class', () => {
       },
     });
 
-    const localCollection = instance.makeCollection({
+    const localCollection = instance.makeDictionaryExtension({
       localKey: {
         enUS: 'English local value',
         ptBR: 'Portuguese local value',
@@ -39,7 +39,7 @@ describe('IntlHelper class', () => {
       },
     });
 
-    const localCollection = instance.makeCollection({
+    const localCollection = instance.makeDictionaryExtension({
       localKey: {
         enUS: 'English local value',
         ptBR: 'Portuguese local value',
@@ -47,7 +47,7 @@ describe('IntlHelper class', () => {
     });
 
     const t = instance.makeTranslator({
-      collection: localCollection,
+      dictionary: localCollection,
     });
 
     expect(t('globalKey')).toBe('English global value');
@@ -61,9 +61,13 @@ describe('IntlHelper class', () => {
           enUS: 'Hello {name}!',
           ptBR: 'Olá, {name}!',
         },
-      } as const);
+      });
 
-      const t = instance.makeTranslator({ language: 'enUS' });
+      const t = instance.makeTranslator({
+        dictionary: instance.defaultDictionary,
+        language: 'enUS',
+      });
+
       expect(t('hello', { name: 'World' })).toBe('Hello World!');
     });
 
@@ -74,7 +78,11 @@ describe('IntlHelper class', () => {
         },
       });
 
-      const t = instance.makeTranslator({ language: 'ptBR' });
+      const t = instance.makeTranslator({
+        dictionary: instance.defaultDictionary,
+        language: 'ptBR',
+      });
+
       expect(t('testingKey')).toBe('English value');
     });
   });

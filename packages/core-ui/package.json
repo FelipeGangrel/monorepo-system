@@ -2,6 +2,7 @@
   "name": "@felipegangrel/core-ui",
   "version": "0.0.0",
   "dependencies": {
+    "@felipegangrel/intl": "workspace:",
     "@radix-ui/react-accordion": "catalog:",
     "@radix-ui/react-alert-dialog": "catalog:",
     "@radix-ui/react-aspect-ratio": "catalog:",

@@ -28,6 +28,7 @@ const DataTable = Object.assign(
     data,
     children,
     selectBy,
+    language = 'enUS',
   }: DataTableProps<TData, TValue>) => {
     const childrenDisplayNames = getChildrenDisplayNames(children);
 
@@ -79,7 +80,7 @@ const DataTable = Object.assign(
     });
 
     return (
-      <DataTableContext.Provider value={{ table }}>
+      <DataTableContext.Provider value={{ table, language }}>
         {children}
       </DataTableContext.Provider>
     );

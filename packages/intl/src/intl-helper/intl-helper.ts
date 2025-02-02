@@ -1,40 +1,66 @@
-interface IntlObj {
+interface TValues {
   enUS: string;
   ptBR?: string;
 }
 
-type IntlCollection = {
-  readonly [key: string]: Readonly<IntlObj>;
+type TDictionary = {
+  readonly [key: string]: Readonly<TValues>;
 };
 
-class IntlHelper<T extends IntlCollection> {
-  private constructor(private readonly globalCollection: T) {}
+class IntlHelper<T extends TDictionary> {
+  private constructor(private readonly _defaultDictionary: T) {}
 
-  public static create<T extends IntlCollection>(collection: T): IntlHelper<T> {
-    return new IntlHelper(collection);
+  /**
+   * Creates an instance of IntlHelper initializing the default dictionary
+   */
+  public static create<T extends TDictionary>(
+    defaultDictionary: T
+  ): IntlHelper<T> {
+    return new IntlHelper(defaultDictionary);
   }
 
-  public makeCollection<T extends IntlCollection>(
-    collection: T
-  ): typeof this.globalCollection & T {
-    return { ...this.globalCollection, ...collection };
+  /**
+   * Access the value for the default dictionary
+   */
+  public get defaultDictionary() {
+    return this._defaultDictionary;
   }
 
-  public makeTranslator<T = typeof this.globalCollection>(options?: {
-    collection?: T;
-    language?: keyof IntlObj;
+  /**
+   * Makes a dictionary based on the default dictionary
+   */
+  public makeDictionaryExtension<T extends TDictionary>(
+    dictionary: T
+  ): typeof this.defaultDictionary & T {
+    return {
+      ...this.defaultDictionary,
+      ...this.makeDictionary(dictionary),
+    };
+  }
+
+  /**
+   * Makes a new dictionary
+   */
+  public makeDictionary<T extends TDictionary>(dictionary: T): T {
+    return dictionary;
+  }
+
+  /**
+   * Makes a translator function
+   */
+  public makeTranslator<T extends TDictionary>(options: {
+    dictionary: T;
+    language?: keyof TValues;
   }) {
-    const { collection, language } = options ?? {};
-    const resolvedCollection = (collection ?? this.globalCollection) as T;
-    const resolvedLanguage = language ?? 'enUS';
+    const { dictionary, language = 'enUS' } = options;
 
     return (
       key: keyof T,
       replacer?: Record<string, string | number>
     ): string => {
-      const value = (resolvedCollection[key] as IntlObj)[resolvedLanguage]
-        ? (resolvedCollection[key] as IntlObj)[resolvedLanguage]
-        : (resolvedCollection[key] as IntlObj).enUS;
+      const value = (dictionary[key] as TValues)[language]
+        ? (dictionary[key] as TValues)[language]
+        : (dictionary[key] as TValues).enUS;
 
       if (!value) {
         return '';
@@ -55,4 +81,4 @@ class IntlHelper<T extends IntlCollection> {
 }
 
 export { IntlHelper };
-export type { IntlCollection, IntlObj };
+export type { TDictionary, TValues };
