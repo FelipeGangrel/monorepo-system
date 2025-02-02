@@ -14,9 +14,6 @@ const meta: Meta<typeof DataTable> = {
       </div>
     ),
   ],
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 export default meta;

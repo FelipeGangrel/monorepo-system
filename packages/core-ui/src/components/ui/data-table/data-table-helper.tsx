@@ -8,20 +8,27 @@ class DataTableHelper<TData = any> {
     return {
       id: 'selection',
       header: ({ table }) => (
-        <Checkbox
-          checked={
-            table.getIsAllPageRowsSelected() ||
-            (table.getIsSomePageRowsSelected() && 'indeterminate')
-          }
-          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        />
+        <div className="flex h-5 w-5 items-center justify-center">
+          <Checkbox
+            checked={
+              table.getIsAllPageRowsSelected() ||
+              (table.getIsSomePageRowsSelected() && 'indeterminate')
+            }
+            onCheckedChange={(value) =>
+              table.toggleAllPageRowsSelected(!!value)
+            }
+            aria-label="Select all rows on page"
+          />
+        </div>
       ),
       cell: ({ row }) => (
-        <Checkbox
-          checked={row.getIsSelected()}
-          onCheckedChange={(value) => row.toggleSelected(!!value)}
-          aria-label="Select row"
-        />
+        <div className="flex h-5 w-5 items-center justify-center">
+          <Checkbox
+            checked={row.getIsSelected()}
+            onCheckedChange={(value) => row.toggleSelected(!!value)}
+            aria-label="Select row"
+          />
+        </div>
       ),
       enableHiding: false,
       enableSorting: false,
@@ -32,20 +39,25 @@ class DataTableHelper<TData = any> {
     return {
       id: 'selection',
       header: ({ table }) => (
-        <Checkbox
-          checked={
-            table.getIsAllRowsSelected() ||
-            (table.getIsSomeRowsSelected() && 'indeterminate')
-          }
-          onCheckedChange={(value) => table.toggleAllRowsSelected(!!value)}
-        />
+        <div className="flex h-5 w-5 items-center justify-center">
+          <Checkbox
+            checked={
+              table.getIsAllRowsSelected() ||
+              (table.getIsSomeRowsSelected() && 'indeterminate')
+            }
+            onCheckedChange={(value) => table.toggleAllRowsSelected(!!value)}
+            aria-label="Select all rows"
+          />
+        </div>
       ),
       cell: ({ row }) => (
-        <Checkbox
-          checked={row.getIsSelected()}
-          onCheckedChange={(value) => row.toggleSelected(!!value)}
-          aria-label="Select row"
-        />
+        <div className="flex h-5 w-5 items-center justify-center">
+          <Checkbox
+            checked={row.getIsSelected()}
+            onCheckedChange={(value) => row.toggleSelected(!!value)}
+            aria-label="Select row"
+          />
+        </div>
       ),
       enableHiding: false,
       enableSorting: false,
