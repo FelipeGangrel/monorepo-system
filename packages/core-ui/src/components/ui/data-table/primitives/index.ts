@@ -1,4 +1,5 @@
 export * from './content';
+export * from './debaunced-input';
 export * from './filter';
 export * from './global-filter';
 export * from './pagination';

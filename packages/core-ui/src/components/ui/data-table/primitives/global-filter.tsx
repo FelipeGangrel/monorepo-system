@@ -1,12 +1,14 @@
 import * as React from 'react';
-import { useDebouncedCallback } from 'use-debounce';
 
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 
 import { DataTableContext } from '../context';
+import { DebouncedInput } from './debaunced-input';
 
-type Props = React.ComponentProps<typeof Input>;
+type Props = Omit<React.ComponentProps<typeof Input>, 'onChange' | 'value'> & {
+  debounce?: number;
+};
 
 const GlobalFilter: React.FunctionComponent<Props> = ({
   className,
@@ -14,19 +16,12 @@ const GlobalFilter: React.FunctionComponent<Props> = ({
 }) => {
   const { table } = React.useContext(DataTableContext);
 
-  const updateGlobalFilter = useDebouncedCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      table.setGlobalFilter(event.target.value);
-    },
-    1000
-  );
-
   return (
-    <Input
+    <DebouncedInput
       className={cn('w-full', className)}
+      value={String(table.getState().globalFilter)}
+      onChange={(value) => table.setGlobalFilter(String(value))}
       {...props}
-      value={table.getState().globalFilter || ''}
-      onChange={updateGlobalFilter}
     />
   );
 };

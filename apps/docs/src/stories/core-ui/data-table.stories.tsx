@@ -9,7 +9,7 @@ const meta: Meta<typeof DataTable> = {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <div className="container flex w-screen flex-col gap-4">
+      <div className="flex flex-col gap-4">
         <Story />
       </div>
     ),
