@@ -115,13 +115,31 @@ export const WithFilter = () => {
   );
 };
 
-export const WithGlobalFilter = () => {
+export const WithFuzzyFilter = () => {
   return (
     <DataTable columns={columns} data={payments}>
       <div className="flex justify-between gap-4">
-        <DataTable.GlobalFilter placeholder={'Fuzzy filter'} />
+        <DataTable.FuzzyFilter placeholder={'Fuzzy filter'} />
         <DataTable.ViewOptions />
       </div>
+      <DataTable.Content />
+      <DataTable.Pagination />
+    </DataTable>
+  );
+};
+
+export const WithSelectionByPage = () => {
+  return (
+    <DataTable selectBy="page" columns={columns} data={payments}>
+      <DataTable.Content />
+      <DataTable.Pagination />
+    </DataTable>
+  );
+};
+
+export const WithSelectionByAll = () => {
+  return (
+    <DataTable selectBy="all" columns={columns} data={payments}>
       <DataTable.Content />
       <DataTable.Pagination />
     </DataTable>

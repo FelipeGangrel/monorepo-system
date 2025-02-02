@@ -10,7 +10,7 @@ type Props = Omit<React.ComponentProps<typeof Input>, 'onChange' | 'value'> & {
   debounce?: number;
 };
 
-const GlobalFilter: React.FunctionComponent<Props> = ({
+const FuzzyFilter: React.FunctionComponent<Props> = ({
   className,
   ...props
 }) => {
@@ -25,6 +25,6 @@ const GlobalFilter: React.FunctionComponent<Props> = ({
     />
   );
 };
-GlobalFilter.displayName = 'DataTable.GlobalFilter';
+FuzzyFilter.displayName = 'DataTable.GlobalFilter';
 
-export { GlobalFilter };
+export { FuzzyFilter };

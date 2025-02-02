@@ -11,10 +11,11 @@ import {
 import * as React from 'react';
 
 import { DataTableContext } from './context';
+import { DataTableHelper } from './data-table-helper';
 import {
   Content,
   Filter,
-  GlobalFilter,
+  FuzzyFilter,
   Pagination,
   ViewOptions,
 } from './primitives';
@@ -23,11 +24,24 @@ import { fuzzyFilter, fuzzySort, getChildrenDisplayNames } from './utils';
 
 const DataTable = Object.assign(
   <TData, TValue>({
-    columns,
+    columns: initialColumns,
     data,
     children,
+    selectBy,
   }: DataTableProps<TData, TValue>) => {
     const childrenDisplayNames = getChildrenDisplayNames(children);
+
+    const columns = React.useMemo(() => {
+      const dt = new DataTableHelper<TData>();
+      switch (selectBy) {
+        case 'page':
+          return [dt.buildSelectionByPageColumn(), ...initialColumns];
+        case 'all':
+          return [dt.buildSelectionByAllColumn(), ...initialColumns];
+        default:
+          return initialColumns;
+      }
+    }, [initialColumns, selectBy]);
 
     const [sorting, setSorting] = React.useState<SortingState>([]);
     const [columnFilters, setColumnFilters] =
@@ -73,11 +87,11 @@ const DataTable = Object.assign(
   {
     Content,
     Filter,
-    GlobalFilter,
+    FuzzyFilter,
     Pagination,
     ViewOptions,
   }
 ) as DataTableComponent;
 DataTable.displayName = 'DataTable';
 
-export { DataTable };
+export { DataTable, DataTableHelper };
