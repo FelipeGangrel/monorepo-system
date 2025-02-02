@@ -79,11 +79,11 @@
   "module": "dist/index.js",
   "publishConfig": {
     "access": "restricted",
-    "registry": "https://npm.pkg.github.com/GeraSinergia"
+    "registry": "https://npm.pkg.github.com/FelipeGangrel"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GeraSinergia/webcol-lib",
+    "url": "https://github.com/FelipeGangrel/monorepo-system",
     "directory": "packages/core-ui"
   },
   "scripts": {

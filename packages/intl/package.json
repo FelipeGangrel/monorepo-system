@@ -1,0 +1,61 @@
+{
+  "name": "@felipegangrel/intl",
+  "version": "0.0.0",
+  "dependencies": {
+    "react": "catalog:react19",
+    "react-dom": "catalog:react19"
+  },
+  "devDependencies": {
+    "@eslint/js": "catalog:",
+    "@swc/core": "catalog:",
+    "@swc/jest": "catalog:",
+    "@testing-library/jest-dom": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@types/jest": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:react19",
+    "@types/react-dom": "catalog:react19",
+    "eslint": "catalog:",
+    "eslint-config": "workspace:*",
+    "globals": "catalog:",
+    "jest": "catalog:",
+    "jest-config": "workspace:*",
+    "jest-environment-jsdom": "catalog:",
+    "ts-node": "catalog:",
+    "tsup": "catalog:",
+    "typescript-config": "workspace:*",
+    "typescript-eslint": "catalog:"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist/**"
+  ],
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com/FelipeGangrel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FelipeGangrel/monorepo-system",
+    "directory": "packages/intl"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "tsup --watch",
+    "lint": "eslint --fix",
+    "lint:check": "eslint",
+    "test": "jest",
+    "test:cov": "jest --coverage"
+  },
+  "type": "module",
+  "types": "dist/index.d.ts"
+}
