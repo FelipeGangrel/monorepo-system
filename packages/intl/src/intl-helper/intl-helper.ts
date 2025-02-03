@@ -1,39 +1,50 @@
-interface TValues {
-  enUS: string;
-  ptBR?: string;
+interface DictionaryEntry {
+  en?: string;
+  pt?: string;
+  es?: string;
+  de?: string;
 }
 
-type TDictionary = {
-  readonly [key: string]: Readonly<TValues>;
+type Dictionary = {
+  readonly [key: string]: Readonly<DictionaryEntry>;
 };
 
-class IntlHelper<T extends TDictionary> {
-  private constructor(private readonly _defaultDictionary: T) {}
+class IntlHelper<T extends Dictionary> {
+  private fallbackLanguage: keyof DictionaryEntry = 'en';
+  private constructor(private readonly _baseDictionary: T) {}
 
   /**
    * Creates an instance of IntlHelper initializing the default dictionary
    */
-  public static create<T extends TDictionary>(
+  public static create<T extends Dictionary>(
     defaultDictionary: T
   ): IntlHelper<T> {
     return new IntlHelper(defaultDictionary);
   }
 
   /**
-   * Access the value for the default dictionary
+   * Sets the fallback language
    */
-  public get defaultDictionary() {
-    return this._defaultDictionary;
+  public setFallbackLanguage(language: keyof DictionaryEntry) {
+    this.fallbackLanguage = language;
+    return this;
   }
 
   /**
-   * Makes a dictionary based on the default dictionary
+   * Access the value for the base dictionary
    */
-  public makeDictionaryExtension<T extends TDictionary>(
+  public get baseDictionary() {
+    return this._baseDictionary;
+  }
+
+  /**
+   * Makes a dictionary based on the base dictionary
+   */
+  public makeDictionaryExtension<T extends Dictionary>(
     dictionary: T
-  ): typeof this.defaultDictionary & T {
+  ): typeof this.baseDictionary & T {
     return {
-      ...this.defaultDictionary,
+      ...this.baseDictionary,
       ...this.makeDictionary(dictionary),
     };
   }
@@ -41,26 +52,26 @@ class IntlHelper<T extends TDictionary> {
   /**
    * Makes a new dictionary
    */
-  public makeDictionary<T extends TDictionary>(dictionary: T): T {
+  public makeDictionary<T extends Dictionary>(dictionary: T): T {
     return dictionary;
   }
 
   /**
    * Makes a translator function
    */
-  public makeTranslator<T extends TDictionary>(options: {
+  public makeTranslator<T extends Dictionary>(options: {
     dictionary: T;
-    language?: keyof TValues;
+    language?: keyof DictionaryEntry;
   }) {
-    const { dictionary, language = 'enUS' } = options;
+    const { dictionary, language = this.fallbackLanguage } = options;
 
     return (
       key: keyof T,
       replacer?: Record<string, string | number>
     ): string => {
-      const value = (dictionary[key] as TValues)[language]
-        ? (dictionary[key] as TValues)[language]
-        : (dictionary[key] as TValues).enUS;
+      const value = (dictionary[key] as DictionaryEntry)[language]
+        ? (dictionary[key] as DictionaryEntry)[language]
+        : (dictionary[key] as DictionaryEntry)[this.fallbackLanguage];
 
       if (!value) {
         return '';
@@ -81,4 +92,4 @@ class IntlHelper<T extends TDictionary> {
 }
 
 export { IntlHelper };
-export type { TDictionary, TValues };
+export type { Dictionary, DictionaryEntry };

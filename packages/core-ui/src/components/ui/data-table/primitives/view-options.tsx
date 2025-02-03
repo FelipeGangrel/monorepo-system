@@ -8,14 +8,14 @@ import { cn } from '@/lib/utils';
 
 import { DataTableContext } from '../context';
 
-const dictionary = intl.makeDictionaryExtension({
+const dictionary = intl.makeDictionary({
   viewOptionsLabel: {
-    enUS: 'View',
-    ptBR: 'Exibição',
+    en: 'View',
+    pt: 'Exibição',
   },
   toggleColumnsLabel: {
-    enUS: 'Toggle columns',
-    ptBR: 'Exibir colunas',
+    en: 'Toggle columns',
+    pt: 'Exibir colunas',
   },
 } as const);
 

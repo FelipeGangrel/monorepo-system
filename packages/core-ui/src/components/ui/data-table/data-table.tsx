@@ -28,7 +28,7 @@ const DataTable = Object.assign(
     data,
     children,
     selectBy,
-    language = 'enUS',
+    language = 'en',
   }: DataTableProps<TData, TValue>) => {
     const childrenDisplayNames = getChildrenDisplayNames(children);
 

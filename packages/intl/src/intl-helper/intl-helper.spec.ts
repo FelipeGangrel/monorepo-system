@@ -1,53 +1,39 @@
 import { IntlHelper } from './intl-helper';
 
-describe('IntlHelper class', () => {
-  it('returns a instance of IntlHelper when calling create', () => {
-    const instance = IntlHelper.create({
-      testingKey: {
-        enUS: 'English value',
-        ptBR: 'Portuguese value',
-      },
-    });
+const intl = IntlHelper.create({
+  globalKey: {
+    en: 'English global value',
+    pt: 'Portuguese global value',
+  },
+} as const).setFallbackLanguage('en');
 
-    expect(instance).toBeInstanceOf(IntlHelper);
+describe('IntlHelper class', () => {
+  it('returns a intl of IntlHelper when calling create', () => {
+    expect(intl).toBeInstanceOf(IntlHelper);
   });
 
-  it('creates a collection that extends the global collection', () => {
-    const instance = IntlHelper.create({
-      globalKey: {
-        enUS: 'English global value',
-        ptBR: 'Portuguese global value',
-      },
-    });
-
-    const localCollection = instance.makeDictionaryExtension({
+  it('creates a dictionary that extends the base dictionary', () => {
+    const dictionary = intl.makeDictionaryExtension({
       localKey: {
-        enUS: 'English local value',
-        ptBR: 'Portuguese local value',
+        en: 'English local value',
+        pt: 'Portuguese local value',
       },
     });
 
-    expect(localCollection?.globalKey).toBeDefined();
-    expect(localCollection?.localKey).toBeDefined();
+    expect(dictionary?.globalKey).toBeDefined();
+    expect(dictionary?.localKey).toBeDefined();
   });
 
   it('creates a translation function', () => {
-    const instance = IntlHelper.create({
-      globalKey: {
-        enUS: 'English global value',
-        ptBR: 'Portuguese global value',
-      },
-    });
-
-    const localCollection = instance.makeDictionaryExtension({
+    const dictionary = intl.makeDictionaryExtension({
       localKey: {
-        enUS: 'English local value',
-        ptBR: 'Portuguese local value',
+        en: 'English local value',
+        pt: 'Portuguese local value',
       },
     });
 
-    const t = instance.makeTranslator({
-      dictionary: localCollection,
+    const t = intl.makeTranslator({
+      dictionary,
     });
 
     expect(t('globalKey')).toBe('English global value');
@@ -56,31 +42,30 @@ describe('IntlHelper class', () => {
 
   describe('translation function', () => {
     it('replaces strings using the replacer object', () => {
-      const instance = IntlHelper.create({
+      const dictionary = intl.makeDictionary({
         hello: {
-          enUS: 'Hello {name}!',
-          ptBR: 'Olá, {name}!',
+          en: 'Hello {name}!',
         },
       });
 
-      const t = instance.makeTranslator({
-        dictionary: instance.defaultDictionary,
-        language: 'enUS',
+      const t = intl.makeTranslator({
+        dictionary,
+        language: 'en',
       });
 
       expect(t('hello', { name: 'World' })).toBe('Hello World!');
     });
 
-    it('shows the enUS translation if the language is not found', () => {
-      const instance = IntlHelper.create({
+    it('shows the fallback language translation if the desired language is not defined', () => {
+      const dictionary = intl.makeDictionary({
         testingKey: {
-          enUS: 'English value',
+          en: 'English value',
         },
       });
 
-      const t = instance.makeTranslator({
-        dictionary: instance.defaultDictionary,
-        language: 'ptBR',
+      const t = intl.makeTranslator({
+        dictionary,
+        language: 'pt',
       });
 
       expect(t('testingKey')).toBe('English value');

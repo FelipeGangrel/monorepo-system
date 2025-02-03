@@ -1,11 +1,11 @@
-import { IntlHelper } from '@felipegangrel/intl';
+import { DictionaryEntry, IntlHelper } from '@felipegangrel/intl';
 
-type LanguageOption = 'enUS' | 'ptBR';
+type LanguageOption = keyof DictionaryEntry;
 
 const intl = IntlHelper.create({
   noResultsFound: {
-    enUS: 'No results found.',
-    ptBR: 'Nenhum resultado encontrado.',
+    en: 'No results found.',
+    pt: 'Nenhum resultado encontrado.',
   },
 } as const);
 

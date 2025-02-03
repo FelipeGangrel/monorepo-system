@@ -1,9 +1,8 @@
-import reactConfig from 'jest-config/react';
+import nodeConfig from 'jest-config/node';
 
 /** @type {import('jest').Config} */
 const config = {
-  ...reactConfig,
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  ...nodeConfig,
 };
 
 export default config;

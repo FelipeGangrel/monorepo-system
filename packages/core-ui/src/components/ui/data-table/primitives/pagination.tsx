@@ -15,16 +15,16 @@ import { DataTableContext } from '../context';
 
 const dictionary = intl.makeDictionary({
   countOfTotalRowsSelected: {
-    enUS: '{count} of {total} row(s) selected',
-    ptBR: '{count} de {total} linha(s) selecionada(s)',
+    en: '{count} of {total} row(s) selected',
+    pt: '{count} de {total} linha(s) selecionada(s)',
   },
   rowsPerPage: {
-    enUS: 'Rows per page',
-    ptBR: 'Linhas por página',
+    en: 'Rows per page',
+    pt: 'Linhas por página',
   },
   currentPageOfTotal: {
-    enUS: 'Page {current} of {total}',
-    ptBR: 'Página {current} de {total}',
+    en: 'Page {current} of {total}',
+    pt: 'Página {current} de {total}',
   },
 } as const);
 

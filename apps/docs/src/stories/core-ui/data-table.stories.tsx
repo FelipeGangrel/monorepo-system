@@ -73,7 +73,7 @@ const payments: Payment[] = Array.from({ length: 1000 }).map(() => {
   };
 });
 
-const language: React.ComponentProps<typeof DataTable>['language'] = 'ptBR';
+const language: React.ComponentProps<typeof DataTable>['language'] = 'en';
 
 const defaultProps = {
   language,
