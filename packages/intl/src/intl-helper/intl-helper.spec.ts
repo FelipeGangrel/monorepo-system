@@ -18,7 +18,7 @@ describe('IntlHelper class', () => {
         en: 'English local value',
         pt: 'Portuguese local value',
       },
-    });
+    } as const);
 
     expect(dictionary?.globalKey).toBeDefined();
     expect(dictionary?.localKey).toBeDefined();
@@ -30,7 +30,7 @@ describe('IntlHelper class', () => {
         en: 'English local value',
         pt: 'Portuguese local value',
       },
-    });
+    } as const);
 
     const t = intl.makeTranslator({
       dictionary,
@@ -46,7 +46,7 @@ describe('IntlHelper class', () => {
         hello: {
           en: 'Hello {name}!',
         },
-      });
+      } as const);
 
       const t = intl.makeTranslator({
         dictionary,
@@ -61,7 +61,7 @@ describe('IntlHelper class', () => {
         testingKey: {
           en: 'English value',
         },
-      });
+      } as const);
 
       const t = intl.makeTranslator({
         dictionary,
