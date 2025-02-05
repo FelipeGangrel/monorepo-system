@@ -10,7 +10,8 @@ import {
 } from '@tanstack/react-table';
 import * as React from 'react';
 
-import { DataTableHelper } from '../../../utils/data-table/data-table-helper';
+import { DataTableHelper } from '@/utils/data-table';
+
 import { DataTableContext } from './context';
 import {
   Content,
@@ -27,22 +28,24 @@ const DataTable = Object.assign(
     columns: initialColumns,
     data,
     children,
-    selectBy,
+    selectionMode,
     language = 'en',
   }: DataTableProps<TData, TValue>) => {
     const childrenDisplayNames = getChildrenDisplayNames(children);
 
     const columns = React.useMemo(() => {
       const dt = new DataTableHelper<TData>();
-      switch (selectBy) {
+      switch (selectionMode) {
+        case 'row':
+          return [dt.buildSelectionByRowColumn(), ...initialColumns];
         case 'page':
           return [dt.buildSelectionByPageColumn(), ...initialColumns];
-        case 'all':
-          return [dt.buildSelectionByAllColumn(), ...initialColumns];
+        case 'table':
+          return [dt.buildSelectionByTableColumn(), ...initialColumns];
         default:
           return initialColumns;
       }
-    }, [initialColumns, selectBy]);
+    }, [initialColumns, selectionMode]);
 
     const [sorting, setSorting] = React.useState<SortingState>([]);
     const [columnFilters, setColumnFilters] =
@@ -80,7 +83,7 @@ const DataTable = Object.assign(
     });
 
     return (
-      <DataTableContext.Provider value={{ table, language }}>
+      <DataTableContext.Provider value={{ table, language, selectionMode }}>
         {children}
       </DataTableContext.Provider>
     );
