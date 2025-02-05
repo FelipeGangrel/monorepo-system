@@ -80,6 +80,9 @@ const DataTable = Object.assign(
       filterFns: {
         fuzzy: fuzzyFilter,
       },
+      sortingFns: {
+        fuzzy: fuzzySort,
+      },
     });
 
     return (
