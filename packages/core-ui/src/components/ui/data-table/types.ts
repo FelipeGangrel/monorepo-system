@@ -11,11 +11,20 @@ import {
   ViewOptions,
 } from './primitives';
 
+export type SelectionMode = 'row' | 'page' | 'table';
+
 export type DataTableProps<TData, TValue> = {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
   children?: React.ReactNode;
-  selectBy?: 'page' | 'all';
+  /**
+   * Determines the selection behavior in the data table.
+   *
+   * - `'row'`: Individual rows can be selected.
+   * - `'page'`: All rows on the current page can be selected at once.
+   * - `'table'`: All rows in the entire data table can be selected at once.
+   */
+  selectionMode?: SelectionMode;
   language?: LanguageOption;
 };
 

@@ -1,8 +1,4 @@
-import {
-  compareItems,
-  RankingInfo,
-  rankItem,
-} from '@tanstack/match-sorter-utils';
+import { compareItems, rankItem } from '@tanstack/match-sorter-utils';
 import { FilterFn, SortingFn, sortingFns } from '@tanstack/react-table';
 import * as React from 'react';
 
@@ -12,17 +8,6 @@ export const getChildrenDisplayNames = (children: React.ReactNode) =>
       ? (child.type as any).displayName
       : null
   );
-
-declare module '@tanstack/react-table' {
-  //add fuzzy filter to the filterFns
-  interface FilterFns {
-    fuzzy: FilterFn<unknown>;
-  }
-  interface FilterMeta {
-    itemRank: RankingInfo;
-  }
-}
-
 // Define a custom fuzzy filter function that will apply ranking info to rows (using match-sorter utils)
 export const fuzzyFilter: FilterFn<any> = (row, columnId, value, addMeta) => {
   // Rank the item

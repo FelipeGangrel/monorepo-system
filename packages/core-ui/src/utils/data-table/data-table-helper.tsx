@@ -4,6 +4,23 @@ import * as React from 'react';
 import { Checkbox } from '@/components/ui/checkbox';
 
 class DataTableHelper<TData = any> {
+  public buildSelectionByRowColumn(): ColumnDef<TData> {
+    return {
+      id: 'selection',
+      cell: ({ row }) => (
+        <div className="flex h-5 w-5 items-center justify-center">
+          <Checkbox
+            checked={row.getIsSelected()}
+            onCheckedChange={(value) => row.toggleSelected(!!value)}
+            aria-label="Select row"
+          />
+        </div>
+      ),
+      enableHiding: false,
+      enableSorting: false,
+    };
+  }
+
   public buildSelectionByPageColumn(): ColumnDef<TData> {
     return {
       id: 'selection',
@@ -35,7 +52,7 @@ class DataTableHelper<TData = any> {
     };
   }
 
-  public buildSelectionByAllColumn(): ColumnDef<TData> {
+  public buildSelectionByTableColumn(): ColumnDef<TData> {
     return {
       id: 'selection',
       header: ({ table }) => (

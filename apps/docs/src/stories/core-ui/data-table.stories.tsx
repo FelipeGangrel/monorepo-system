@@ -110,6 +110,15 @@ export const WithPagination = () => {
   );
 };
 
+export const WithCustomPageSizeAndOptions = () => {
+  return (
+    <DataTable {...defaultProps} columns={columns} data={payments}>
+      <DataTable.Content />
+      <DataTable.Pagination pageSizeOptions={[5, 10]} pageSize={5} />
+    </DataTable>
+  );
+};
+
 export const WithFilter = () => {
   return (
     <DataTable {...defaultProps} columns={columns} data={payments}>
@@ -135,11 +144,11 @@ export const WithFuzzyFilter = () => {
   );
 };
 
-export const WithSelectionByPage = () => {
+export const WithSelectionByRow = () => {
   return (
     <DataTable
       {...defaultProps}
-      selectBy="page"
+      selectionMode="row"
       columns={columns}
       data={payments}
     >
@@ -149,16 +158,53 @@ export const WithSelectionByPage = () => {
   );
 };
 
-export const WithSelectionByAll = () => {
+export const WithSelectionByPage = () => {
   return (
     <DataTable
       {...defaultProps}
-      selectBy="all"
+      selectionMode="page"
       columns={columns}
       data={payments}
     >
       <DataTable.Content />
       <DataTable.Pagination />
+    </DataTable>
+  );
+};
+
+export const WithSelectionByTable = () => {
+  return (
+    <DataTable
+      {...defaultProps}
+      selectionMode="table"
+      columns={columns}
+      data={payments}
+    >
+      <DataTable.Content />
+      <DataTable.Pagination />
+    </DataTable>
+  );
+};
+
+export const WithHiddenSelectionInfo = () => {
+  return (
+    <DataTable
+      {...defaultProps}
+      selectionMode="row"
+      columns={columns}
+      data={payments}
+    >
+      <DataTable.Content />
+      <DataTable.Pagination hideSelectionInfo />
+    </DataTable>
+  );
+};
+
+export const WithHiddenPageSizeSelector = () => {
+  return (
+    <DataTable {...defaultProps} columns={columns} data={payments}>
+      <DataTable.Content />
+      <DataTable.Pagination hidePageSizeSelector />
     </DataTable>
   );
 };
