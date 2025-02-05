@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { DataTable } from '@felipegangrel/core-ui';
+import { DataTable, DataTableMetaHelper } from '@felipegangrel/core-ui';
 import type { Meta } from '@storybook/react';
 import { ColumnDef } from '@tanstack/react-table';
 import * as React from 'react';
@@ -42,20 +42,23 @@ const columns: ColumnDef<Payment>[] = [
   },
   {
     accessorKey: 'amount',
-    header: () => <div className="text-right">Amount</div>,
+    header: 'Amount',
+    meta: DataTableMetaHelper.makeColumnMeta({
+      headerClassName: 'text-right',
+    }),
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue('amount'));
-      const formatted = new Intl.NumberFormat('en-US', {
+      const content = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
       }).format(amount);
 
-      return <div className="text-right font-medium">{formatted}</div>;
+      return <div className={'text-right'}>{content}</div>;
     },
   },
 ];
 
-const payments: Payment[] = Array.from({ length: 1000 }).map(() => {
+const payments: Payment[] = Array.from({ length: 100 }).map(() => {
   const firstName = faker.person.firstName();
   const lastName = faker.person.lastName();
 

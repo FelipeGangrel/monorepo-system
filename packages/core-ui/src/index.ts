@@ -2,6 +2,8 @@ import 'tailwind-config/tailwind.css';
 
 // utils
 export * from './lib/utils';
+// data table utils
+export * from './utils/data-table';
 
 // components
 export * from './components/ui/accordion';

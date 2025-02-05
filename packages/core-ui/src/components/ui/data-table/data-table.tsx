@@ -10,8 +10,8 @@ import {
 } from '@tanstack/react-table';
 import * as React from 'react';
 
+import { DataTableHelper } from '../../../utils/data-table/data-table-helper';
 import { DataTableContext } from './context';
-import { DataTableHelper } from './data-table-helper';
 import {
   Content,
   Filter,
@@ -95,4 +95,4 @@ const DataTable = Object.assign(
 ) as DataTableComponent;
 DataTable.displayName = 'DataTable';
 
-export { DataTable, DataTableHelper };
+export { DataTable };
