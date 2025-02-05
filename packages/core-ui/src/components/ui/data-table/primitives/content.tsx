@@ -1,15 +1,69 @@
-import { flexRender } from '@tanstack/react-table';
+import { flexRender, Header } from '@tanstack/react-table';
+import { ArrowDownIcon, ArrowUpDownIcon, ArrowUpIcon } from 'lucide-react';
 import * as React from 'react';
 
+import { Button } from '@/components/ui/button';
 import { Table } from '@/components/ui/table';
 import { intl } from '@/lib/intl';
 import { cn } from '@/lib/utils';
+import { DataTableMetaHelper } from '@/utils/data-table';
 
 import { DataTableContext } from '../context';
 
-type Props = React.HTMLAttributes<HTMLDivElement>;
+type HeadProps = React.ComponentPropsWithoutRef<typeof Table.Head> & {
+  header: Header<any, unknown>;
+};
 
-const Content: React.FunctionComponent<Props> = ({ className, ...props }) => {
+const SortableHead = ({ header }: HeadProps) => {
+  if (header.isPlaceholder) {
+    return <Table.Head />;
+  }
+
+  const content = flexRender(
+    header.column.columnDef.header,
+    header.getContext()
+  );
+
+  if (!header.column.getCanSort()) {
+    return <Table.Head>{content}</Table.Head>;
+  }
+
+  const SortIcon: React.FunctionComponent<
+    React.ComponentPropsWithoutRef<typeof ArrowUpIcon>
+  > = (props) => {
+    switch (header.column.getIsSorted()) {
+      case 'asc':
+        return <ArrowUpIcon {...props} />;
+      case 'desc':
+        return <ArrowDownIcon {...props} />;
+      default:
+        return <ArrowUpDownIcon {...props} />;
+    }
+  };
+
+  const columnMeta = DataTableMetaHelper.getColumnMeta(header.column);
+
+  return (
+    <Table.Head className={columnMeta?.headerClassName}>
+      <Button
+        variant={'ghost'}
+        className="px-0 hover:bg-transparent"
+        onClick={() =>
+          header.column.toggleSorting(header.column.getIsSorted() === 'asc')
+        }
+      >
+        {content} <SortIcon />
+      </Button>
+    </Table.Head>
+  );
+};
+
+type ContentProps = React.HTMLAttributes<HTMLDivElement>;
+
+const Content: React.FunctionComponent<ContentProps> = ({
+  className,
+  ...props
+}) => {
   const { table, language } = React.useContext(DataTableContext);
 
   const t = intl.makeTranslator({
@@ -23,18 +77,9 @@ const Content: React.FunctionComponent<Props> = ({ className, ...props }) => {
         <Table.Header>
           {table.getHeaderGroups().map((headerGroup) => (
             <Table.Row key={headerGroup.id}>
-              {headerGroup.headers.map((header) => {
-                return (
-                  <Table.Head key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </Table.Head>
-                );
-              })}
+              {headerGroup.headers.map((header) => (
+                <SortableHead key={header.id} header={header} />
+              ))}
             </Table.Row>
           ))}
         </Table.Header>
