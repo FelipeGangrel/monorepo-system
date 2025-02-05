@@ -25,6 +25,6 @@ const FuzzyFilter: React.FunctionComponent<Props> = ({
     />
   );
 };
-FuzzyFilter.displayName = 'DataTable.GlobalFilter';
+FuzzyFilter.displayName = 'DataTable.FuzzyFilter';
 
 export { FuzzyFilter };
