@@ -7,7 +7,7 @@ const meta: Meta<typeof Switch> = {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <div className="flex items-center space-x-2">
+      <div className="docs-flex docs-items-center docs-space-x-2">
         <Story />
       </div>
     ),

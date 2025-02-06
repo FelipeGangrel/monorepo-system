@@ -10,7 +10,7 @@ const meta: Meta<typeof DataTable> = {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <div className="flex flex-col gap-4">
+      <div className="docs-flex docs-flex-col docs-gap-4">
         <Story />
       </div>
     ),
@@ -44,7 +44,7 @@ const columns: ColumnDef<Payment>[] = [
     accessorKey: 'amount',
     header: 'Amount',
     meta: DataTableMetaHelper.makeColumnMeta({
-      headerClassName: 'text-right',
+      headerClassName: 'docs-text-right',
     }),
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue('amount'));
@@ -53,7 +53,7 @@ const columns: ColumnDef<Payment>[] = [
         currency: 'USD',
       }).format(amount);
 
-      return <div className={'text-right'}>{content}</div>;
+      return <div className="docs-text-right">{content}</div>;
     },
   },
 ];
@@ -93,7 +93,7 @@ export const Default = () => {
 export const WithViewOptions = () => {
   return (
     <DataTable {...defaultProps} columns={columns} data={payments.slice(0, 10)}>
-      <div className="flex justify-between gap-4">
+      <div className="docs-flex docs-justify-between docs-gap-4">
         <DataTable.ViewOptions />
       </div>
       <DataTable.Content />
@@ -122,7 +122,7 @@ export const WithCustomPageSizeAndOptions = () => {
 export const WithFilter = () => {
   return (
     <DataTable {...defaultProps} columns={columns} data={payments}>
-      <div className="flex justify-between gap-4">
+      <div className="docs-flex docs-justify-between docs-gap-4">
         <DataTable.Filter filterBy={'name'} placeholder={'Filter by name'} />
       </div>
       <DataTable.Content />
@@ -134,7 +134,7 @@ export const WithFilter = () => {
 export const WithFuzzyFilter = () => {
   return (
     <DataTable {...defaultProps} columns={columns} data={payments}>
-      <div className="flex justify-between gap-4">
+      <div className="docs-flex docs-justify-between docs-gap-4">
         <DataTable.FuzzyFilter placeholder={'Fuzzy filter'} />
         <DataTable.ViewOptions />
       </div>

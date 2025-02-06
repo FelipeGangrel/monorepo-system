@@ -29,7 +29,7 @@ export const WithFallback = () => (
 );
 
 export const CustomSize = () => (
-  <Avatar className="h-16 w-16">
+  <Avatar className="docs-h-16 docs-w-16">
     <Avatar.Image
       src="https://avatar.iran.liara.run/public"
       alt="Custom Size Avatar"

@@ -47,7 +47,7 @@ export const Checkboxes = () => {
       <DropdownMenu.Trigger asChild>
         <Button variant="outline">Open</Button>
       </DropdownMenu.Trigger>
-      <DropdownMenu.Content className="w-56">
+      <DropdownMenu.Content className="docs-w-56">
         <DropdownMenu.Label>Appearance</DropdownMenu.Label>
         <DropdownMenu.Separator />
         <DropdownMenu.CheckboxItem
@@ -82,7 +82,7 @@ export const RadioGroup = () => {
       <DropdownMenu.Trigger asChild>
         <Button variant="outline">Open</Button>
       </DropdownMenu.Trigger>
-      <DropdownMenu.Content className="w-56">
+      <DropdownMenu.Content className="docs-w-56">
         <DropdownMenu.Label>Panel Position</DropdownMenu.Label>
         <DropdownMenu.Separator />
         <DropdownMenu.RadioGroup value={position} onValueChange={setPosition}>
