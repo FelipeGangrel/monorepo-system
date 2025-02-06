@@ -40,7 +40,7 @@ const Chart = React.forwardRef<ChartRef, ChartProps>(
           data-chart={chartId}
           ref={ref}
           className={cn(
-            "[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border flex aspect-video justify-center text-xs [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none",
+            'core-flex core-aspect-video core-justify-center core-text-xs [&_.recharts-cartesian-axis-tick_text]:core-fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke=#ccc]]:core-stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:core-stroke-border [&_.recharts-dot[stroke=#fff]]:core-stroke-transparent [&_.recharts-layer]:core-outline-none [&_.recharts-polar-grid_[stroke=#ccc]]:core-stroke-border [&_.recharts-radial-bar-background-sector]:core-fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:core-fill-muted [&_.recharts-reference-line_[stroke=#ccc]]:core-stroke-border [&_.recharts-sector[stroke=#fff]]:core-stroke-transparent [&_.recharts-sector]:core-outline-none [&_.recharts-surface]:core-outline-none',
             className
           )}
           {...props}
@@ -133,7 +133,7 @@ Chart.TooltipContent = React.forwardRef<
 
       if (labelFormatter) {
         return (
-          <div className={cn('font-medium', labelClassName)}>
+          <div className={cn('core-font-medium', labelClassName)}>
             {labelFormatter(value, payload)}
           </div>
         );
@@ -143,7 +143,9 @@ Chart.TooltipContent = React.forwardRef<
         return null;
       }
 
-      return <div className={cn('font-medium', labelClassName)}>{value}</div>;
+      return (
+        <div className={cn('core-font-medium', labelClassName)}>{value}</div>
+      );
     }, [
       label,
       labelFormatter,
@@ -164,12 +166,12 @@ Chart.TooltipContent = React.forwardRef<
       <div
         ref={ref}
         className={cn(
-          'border-border/50 bg-background grid min-w-[8rem] items-start gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs shadow-xl',
+          'core-grid core-min-w-[8rem] core-items-start core-gap-1.5 core-rounded-lg core-border core-border-border/50 core-bg-background core-px-2.5 core-py-1.5 core-text-xs core-shadow-xl',
           className
         )}
       >
         {!nestLabel ? tooltipLabel : null}
-        <div className="grid gap-1.5">
+        <div className="core-grid core-gap-1.5">
           {payload.map((item, index) => {
             const key = `${nameKey || item.name || item.dataKey || 'value'}`;
             const itemConfig = getPayloadConfigFromPayload(config, item, key);
@@ -179,8 +181,8 @@ Chart.TooltipContent = React.forwardRef<
               <div
                 key={item.dataKey}
                 className={cn(
-                  '[&>svg]:text-muted-foreground flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5',
-                  indicator === 'dot' && 'items-center'
+                  'core-flex core-w-full core-flex-wrap core-items-stretch core-gap-2 [&>svg]:core-h-2.5 [&>svg]:core-w-2.5 [&>svg]:core-text-muted-foreground',
+                  indicator === 'dot' && 'core-items-center'
                 )}
               >
                 {formatter && item?.value !== undefined && item.name ? (
@@ -193,7 +195,7 @@ Chart.TooltipContent = React.forwardRef<
                       !hideIndicator && (
                         <div
                           className={cn(
-                            'shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]',
+                            'core-shrink-0 core-rounded-[2px] core-border-[--color-border] core-bg-[--color-bg]',
                             {
                               'h-2.5 w-2.5': indicator === 'dot',
                               'w-1': indicator === 'line',
@@ -213,18 +215,18 @@ Chart.TooltipContent = React.forwardRef<
                     )}
                     <div
                       className={cn(
-                        'flex flex-1 justify-between leading-none',
-                        nestLabel ? 'items-end' : 'items-center'
+                        'core-flex core-flex-1 core-justify-between core-leading-none',
+                        nestLabel ? 'core-items-end' : 'core-items-center'
                       )}
                     >
-                      <div className="grid gap-1.5">
+                      <div className="core-grid core-gap-1.5">
                         {nestLabel ? tooltipLabel : null}
-                        <span className="text-muted-foreground">
+                        <span className="core-text-muted-foreground">
                           {itemConfig?.label || item.name}
                         </span>
                       </div>
                       {item.value && (
-                        <span className="text-foreground font-mono font-medium tabular-nums">
+                        <span className="core-font-mono core-font-medium core-tabular-nums core-text-foreground">
                           {item.value.toLocaleString()}
                         </span>
                       )}
@@ -262,8 +264,8 @@ Chart.LegendContent = React.forwardRef<
       <div
         ref={ref}
         className={cn(
-          'flex items-center justify-center gap-4',
-          verticalAlign === 'top' ? 'pb-3' : 'pt-3',
+          'core-flex core-items-center core-justify-center core-gap-4',
+          verticalAlign === 'top' ? 'core-pb-3' : 'core-pt-3',
           className
         )}
       >
@@ -275,14 +277,14 @@ Chart.LegendContent = React.forwardRef<
             <div
               key={item.value}
               className={cn(
-                '[&>svg]:text-muted-foreground flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3'
+                'core-flex core-items-center core-gap-1.5 [&>svg]:core-h-3 [&>svg]:core-w-3 [&>svg]:core-text-muted-foreground'
               )}
             >
               {itemConfig?.icon && !hideIcon ? (
                 <itemConfig.icon />
               ) : (
                 <div
-                  className="h-2 w-2 shrink-0 rounded-[2px]"
+                  className="core-h-2 core-w-2 core-shrink-0 core-rounded-[2px]"
                   style={{
                     backgroundColor: item.color,
                   }}

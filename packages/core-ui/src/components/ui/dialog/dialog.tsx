@@ -35,7 +35,7 @@ Dialog.Overlay = React.forwardRef<DialogOverlayRef, DialogOverlayProps>(
     <DialogPrimitive.Overlay
       ref={ref}
       className={cn(
-        'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80',
+        'core-fixed core-inset-0 core-z-50 core-bg-black/80 core- data-[state=open]:core-animate-in data-[state=closed]:core-animate-out data-[state=closed]:core-fade-out-0 data-[state=open]:core-fade-in-0',
         className
       )}
       {...props}
@@ -51,15 +51,15 @@ Dialog.Content = React.forwardRef<DialogContentRef, DialogContentProps>(
       <DialogPrimitive.Content
         ref={ref}
         className={cn(
-          'bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border p-6 shadow-lg duration-200 sm:rounded-lg',
+          'core-fixed core-left-[50%] core-top-[50%] core-z-50 core-grid core-w-full core-max-w-lg core-translate-x-[-50%] core-translate-y-[-50%] core-gap-4 core-border core-bg-background core-p-6 core-shadow-lg core-duration-200 data-[state=open]:core-animate-in data-[state=closed]:core-animate-out data-[state=closed]:core-fade-out-0 data-[state=open]:core-fade-in-0 data-[state=closed]:core-zoom-out-95 data-[state=open]:core-zoom-in-95 data-[state=closed]:core-slide-out-to-left-1/2 data-[state=closed]:core-slide-out-to-top-[48%] data-[state=open]:core-slide-in-from-left-1/2 data-[state=open]:core-slide-in-from-top-[48%] sm:core-rounded-lg',
           className
         )}
         {...props}
       >
         {children}
-        <DialogPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none">
-          <X className="h-4 w-4" />
-          <span className="sr-only">Close</span>
+        <DialogPrimitive.Close className="core-absolute core-right-4 core-top-4 core-rounded-sm core-opacity-70 core-ring-offset-background core-transition-opacity hover:core-opacity-100 focus:core-outline-none focus:core-ring-2 focus:core-ring-ring focus:core-ring-offset-2 disabled:core-pointer-events-none data-[state=open]:core-bg-accent data-[state=open]:core-text-muted-foreground">
+          <X className="core-h-4 core-w-4" />
+          <span className="core-sr-only">Close</span>
         </DialogPrimitive.Close>
       </DialogPrimitive.Content>
     </Dialog.Portal>
@@ -70,7 +70,7 @@ Dialog.Content.displayName = 'Dialog.Content';
 Dialog.Header = ({ className, ...props }: DialogHeaderProps) => (
   <div
     className={cn(
-      'flex flex-col space-y-1.5 text-center sm:text-left',
+      'core-flex core-flex-col core-space-y-1.5 core-text-center sm:core-text-left',
       className
     )}
     {...props}
@@ -81,7 +81,7 @@ Dialog.Header.displayName = 'Dialog.Header';
 Dialog.Footer = ({ className, ...props }: DialogFooterProps) => (
   <div
     className={cn(
-      'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',
+      'core-flex core-flex-col-reverse sm:core-flex-row sm:core-justify-end sm:core-space-x-2',
       className
     )}
     {...props}
@@ -94,7 +94,7 @@ Dialog.Title = React.forwardRef<DialogTitleRef, DialogTitleProps>(
     <DialogPrimitive.Title
       ref={ref}
       className={cn(
-        'text-lg font-semibold leading-none tracking-tight',
+        'core-text-lg core-font-semibold core-leading-none core-tracking-tight',
         className
       )}
       {...props}
@@ -109,7 +109,7 @@ Dialog.Description = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn('text-muted-foreground text-sm', className)}
+    className={cn('core-text-sm core-text-muted-foreground', className)}
     {...props}
   />
 ));

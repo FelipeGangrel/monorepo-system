@@ -10,7 +10,9 @@ describe('Label component', () => {
     const label = screen.getByText('Test Label');
 
     expect(label).toBeInTheDocument();
-    expect(label).toHaveClass('text-sm font-medium leading-none');
+    expect(label).toHaveClass(
+      'core-text-sm core-font-medium core-leading-none'
+    );
   });
 
   it('applies custom className', () => {

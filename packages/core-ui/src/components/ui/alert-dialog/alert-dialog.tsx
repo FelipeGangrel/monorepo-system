@@ -37,7 +37,7 @@ AlertDialog.Overlay = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AlertDialogPrimitive.Overlay
     className={cn(
-      'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80',
+      'core-fixed core-inset-0 core-z-50 core-bg-black/80 data-[state=open]:core-animate-in data-[state=closed]:core-animate-out data-[state=closed]:core-fade-out-0 data-[state=open]:core-fade-in-0',
       className
     )}
     {...props}
@@ -55,7 +55,7 @@ AlertDialog.Content = React.forwardRef<
     <AlertDialogPrimitive.Content
       ref={ref}
       className={cn(
-        'bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border p-6 shadow-lg duration-200 sm:rounded-lg',
+        'core-fixed core-left-[50%] core-top-[50%] core-z-50 core-grid core-w-full core-max-w-lg core-translate-x-[-50%] core-translate-y-[-50%] core-gap-4 core-border core-bg-background core-p-6 core-shadow-lg core-duration-200 data-[state=open]:core-animate-in data-[state=closed]:core-animate-out data-[state=closed]:core-fade-out-0 data-[state=open]:core-fade-in-0 data-[state=closed]:core-zoom-out-95 data-[state=open]:core-zoom-in-95 data-[state=closed]:core-slide-out-to-left-1/2 data-[state=closed]:core-slide-out-to-top-[48%] data-[state=open]:core-slide-in-from-left-1/2 data-[state=open]:core-slide-in-from-top-[48%] sm:core-rounded-lg',
         className
       )}
       {...props}
@@ -67,7 +67,7 @@ AlertDialog.Content.displayName = 'AlertDialog.Content';
 AlertDialog.Header = ({ className, ...props }: AlertDialogHeaderProps) => (
   <div
     className={cn(
-      'flex flex-col space-y-2 text-center sm:text-left',
+      'core-flex core-flex-col core-space-y-2 core-text-center sm:core-text-left',
       className
     )}
     {...props}
@@ -78,7 +78,7 @@ AlertDialog.Header.displayName = 'AlertDialog.Header';
 AlertDialog.Footer = ({ className, ...props }: AlertDialogFooterProps) => (
   <div
     className={cn(
-      'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',
+      'core-flex core-flex-col-reverse sm:core-flex-row sm:core-justify-end sm:core-space-x-2',
       className
     )}
     {...props}
@@ -92,7 +92,7 @@ AlertDialog.Title = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AlertDialogPrimitive.Title
     ref={ref}
-    className={cn('text-lg font-semibold', className)}
+    className={cn('core-text-lg core-font-semibold', className)}
     {...props}
   />
 ));
@@ -104,7 +104,7 @@ AlertDialog.Description = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AlertDialogPrimitive.Description
     ref={ref}
-    className={cn('text-muted-foreground text-sm', className)}
+    className={cn('core-text-sm core-text-muted-foreground', className)}
     {...props}
   />
 ));
@@ -130,7 +130,7 @@ AlertDialog.Cancel = React.forwardRef<
     ref={ref}
     className={cn(
       buttonVariants({ variant: 'outline' }),
-      'mt-2 sm:mt-0',
+      'core-mt-2 sm:core-mt-0',
       className
     )}
     {...props}

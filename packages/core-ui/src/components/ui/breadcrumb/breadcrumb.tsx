@@ -30,7 +30,7 @@ Breadcrumb.List = React.forwardRef<BreadcrumbListRef, BreadcrumbListProps>(
     <ol
       ref={ref}
       className={cn(
-        'text-muted-foreground flex flex-wrap items-center gap-1.5 break-words text-sm sm:gap-2.5',
+        'core-flex core-flex-wrap core-items-center core-gap-1.5 core-break-words core-text-sm core-text-muted-foreground sm:core-gap-2.5',
         className
       )}
       {...props}
@@ -43,7 +43,10 @@ Breadcrumb.Item = React.forwardRef<BreadcrumbItemRef, BreadcrumbItemProps>(
   ({ className, ...props }, ref) => (
     <li
       ref={ref}
-      className={cn('inline-flex items-center gap-1.5', className)}
+      className={cn(
+        'core-inline-flex core-items-center core-gap-1.5',
+        className
+      )}
       {...props}
     />
   )
@@ -57,7 +60,10 @@ Breadcrumb.Link = React.forwardRef<BreadcrumbLinkRef, BreadcrumbLinkProps>(
     return (
       <Comp
         ref={ref}
-        className={cn('hover:text-foreground transition-colors', className)}
+        className={cn(
+          'core-transition-colors hover:core-text-foreground',
+          className
+        )}
         {...props}
       />
     );
@@ -72,7 +78,7 @@ Breadcrumb.Page = React.forwardRef<BreadcrumbPageRef, BreadcrumbPageProps>(
       role="link"
       aria-disabled="true"
       aria-current="page"
-      className={cn('text-foreground font-normal', className)}
+      className={cn('core-font-normal core-text-foreground', className)}
       {...props}
     />
   )
@@ -87,7 +93,7 @@ Breadcrumb.Separator = ({
   <li
     role="presentation"
     aria-hidden="true"
-    className={cn('[&>svg]:h-3.5 [&>svg]:w-3.5', className)}
+    className={cn('[&>svg]:core-w-3.5 [&>svg]:core-h-3.5', className)}
     {...props}
   >
     {children ?? <ChevronRight />}
@@ -99,11 +105,14 @@ Breadcrumb.Ellipsis = ({ className, ...props }: BreadcrumbEllipsisProps) => (
   <span
     role="presentation"
     aria-hidden="true"
-    className={cn('flex h-9 w-9 items-center justify-center', className)}
+    className={cn(
+      'core-flex core-h-9 core-w-9 core-items-center core-justify-center',
+      className
+    )}
     {...props}
   >
-    <MoreHorizontal className="h-4 w-4" />
-    <span className="sr-only">More</span>
+    <MoreHorizontal className="core-h-4 core-w-4" />
+    <span className="core-sr-only">More</span>
   </span>
 );
 Breadcrumb.Ellipsis.displayName = 'Breadcrumb.Ellipsis';

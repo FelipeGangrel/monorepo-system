@@ -18,7 +18,7 @@ const FuzzyFilter: React.FunctionComponent<Props> = ({
 
   return (
     <DebouncedInput
-      className={cn('w-full', className)}
+      className={cn('core-w-full', className)}
       value={String(table.getState().globalFilter)}
       onChange={(value) => table.setGlobalFilter(String(value))}
       {...props}

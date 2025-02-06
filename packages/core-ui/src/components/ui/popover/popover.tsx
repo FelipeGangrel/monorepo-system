@@ -23,7 +23,7 @@ Popover.Arrow = React.forwardRef<PopoverArrowRef, PopoverArrowProps>(
   ({ className, ...props }, ref) => (
     <PopoverPrimitive.Arrow
       ref={ref}
-      className={cn('fill-popover', className)}
+      className={cn('core-fill-popover', className)}
       {...props}
     />
   )
@@ -41,7 +41,7 @@ Popover.Content = React.forwardRef<PopoverContentRef, PopoverContentProps>(
         align={align}
         sideOffset={sideOffset}
         className={cn(
-          'bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-72 rounded-md border p-4 shadow-md outline-none',
+          'core-z-50 core-w-72 core-rounded-md core-border core-bg-popover core-p-4 core-text-popover-foreground core-shadow-md core-outline-none data-[state=open]:core-animate-in data-[state=closed]:core-animate-out data-[state=closed]:core-fade-out-0 data-[state=open]:core-fade-in-0 data-[state=closed]:core-zoom-out-95 data-[state=open]:core-zoom-in-95 data-[side=bottom]:core-slide-in-from-top-2 data-[side=left]:core-slide-in-from-right-2 data-[side=right]:core-slide-in-from-left-2 data-[side=top]:core-slide-in-from-bottom-2',
           className
         )}
         {...props}

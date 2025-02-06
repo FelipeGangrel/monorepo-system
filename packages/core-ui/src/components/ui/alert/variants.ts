@@ -1,13 +1,13 @@
 import { cva } from 'class-variance-authority';
 
 export const alertVariants = cva(
-  'relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7',
+  'core-relative core-w-full core-rounded-lg core-border core-px-4 core-py-3 core-text-sm [&>svg+div]:core-translate-y-[-3px] [&>svg]:core-absolute [&>svg]:core-left-4 [&>svg]:core-top-4 [&>svg]:core-text-foreground [&>svg~*]:core-pl-7',
   {
     variants: {
       variant: {
-        default: 'bg-background text-foreground',
+        default: 'core-bg-background core-text-foreground',
         destructive:
-          'border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive',
+          'core-border-destructive/50 core-text-destructive dark:core-border-destructive [&>svg]:core-text-destructive',
       },
     },
     defaultVariants: {

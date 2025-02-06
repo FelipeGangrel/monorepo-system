@@ -18,7 +18,7 @@ const Filter: React.FunctionComponent<Props> = ({
 
   return (
     <Input
-      className={cn('w-full', className)}
+      className={cn('core-w-full', className)}
       {...props}
       value={(table.getColumn(filterBy)?.getFilterValue() as string) ?? ''}
       onChange={(event) => {
