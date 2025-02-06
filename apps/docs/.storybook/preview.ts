@@ -1,5 +1,5 @@
 import '@felipegangrel/core-ui/styles.css';
-import './main.css';
+import './docs.css';
 
 import type { Preview } from '@storybook/react';
 import { themes } from '@storybook/theming';

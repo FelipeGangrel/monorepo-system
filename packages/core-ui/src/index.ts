@@ -1,4 +1,4 @@
-import './index.css';
+import './core-ui.css';
 
 // utils
 export * from './lib/utils';
