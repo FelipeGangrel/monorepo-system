@@ -2,6 +2,9 @@ import { Button, DropdownMenu } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
+/**
+ * Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+ */
 const meta: Meta<typeof DropdownMenu> = {
   title: 'core-ui/DropdownMenu',
   component: DropdownMenu,
@@ -15,7 +18,7 @@ export default meta;
 
 type Story = StoryObj<typeof DropdownMenu>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     children: (
       <>

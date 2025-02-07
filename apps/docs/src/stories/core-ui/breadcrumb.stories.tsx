@@ -1,6 +1,9 @@
 import { Breadcrumb } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
+/**
+ * Displays the path to the current resource using a hierarchy of links.
+ */
 const meta: Meta<typeof Breadcrumb> = {
   title: 'core-ui/Breadcrumb',
   component: Breadcrumb,
@@ -14,7 +17,7 @@ export default meta;
 
 type Story = StoryObj<typeof Breadcrumb>;
 
-export const Default: Story = {
+export const Example: Story = {
   render: (args) => (
     <Breadcrumb {...args}>
       <Breadcrumb.List>

@@ -2,6 +2,9 @@ import { Button, Collapsible } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ChevronsUpDown } from 'lucide-react';
 
+/**
+ * An interactive component which expands/collapses a panel.
+ */
 const meta: Meta<typeof Collapsible> = {
   title: 'core-ui/Collapsible',
   component: Collapsible,
@@ -15,7 +18,7 @@ export default meta;
 
 type Story = StoryObj<typeof Collapsible>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     className: 'docs-w-full docs-max-w-[400px] docs-space-y-2',
     children: (

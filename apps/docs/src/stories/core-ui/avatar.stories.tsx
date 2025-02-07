@@ -1,6 +1,9 @@
 import { Avatar } from '@felipegangrel/core-ui';
 import { Meta } from '@storybook/react';
 
+/**
+ * An image element with a fallback for representing the user.
+ */
 const meta: Meta<typeof Avatar> = {
   title: 'core-ui/Avatar',
   component: Avatar,
@@ -12,7 +15,7 @@ const meta: Meta<typeof Avatar> = {
 
 export default meta;
 
-export const Default = () => (
+export const Example = () => (
   <Avatar>
     <Avatar.Image
       src="https://avatar.iran.liara.run/public"

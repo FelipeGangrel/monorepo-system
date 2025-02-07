@@ -2,6 +2,9 @@ import { Checkbox } from '@felipegangrel/core-ui';
 import { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
+/**
+ * A control that allows the user to toggle between checked and not checked.
+ */
 const meta: Meta<typeof Checkbox> = {
   title: 'core-ui/Checkbox',
   component: Checkbox,
@@ -18,7 +21,7 @@ export default meta;
 
 type Story = StoryObj<typeof Checkbox>;
 
-export const Default: Story = {
+export const Example: Story = {
   render: (args) => <Checkbox {...args} />,
 };
 

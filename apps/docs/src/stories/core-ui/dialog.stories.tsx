@@ -1,6 +1,9 @@
 import { Button, Dialog } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
+/**
+ * A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+ */
 const meta: Meta<typeof Dialog> = {
   title: 'core-ui/Dialog',
   component: Dialog,
@@ -14,7 +17,7 @@ export default meta;
 
 type Story = StoryObj<typeof Dialog>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     children: (
       <>

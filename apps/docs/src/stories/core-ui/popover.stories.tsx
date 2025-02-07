@@ -1,6 +1,9 @@
 import { Button, Popover } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
+/**
+ * Displays rich content in a portal, triggered by a button.
+ */
 const meta: Meta<typeof Popover> = {
   title: 'core-ui/Popover',
   component: Popover,
@@ -14,7 +17,7 @@ export default meta;
 
 type Story = StoryObj<typeof Popover>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     children: (
       <>

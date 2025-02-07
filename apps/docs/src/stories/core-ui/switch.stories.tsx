@@ -1,6 +1,9 @@
 import { Label, Switch } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
+/**
+ * A control that allows the user to toggle between checked and not checked.
+ */
 const meta: Meta<typeof Switch> = {
   title: 'core-ui/Switch',
   component: Switch,
@@ -21,7 +24,7 @@ export default meta;
 
 type Story = StoryObj<typeof Switch>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     id: 'switch-default',
   },

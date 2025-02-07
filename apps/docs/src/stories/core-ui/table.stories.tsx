@@ -1,6 +1,9 @@
 import { Button, Table } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
+/**
+ * A responsive table component.
+ */
 const meta: Meta<typeof Table> = {
   title: 'core-ui/Table',
   component: Table,
@@ -35,7 +38,7 @@ const users = [
   },
 ];
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     children: (
       <>

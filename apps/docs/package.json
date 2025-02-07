@@ -8,6 +8,7 @@
     "@hookform/resolvers": "catalog:",
     "@storybook/preview-api": "catalog:",
     "@tanstack/react-table": "catalog:",
+    "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "date-fns": "catalog:",
     "lucide-react": "catalog:",
@@ -16,6 +17,7 @@
     "react-dom": "catalog:react19",
     "react-hook-form": "catalog:",
     "recharts": "catalog:",
+    "tailwind-merge": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {

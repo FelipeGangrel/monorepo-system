@@ -1,6 +1,9 @@
 import { Accordion } from '@felipegangrel/core-ui';
 import { Meta, StoryObj } from '@storybook/react';
 
+/**
+ * A vertically stacked set of interactive headings that each reveal a section of content.
+ */
 const meta: Meta<typeof Accordion> = {
   title: 'core-ui/Accordion',
   component: Accordion,
@@ -28,7 +31,11 @@ export default meta;
 
 type Story = StoryObj<typeof Accordion>;
 
-export const Default: Story = {
+/**
+ * The default Accordion story demonstrates a single-type accordion
+ * with collapsible functionality enabled.
+ */
+export const Single: Story = {
   render: (args) => (
     <Accordion {...args}>
       <Accordion.Item value="item-1">
@@ -53,7 +60,11 @@ export const Default: Story = {
   ),
 };
 
-export const MultipleItems: Story = {
+/**
+ * Demonstrates an accordion with 'multiple' type, allowing
+ * multiple items to be open simultaneously.
+ */
+export const Multiple: Story = {
   args: {
     type: 'multiple',
   },
@@ -81,6 +92,10 @@ export const MultipleItems: Story = {
   ),
 };
 
+/**
+ * An Accordion story that demonstrates a non-collapsible
+ * single-type accordion.
+ */
 export const NonCollapsible: Story = {
   args: {
     type: 'single',

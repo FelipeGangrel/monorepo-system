@@ -3,6 +3,9 @@ import { DataTable, DataTableMetaHelper } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ColumnDef } from '@tanstack/react-table';
 
+/**
+ * Powerful table and datagrids built using TanStack Table.
+ */
 const meta: Meta<typeof DataTable> = {
   title: 'core-ui/DataTable',
   component: DataTable,
@@ -92,7 +95,13 @@ const payments: Payment[] = Array.from({ length: 100 }).map(() => {
   };
 });
 
-export const Default: Story = {
+/**
+ * A comprehensive example of the `DataTable` component showcasing various features,
+ * including filters, pagination, and data rendering.
+ * It uses a dataset of mock payment data and provides customizable options
+ * such as table columns and language.
+ */
+export const Example: Story = {
   args: {
     columns,
     data: payments,

@@ -1,10 +1,15 @@
-import { Button, Calendar, cn, Popover, Select } from '@felipegangrel/core-ui';
+import { Button, Calendar, Popover, Select } from '@felipegangrel/core-ui';
 import { Meta, StoryObj } from '@storybook/react';
 import { addDays, format } from 'date-fns';
 import { CalendarIcon } from 'lucide-react';
 import * as React from 'react';
 import { DateRange } from 'react-day-picker';
 
+import { cn } from '@/lib/utils';
+
+/**
+ * A date field component that allows users to enter and edit date.
+ */
 const meta: Meta<typeof Calendar> = {
   title: 'core-ui/Calendar',
   component: Calendar,
@@ -23,7 +28,7 @@ type Story = StoryObj<typeof Calendar>;
 
 const today = new Date();
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     mode: 'single',
     onSelect: (value) => {

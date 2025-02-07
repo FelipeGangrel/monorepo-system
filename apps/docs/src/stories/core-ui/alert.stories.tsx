@@ -2,6 +2,9 @@ import { Alert } from '@felipegangrel/core-ui';
 import { Meta, StoryObj } from '@storybook/react';
 import { AlertTriangleIcon } from 'lucide-react';
 
+/**
+ * Displays a callout for user attention.
+ */
 const meta: Meta<typeof Alert> = {
   title: 'core-ui/Alert',
   component: Alert,
@@ -21,7 +24,7 @@ export default meta;
 
 type Story = StoryObj<typeof Alert>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     variant: 'default',
     children: (

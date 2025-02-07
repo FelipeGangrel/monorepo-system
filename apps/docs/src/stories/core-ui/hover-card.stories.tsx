@@ -2,6 +2,9 @@ import { Avatar, Button, HoverCard } from '@felipegangrel/core-ui';
 import { Meta, StoryObj } from '@storybook/react';
 import { CalendarDaysIcon } from 'lucide-react';
 
+/**
+ * For sighted users to preview content available behind a link.
+ */
 const meta: Meta<typeof HoverCard> = {
   title: 'core-ui/HoverCard',
   component: HoverCard,
@@ -15,7 +18,7 @@ export default meta;
 
 type Story = StoryObj<typeof HoverCard>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     children: (
       <>
@@ -26,7 +29,7 @@ export const Default: Story = {
   },
 };
 
-export const Example: Story = {
+export const CustomTriggerAndContent: Story = {
   args: {
     children: (
       <>
