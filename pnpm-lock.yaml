@@ -13,8 +13,8 @@ catalogs:
       specifier: ^3.2.2
       version: 3.2.4
     '@eslint/js':
-      specifier: ^9.16.0
-      version: 9.19.0
+      specifier: ^9.20.0
+      version: 9.20.0
     '@faker-js/faker':
       specifier: ^9.4.0
       version: 9.4.0
@@ -378,7 +378,7 @@ importers:
         version: 3.2.4(react@19.0.0)(storybook@8.5.3(prettier@3.4.2))
       '@eslint/js':
         specifier: 'catalog:'
-        version: 9.19.0
+        version: 9.20.0
       '@storybook/addon-a11y':
         specifier: 'catalog:'
         version: 8.5.3(storybook@8.5.3(prettier@3.4.2))(vitest@3.0.5(@types/node@22.13.1)(jiti@1.21.7)(jsdom@20.0.3)(tsx@4.19.2)(yaml@2.7.0))
@@ -652,7 +652,7 @@ importers:
     devDependencies:
       '@eslint/js':
         specifier: 'catalog:'
-        version: 9.19.0
+        version: 9.20.0
       '@next/eslint-plugin-next':
         specifier: 'catalog:'
         version: 15.1.6
@@ -746,7 +746,7 @@ importers:
     devDependencies:
       '@eslint/js':
         specifier: 'catalog:'
-        version: 9.19.0
+        version: 9.20.0
       '@swc/core':
         specifier: 'catalog:'
         version: 1.10.14
@@ -1507,6 +1507,10 @@ packages:
 
   '@eslint/js@9.19.0':
     resolution: {integrity: sha512-rbq9/g38qjfqFLOVPvwjIvFFdNziEC5S65jmjPw5r6A//QH+W91akh9irMwjDN8zKUTak6W9EsAv4m/7Wnw0UQ==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@eslint/js@9.20.0':
+    resolution: {integrity: sha512-iZA07H9io9Wn836aVTytRaNqh00Sad+EamwOVJT12GTLw1VGMFV/4JaME+JjLtr9fiGaoWgYnS54wrfWsSs4oQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/object-schema@2.1.6':
@@ -6498,6 +6502,8 @@ snapshots:
       - supports-color
 
   '@eslint/js@9.19.0': {}
+
+  '@eslint/js@9.20.0': {}
 
   '@eslint/object-schema@2.1.6': {}
 
