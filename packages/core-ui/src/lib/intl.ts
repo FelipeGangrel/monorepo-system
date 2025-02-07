@@ -1,8 +1,6 @@
-import { DictionaryEntry, IntlHelper } from '@felipegangrel/intl';
+import { type LanguageOption, TranslationManager } from '@felipegangrel/intl';
 
-type LanguageOption = keyof DictionaryEntry;
-
-const intl = IntlHelper.create({
+const intl = TranslationManager.create({
   noResultsFound: {
     en: 'No results found.',
     pt: 'Nenhum resultado encontrado.',

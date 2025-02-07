@@ -1,8 +1,6 @@
-import { DictionaryEntry, IntlHelper } from '@felipegangrel/intl';
+import { type LanguageOption, TranslationManager } from '@felipegangrel/intl';
 
-type LanguageOption = keyof DictionaryEntry;
-
-const intl = IntlHelper.create({}).setFallbackLanguage('pt');
+const intl = TranslationManager.create().setFallbackLanguage('pt');
 
 export { intl };
 export type { LanguageOption };

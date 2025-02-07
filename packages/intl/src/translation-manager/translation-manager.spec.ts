@@ -1,19 +1,19 @@
-import { IntlHelper } from './intl-helper';
+import { TranslationManager } from './translation-manager';
 
-const intl = IntlHelper.create({
+const tManager = TranslationManager.create({
   globalKey: {
     en: 'English global value',
     pt: 'Portuguese global value',
   },
 } as const).setFallbackLanguage('en');
 
-describe('IntlHelper class', () => {
-  it('returns a intl of IntlHelper when calling create', () => {
-    expect(intl).toBeInstanceOf(IntlHelper);
+describe('TranslationManager class', () => {
+  it('returns a intl of TranslationManager when calling create', () => {
+    expect(tManager).toBeInstanceOf(TranslationManager);
   });
 
   it('creates a dictionary that extends the base dictionary', () => {
-    const dictionary = intl.makeDictionaryExtension({
+    const dictionary = tManager.makeDictionaryExtension({
       localKey: {
         en: 'English local value',
         pt: 'Portuguese local value',
@@ -25,14 +25,14 @@ describe('IntlHelper class', () => {
   });
 
   it('creates a translation function', () => {
-    const dictionary = intl.makeDictionaryExtension({
+    const dictionary = tManager.makeDictionaryExtension({
       localKey: {
         en: 'English local value',
         pt: 'Portuguese local value',
       },
     } as const);
 
-    const t = intl.makeTranslator({
+    const t = tManager.makeTranslator({
       dictionary,
     });
 
@@ -42,13 +42,13 @@ describe('IntlHelper class', () => {
 
   describe('translation function', () => {
     it('replaces strings using the replacer object', () => {
-      const dictionary = intl.makeDictionary({
+      const dictionary = tManager.makeDictionary({
         hello: {
           en: 'Hello {name}!',
         },
       } as const);
 
-      const t = intl.makeTranslator({
+      const t = tManager.makeTranslator({
         dictionary,
         language: 'en',
       });
@@ -57,13 +57,13 @@ describe('IntlHelper class', () => {
     });
 
     it('shows the fallback language translation if the desired language is not defined', () => {
-      const dictionary = intl.makeDictionary({
+      const dictionary = tManager.makeDictionary({
         testingKey: {
           en: 'English value',
         },
       } as const);
 
-      const t = intl.makeTranslator({
+      const t = tManager.makeTranslator({
         dictionary,
         language: 'pt',
       });
