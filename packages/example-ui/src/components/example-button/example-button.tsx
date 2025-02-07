@@ -5,6 +5,9 @@ import { cn } from '@/lib/utils';
 
 type Props = React.HTMLAttributes<HTMLButtonElement>;
 
+/**
+ * A button that wraps the button from the core-ui
+ */
 const ExampleButton = ({ className, ...props }: Props) => {
   return (
     <Button

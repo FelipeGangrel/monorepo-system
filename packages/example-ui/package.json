@@ -36,6 +36,9 @@
   ],
   "main": "dist/index.cjs",
   "module": "dist/index.js",
+  "peerDependencies": {
+    "@felipegangrel/core-ui": "workspace:"
+  },
   "publishConfig": {
     "access": "restricted",
     "registry": "https://npm.pkg.github.com/FelipeGangrel"
@@ -56,8 +59,5 @@
     "**/*.css"
   ],
   "type": "module",
-  "types": "dist/index.d.ts",
-  "peerDependencies": {
-    "@felipegangrel/core-ui": "workspace:"
-  }
+  "types": "dist/index.d.ts"
 }
