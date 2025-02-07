@@ -43,7 +43,7 @@ const SortableHead = ({ header }: HeadProps) => {
     <Table.Head className={columnMeta?.headerClassName}>
       <Button
         variant={'ghost'}
-        className="core-px-[0px] hover:core-bg-transparent"
+        className="core-px-0 hover:core-bg-transparent"
         onClick={() =>
           header.column.toggleSorting(header.column.getIsSorted() === 'asc')
         }
