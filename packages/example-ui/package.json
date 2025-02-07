@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "dependencies": {
     "@felipegangrel/core-ui": "workspace:",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
     "react": "catalog:react19",
     "react-dom": "catalog:react19",
+    "tailwind-merge": "catalog:",
     "tailwindcss-animate": "catalog:"
   },
   "devDependencies": {

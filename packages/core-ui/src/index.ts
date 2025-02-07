@@ -1,7 +1,5 @@
 import './core-ui.css';
 
-// utils
-export * from './lib/utils';
 // data table utils
 export * from './utils/data-table';
 

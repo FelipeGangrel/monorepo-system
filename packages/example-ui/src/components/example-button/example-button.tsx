@@ -1,5 +1,7 @@
-import { Button, cn } from '@felipegangrel/core-ui';
+import { Button } from '@felipegangrel/core-ui';
 import * as React from 'react';
+
+import { cn } from '@/lib/utils';
 
 type Props = React.HTMLAttributes<HTMLButtonElement>;
 
