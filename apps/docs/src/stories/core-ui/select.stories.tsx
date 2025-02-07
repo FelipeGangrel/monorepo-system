@@ -18,7 +18,7 @@ export const Default: Story = {
   args: {
     children: (
       <>
-        <Select.Trigger className="w-screen max-w-[240px]">
+        <Select.Trigger className="docs-w-screen docs-max-w-[240px]">
           <Select.Value placeholder="Theme" />
         </Select.Trigger>
         <Select.Content>
@@ -35,7 +35,7 @@ export const Scrollable: Story = {
   args: {
     children: (
       <>
-        <Select.Trigger className="w-screen max-w-[240px]">
+        <Select.Trigger className="docs-w-screen docs-max-w-[240px]">
           <Select.Value placeholder="Select a timezone" />
         </Select.Trigger>
         <Select.Content>

@@ -61,10 +61,10 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply docs-border-border;
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply docs-font-sans docs-antialiased docs-bg-background docs-text-foreground;
   }
 }

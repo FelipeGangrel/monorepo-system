@@ -24,10 +24,13 @@ import type {
 
 const Table = React.forwardRef<TableRef, TableProps>(
   ({ className, ...props }, ref) => (
-    <div className="relative w-full overflow-auto">
+    <div className="core-relative core-w-full core-overflow-auto">
       <table
         ref={ref}
-        className={cn('w-full caption-bottom text-sm', className)}
+        className={cn(
+          'core-w-full core-caption-bottom core-text-sm',
+          className
+        )}
         {...props}
       />
     </div>
@@ -37,7 +40,11 @@ Table.displayName = 'Table';
 
 Table.Header = React.forwardRef<TableHeaderRef, TableHeaderProps>(
   ({ className, ...props }, ref) => (
-    <thead ref={ref} className={cn('[&_tr]:border-b', className)} {...props} />
+    <thead
+      ref={ref}
+      className={cn('[&_tr]:core-border-b', className)}
+      {...props}
+    />
   )
 );
 Table.Header.displayName = 'Table..Header';
@@ -46,7 +53,7 @@ Table.Body = React.forwardRef<TableBodyRef, TableBodyProps>(
   ({ className, ...props }, ref) => (
     <tbody
       ref={ref}
-      className={cn('[&_tr:last-child]:border-0', className)}
+      className={cn('[&_tr:last-child]:core-border-0', className)}
       {...props}
     />
   )
@@ -58,7 +65,7 @@ Table.Footer = React.forwardRef<TableFooterRef, TableFooterProps>(
     <tfoot
       ref={ref}
       className={cn(
-        'bg-muted/50 border-t font-medium [&>tr]:last:border-b-0',
+        'core-border-t core-bg-muted/50 core-font-medium [&>tr]:last:core-border-b-0',
         className
       )}
       {...props}
@@ -72,7 +79,7 @@ Table.Row = React.forwardRef<TableRowRef, TableRowProps>(
     <tr
       ref={ref}
       className={cn(
-        'hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors',
+        'core-border-b core-transition-colors hover:core-bg-muted/50 data-[state=selected]:core-bg-muted',
         className
       )}
       {...props}
@@ -86,7 +93,7 @@ Table.Head = React.forwardRef<TableHeadRef, TableHeadProps>(
     <th
       ref={ref}
       className={cn(
-        'text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
+        'core-h-10 core-px-2 core-text-left core-align-middle core-font-medium core-text-muted-foreground [&:has([role=checkbox])]:core-pr-0 [&>[role=checkbox]]:core-translate-y-[2px]',
         className
       )}
       {...props}
@@ -100,7 +107,7 @@ Table.Cell = React.forwardRef<TableCellRef, TableCellProps>(
     <td
       ref={ref}
       className={cn(
-        'p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
+        'core-p-2 core-align-middle [&:has([role=checkbox])]:core-pr-0 [&>[role=checkbox]]:core-translate-y-[2px]',
         className
       )}
       {...props}
@@ -113,7 +120,10 @@ Table.Caption = React.forwardRef<TableCaptionRef, TableCaptionProps>(
   ({ className, ...props }, ref) => (
     <caption
       ref={ref}
-      className={cn('text-muted-foreground mt-4 text-sm', className)}
+      className={cn(
+        'core-mt-4 core-text-sm core-text-muted-foreground',
+        className
+      )}
       {...props}
     />
   )

@@ -119,7 +119,7 @@ const Carousel = React.forwardRef<
         <div
           ref={ref}
           onKeyDownCapture={handleKeyDown}
-          className={cn('relative', className)}
+          className={cn('core-relative', className)}
           role="region"
           aria-roledescription="carousel"
           {...props}
@@ -139,12 +139,14 @@ Carousel.Content = React.forwardRef<
   const { carouselRef, orientation } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="overflow-hidden">
+    <div ref={carouselRef} className="core-overflow-hidden">
       <div
         ref={ref}
         className={cn(
-          'flex',
-          orientation === 'horizontal' ? '-ml-4' : '-mt-4 flex-col',
+          'core-flex',
+          orientation === 'horizontal'
+            ? 'core--ml-4'
+            : 'core--mt-4 core-flex-col',
           className
         )}
         {...props}
@@ -166,8 +168,8 @@ Carousel.Item = React.forwardRef<
       role="group"
       aria-roledescription="slide"
       className={cn(
-        'min-w-0 shrink-0 grow-0 basis-full',
-        orientation === 'horizontal' ? 'pl-4' : 'pt-4',
+        'core-min-w-0 core-shrink-0 core-grow-0 core-basis-full',
+        orientation === 'horizontal' ? 'core-pl-4' : 'core-pt-4',
         className
       )}
       {...props}
@@ -188,18 +190,18 @@ Carousel.Previous = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        'absolute h-8 w-8 rounded-full',
+        'core-absolute core- core-h-8 core-w-8 core-rounded-full',
         orientation === 'horizontal'
-          ? '-left-12 top-1/2 -translate-y-1/2'
-          : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
+          ? 'core--left-12 core-top-1/2 core--translate-y-1/2'
+          : 'core--top-12 core-left-1/2 core--translate-x-1/2 core-rotate-90',
         className
       )}
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft className="h-4 w-4" />
-      <span className="sr-only">Previous slide</span>
+      <ArrowLeft className="core-h-4 core-w-4" />
+      <span className="core-sr-only">Previous slide</span>
     </Button>
   );
 });
@@ -217,22 +219,22 @@ Carousel.Next = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        'absolute h-8 w-8 rounded-full',
+        'core-absolute core-h-8 core-w-8 core-rounded-full',
         orientation === 'horizontal'
-          ? '-right-12 top-1/2 -translate-y-1/2'
-          : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
+          ? 'core--right-12 core-top-1/2 core--translate-y-1/2'
+          : 'core--bottom-12 core-left-1/2 core--translate-x-1/2 core-rotate-90',
         className
       )}
       disabled={!canScrollNext}
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight className="h-4 w-4" />
-      <span className="sr-only">Next slide</span>
+      <ArrowRight className="core-h-4 core-w-4" />
+      <span className="core-sr-only">Next slide</span>
     </Button>
   );
 });
 Carousel.Next.displayName = 'Carousel.Next';
 
-export { type CarouselApi };
 export { Carousel };
+export type { CarouselApi };

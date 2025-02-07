@@ -25,7 +25,7 @@ type Story = StoryObj<typeof Command>;
 
 export const Default: Story = {
   args: {
-    className: 'w-screen max-w-[400px]',
+    className: 'docs-w-screen docs-max-w-[400px]',
     children: (
       <>
         <Command.Input placeholder="Type a command or search..." />
@@ -65,9 +65,9 @@ export const WithKeyboardShortcut = () => {
 
   return (
     <>
-      <p className="text-muted-foreground text-sm">
+      <p className="docs-text-muted-foreground docs-text-sm">
         Press{' '}
-        <kbd className="bg-muted text-muted-foreground pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100">
+        <kbd className="docs-bg-muted docs-text-muted-foreground docs-pointer-events-none docs-inline-flex docs-h-5 docs-select-none docs-items-center docs-gap-1 docs-rounded docs-border docs-px-1.5 docs-font-mono docs-text-[10px] docs-font-medium docs-opacity-100">
           <span className="text-xs">⌘</span>J
         </kbd>
       </p>

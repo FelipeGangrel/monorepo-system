@@ -74,7 +74,7 @@ describe('Switch component', () => {
   it('renders children (Thumb)', () => {
     render(<Switch aria-label="Example switch" />);
 
-    const thumbElement = screen.getByRole('switch').querySelector('.block');
+    const thumbElement = screen.getByRole('switch');
     expect(thumbElement).toBeInTheDocument();
   });
 
@@ -86,6 +86,6 @@ describe('Switch component', () => {
     });
 
     switchElement.focus();
-    expect(switchElement).toHaveClass('focus-visible:outline-none');
+    expect(switchElement).toHaveClass('focus-visible:core-outline-none');
   });
 });

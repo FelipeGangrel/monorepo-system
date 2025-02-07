@@ -73,19 +73,22 @@ const Pagination: React.FunctionComponent<Props> = ({
   }
 
   return (
-    <div className={cn('flex items-center px-2', className)} {...props}>
+    <div
+      className={cn('core-flex core-items-center core-px-2', className)}
+      {...props}
+    >
       {selectionMode && !hideSelectionInfo && (
-        <div className="text-muted-foreground flex-1 text-sm">
+        <div className="core-text-muted-foreground core-flex-1 core-text-sm">
           {t('countOfTotalRowsSelected', {
             count: table.getFilteredSelectedRowModel().rows.length,
             total: table.getFilteredRowModel().rows.length,
           })}
         </div>
       )}
-      <div className="ml-auto flex items-center space-x-6 lg:space-x-8">
+      <div className="core-ml-auto core-flex core-items-center core-space-x-6 lg:core-space-x-8">
         {!hidePageSizeSelector && (
-          <div className="flex items-center space-x-2">
-            <p className="text-sm font-medium">{t('rowsPerPage')}</p>
+          <div className="core-flex core-items-center core-space-x-2">
+            <p className="core-text-sm core-font-medium">{t('rowsPerPage')}</p>
             <Select
               value={`${table.getState().pagination.pageSize}`}
               onValueChange={(value) => {
@@ -107,47 +110,47 @@ const Pagination: React.FunctionComponent<Props> = ({
             </Select>
           </div>
         )}
-        <div className="flex w-[100px] items-center justify-center text-sm font-medium">
+        <div className="core-flex core-w-[110px] core-items-center core-justify-center core-text-sm core-font-medium">
           {t('currentPageOfTotal', {
             current: table.getState().pagination.pageIndex + 1,
             total: table.getPageCount(),
           })}
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="core-flex core-items-center core-space-x-2">
           <Button
             variant="outline"
-            className="hidden h-8 w-8 p-0 lg:flex"
+            className="core-hidden core-h-8 core-w-8 core-p-0 lg:core-flex"
             onClick={() => table.setPageIndex(0)}
             disabled={!table.getCanPreviousPage()}
           >
-            <span className="sr-only">Go to first page</span>
+            <span className="core-sr-only">Go to first page</span>
             <ChevronsLeft />
           </Button>
           <Button
             variant="outline"
-            className="h-8 w-8 p-0"
+            className="core-h-8 core-w-8 core-p-0"
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
           >
-            <span className="sr-only">Go to previous page</span>
+            <span className="core-sr-only">Go to previous page</span>
             <ChevronLeft />
           </Button>
           <Button
             variant="outline"
-            className="h-8 w-8 p-0"
+            className="core-h-8 core-w-8 core-p-0"
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
           >
-            <span className="sr-only">Go to next page</span>
+            <span className="core-sr-only">Go to next page</span>
             <ChevronRight />
           </Button>
           <Button
             variant="outline"
-            className="hidden h-8 w-8 p-0 lg:flex"
+            className="core-hidden core-h-8 core-w-8 core-p-0 lg:core-flex"
             onClick={() => table.setPageIndex(table.getPageCount() - 1)}
             disabled={!table.getCanNextPage()}
           >
-            <span className="sr-only">Go to last page</span>
+            <span className="core-sr-only">Go to last page</span>
             <ChevronsRight />
           </Button>
         </div>

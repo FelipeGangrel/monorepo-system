@@ -8,7 +8,7 @@ const meta: Meta<typeof Accordion> = {
   args: {
     type: 'single',
     collapsible: true,
-    className: 'w-screen max-w-[400px]',
+    className: 'docs-w-screen docs-max-w-[400px]',
   },
   argTypes: {
     type: {

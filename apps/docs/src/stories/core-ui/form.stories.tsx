@@ -62,10 +62,10 @@ export const WithValidation = () => {
   };
 
   return (
-    <div className="w-screen max-w-[400px]">
+    <div className="docs-w-screen docs-max-w-[400px]">
       <Form {...form}>
         <form
-          className="flex flex-col gap-4"
+          className="docs-flex docs-flex-col docs-gap-4"
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <Form.Field
@@ -121,7 +121,7 @@ export const WithValidation = () => {
                 {['web', 'mobile', 'desktop'].map((value) => (
                   <Label
                     key={value}
-                    className="flex items-center gap-2 font-normal"
+                    className="docs-flex docs-items-center docs-gap-2 docs-font-normal"
                   >
                     <Checkbox
                       id={`${field.name}-${value}`}
@@ -147,7 +147,7 @@ export const WithValidation = () => {
             control={form.control}
             name="date"
             render={({ field }) => (
-              <Form.Item className="flex flex-col gap-2">
+              <Form.Item className="docs-flex docs-flex-col docs-gap-2">
                 <Form.Label>Date of birth</Form.Label>
                 <Popover>
                   <Popover.Trigger asChild>
@@ -155,8 +155,8 @@ export const WithValidation = () => {
                       <Button
                         variant={'outline'}
                         className={cn(
-                          'pl-3 text-left font-normal',
-                          !field.value && 'text-muted-foreground'
+                          'docs-pl-3 docs-text-left docs-font-normal',
+                          !field.value && 'docs-text-muted-foreground'
                         )}
                       >
                         {field.value ? (
@@ -164,11 +164,14 @@ export const WithValidation = () => {
                         ) : (
                           <span>Pick a date</span>
                         )}
-                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                        <CalendarIcon className="docs-ml-auto docs-h-4 docs-w-4 docs-opacity-50" />
                       </Button>
                     </Form.Control>
                   </Popover.Trigger>
-                  <Popover.Content className="w-auto p-0" align="start">
+                  <Popover.Content
+                    className="docs-w-auto docs-p-0"
+                    align="start"
+                  >
                     <Calendar
                       mode="single"
                       selected={field.value}
@@ -193,8 +196,10 @@ export const WithValidation = () => {
             render={({ field }) => (
               <Form.Item>
                 <Label>Switch</Label>
-                <div className="flex items-center gap-2">
-                  <span className="w-10">{field.value ? 'ON' : 'OFF'}</span>
+                <div className="docs-flex docs-items-center docs-gap-2">
+                  <span className="docs-w-10">
+                    {field.value ? 'ON' : 'OFF'}
+                  </span>
                   <Switch
                     value="on"
                     checked={field.value}

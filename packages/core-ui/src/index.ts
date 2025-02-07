@@ -1,4 +1,4 @@
-import 'tailwind-config/tailwind.css';
+import './core-ui.css';
 
 // utils
 export * from './lib/utils';

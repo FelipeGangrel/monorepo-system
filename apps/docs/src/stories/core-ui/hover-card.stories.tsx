@@ -33,21 +33,21 @@ export const Example: Story = {
         <HoverCard.Trigger asChild>
           <Button variant="link">@nextjs</Button>
         </HoverCard.Trigger>
-        <HoverCard.Content className="w-80">
+        <HoverCard.Content className="docs-w-80">
           <HoverCard.Arrow />
-          <div className="flex justify-between space-x-4">
+          <div className="docs-flex docs-justify-between docs-space-x-4">
             <Avatar>
               <Avatar.Image src="https://github.com/vercel.png" />
               <Avatar.Fallback>VC</Avatar.Fallback>
             </Avatar>
-            <div className="space-y-1">
-              <h4 className="text-sm font-semibold">@nextjs</h4>
-              <p className="text-sm">
+            <div className="docs-space-y-1">
+              <h4 className="docs-text-sm docs-font-semibold">@nextjs</h4>
+              <p className="docs-text-sm">
                 The React Framework – created and maintained by @vercel.
               </p>
-              <div className="flex items-center pt-2">
-                <CalendarDaysIcon className="mr-2 h-4 w-4 opacity-70" />{' '}
-                <span className="text-muted-foreground text-xs">
+              <div className="docs-flex docs-items-center docs-pt-2">
+                <CalendarDaysIcon className="docs-mr-2 docs-h-4 docs-w-4 docs-opacity-70" />{' '}
+                <span className="docs-text-muted-foreground docs-text-xs">
                   Joined December 2021
                 </span>
               </div>

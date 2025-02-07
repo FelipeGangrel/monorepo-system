@@ -8,7 +8,7 @@ describe('Menubar Component', () => {
     render(<Menubar data-testid="menubar-root" />);
     const menubarElement = screen.getByTestId('menubar-root');
     expect(menubarElement).toBeInTheDocument();
-    expect(menubarElement).toHaveClass('bg-background');
+    expect(menubarElement).toHaveClass('core-bg-background');
   });
 
   it('renders a Menu with Trigger and Content', async () => {
@@ -39,7 +39,7 @@ describe('Menubar Component', () => {
     // The content should now be visible
     const visibleContent = screen.getByTestId('menu-content');
     expect(visibleContent).toBeInTheDocument();
-    expect(visibleContent).toHaveClass('bg-popover');
+    expect(visibleContent).toHaveClass('core-bg-popover');
   });
 
   it('renders a Submenu with SubTrigger and SubContent', async () => {

@@ -9,7 +9,7 @@ describe('Alert component', () => {
 
     expect(alertRoot).toBeInTheDocument();
     expect(alertRoot).toHaveClass(
-      'relative w-full rounded-lg border px-4 py-3 text-sm'
+      'core-relative core-w-full core-rounded-lg core-border core-px-4 core-py-3 core-text-sm'
     );
     expect(alertRoot).toHaveTextContent('Default Alert');
   });
@@ -20,7 +20,7 @@ describe('Alert component', () => {
 
     expect(alertRoot).toBeInTheDocument();
     expect(alertRoot).toHaveClass(
-      'border-destructive/50 text-destructive dark:border-destructive'
+      'core-border-destructive/50 core-text-destructive dark:core-border-destructive'
     );
     expect(alertRoot).toHaveTextContent('Destructive Alert');
   });
@@ -31,7 +31,7 @@ describe('Alert component', () => {
 
     expect(alertTitle).toBeInTheDocument();
     expect(alertTitle).toHaveClass(
-      'mb-1 font-medium leading-none tracking-tight'
+      'core-mb-1 core-font-medium core-leading-none core-tracking-tight'
     );
   });
 
@@ -40,7 +40,9 @@ describe('Alert component', () => {
     const alertDescription = screen.getByText('Alert Description');
 
     expect(alertDescription).toBeInTheDocument();
-    expect(alertDescription).toHaveClass('text-sm [&_p]:leading-relaxed');
+    expect(alertDescription).toHaveClass(
+      'core-text-sm [&_p]:core-leading-relaxed'
+    );
   });
 
   it('should allow custom classNames for AlertRoot', () => {

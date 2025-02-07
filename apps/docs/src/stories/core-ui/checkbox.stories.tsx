@@ -40,7 +40,7 @@ export const Disabled: Story = {
 export const WithCustomStyles: Story = {
   args: {
     className:
-      'bg-gray-100 border-gray-500 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500',
+      'docs-bg-gray-100 docs-border-gray-500 data-[state=checked]:docs-bg-blue-500 data-[state=checked]:docs-border-blue-500',
   },
   render: (args) => <Checkbox {...args} />,
 };

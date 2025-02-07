@@ -5,7 +5,7 @@ import { DayPicker } from 'react-day-picker';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>;
+type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
 function Calendar({
   className,
@@ -16,55 +16,61 @@ function Calendar({
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
-      className={cn('p-3', className)}
+      className={cn('core-p-3', className)}
       classNames={{
-        months: 'flex flex-row sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0',
-        month: 'space-y-4',
-        caption: 'flex justify-center pt-1 relative items-center',
-        caption_label: 'text-sm font-medium',
-        nav: 'space-x-1 flex items-center',
+        months:
+          'core-flex core-flex-col sm:core-flex-row core-space-y-4 sm:core-space-x-4 sm:core-space-y-0',
+        month: 'core-space-y-4',
+        caption:
+          'core-flex core-justify-center core-pt-1 core-relative core-items-center',
+        caption_label: 'core-text-sm core-font-medium',
+        nav: 'core-space-x-1 core-flex core-items-center',
         nav_button: cn(
           buttonVariants({ variant: 'outline' }),
-          'h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100'
+          'core-h-7 core-w-7 core-bg-transparent core-p-0 core-opacity-50 hover:core-opacity-100'
         ),
-        nav_button_previous: 'absolute left-1',
-        nav_button_next: 'absolute right-1',
-        table: 'w-full border-collapse space-y-1',
-        head_row: 'flex',
+        nav_button_previous: 'core-absolute core-left-1',
+        nav_button_next: 'core-absolute core-right-1',
+        table: 'core-w-full core-border-collapse core-space-y-1',
+        head_row: 'core-flex',
         head_cell:
-          'text-muted-foreground rounded-md w-8 font-normal text-[0.8rem]',
-        row: 'flex w-full mt-2',
+          'core-text-muted-foreground core-rounded-md core-w-8 core-font-normal core-text-[0.8rem]',
+        row: 'core-flex core-w-full core-mt-2',
         cell: cn(
-          'relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected].day-range-end)]:rounded-r-md',
+          'core-relative core-p-0 core-text-center core-text-sm focus-within:core-relative focus-within:core-z-20 [&:has([aria-selected])]:core-bg-accent [&:has([aria-selected].day-outside)]:core-bg-accent/50 [&:has([aria-selected].day-range-end)]:core-rounded-r-md',
           props.mode === 'range'
-            ? '[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md'
-            : '[&:has([aria-selected])]:rounded-md'
+            ? '[&:has(>.day-range-end)]:core-rounded-r-md [&:has(>.day-range-start)]:core-rounded-l-md first:[&:has([aria-selected])]:core-rounded-l-md last:[&:has([aria-selected])]:core-rounded-r-md'
+            : '[&:has([aria-selected])]:core-rounded-md'
         ),
         day: cn(
           buttonVariants({ variant: 'ghost' }),
-          'h-8 w-8 p-0 font-normal aria-selected:opacity-100'
+          'core-h-8 core-w-8 core-p-0 core-font-normal aria-selected:core-opacity-100'
         ),
-        day_range_start: 'day-range-start',
-        day_range_end: 'day-range-end',
+        day_range_start: 'core-day-range-start',
+        day_range_end: 'core-day-range-end',
         day_selected:
-          'bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground',
-        day_today: 'bg-accent text-accent-foreground',
+          'core-bg-primary core-text-primary-foreground hover:core-bg-primary hover:core-text-primary-foreground focus:core-bg-primary focus:core-text-primary-foreground',
+        day_today: 'core-bg-accent core-text-accent-foreground',
         day_outside:
-          'day-outside text-muted-foreground aria-selected:bg-accent/50 aria-selected:text-muted-foreground',
-        day_disabled: 'text-muted-foreground opacity-50',
+          'core-day-outside core-text-muted-foreground aria-selected:core-bg-accent/50 aria-selected:core-text-muted-foreground',
+        day_disabled: 'core-text-muted-foreground core-opacity-50',
         day_range_middle:
-          'aria-selected:bg-accent aria-selected:text-accent-foreground',
-        day_hidden: 'invisible',
+          'aria-selected:core-bg-accent aria-selected:core-text-accent-foreground',
+        day_hidden: 'core-invisible',
         ...classNames,
       }}
       components={{
-        // eslint-disable-next-line react/prop-types
         IconLeft: ({ className, ...props }) => (
-          <ChevronLeft className={cn('h-4 w-4', className)} {...props} />
+          <ChevronLeft
+            className={cn('core-h-4 core-w-4', className)}
+            {...props}
+          />
         ),
-        // eslint-disable-next-line react/prop-types
         IconRight: ({ className, ...props }) => (
-          <ChevronRight className={cn('h-4 w-4', className)} {...props} />
+          <ChevronRight
+            className={cn('core-h-4 core-w-4', className)}
+            {...props}
+          />
         ),
       }}
       {...props}
@@ -75,3 +81,4 @@ function Calendar({
 Calendar.displayName = 'Calendar';
 
 export { Calendar };
+export type { CalendarProps };

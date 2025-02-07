@@ -34,14 +34,14 @@ const ViewOptions: React.FunctionComponent<ButtonProps> = ({
       <DropdownMenu.Trigger asChild>
         <Button
           variant="outline"
-          className={cn('ml-auto', className)}
+          className={cn('core-ml-auto', className)}
           {...props}
         >
           <Settings2 />
           {t('viewOptionsLabel')}
         </Button>
       </DropdownMenu.Trigger>
-      <DropdownMenu.Content align="end" className="w-[150px]">
+      <DropdownMenu.Content align="end" className="core-w-[150px]">
         <DropdownMenu.Label>{t('toggleColumnsLabel')}</DropdownMenu.Label>
         <DropdownMenu.Separator />
         {table
@@ -54,7 +54,7 @@ const ViewOptions: React.FunctionComponent<ButtonProps> = ({
             return (
               <DropdownMenu.CheckboxItem
                 key={column.id}
-                className="capitalize"
+                className="core-capitalize"
                 checked={column.getIsVisible()}
                 onCheckedChange={(value) => column.toggleVisibility(value)}
               >

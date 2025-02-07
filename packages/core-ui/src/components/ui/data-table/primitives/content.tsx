@@ -47,7 +47,7 @@ const SortableHead = ({ header }: HeadProps) => {
     <Table.Head className={columnMeta?.headerClassName}>
       <Button
         variant={'ghost'}
-        className="px-0 hover:bg-transparent"
+        className="core-px-0 hover:core-bg-transparent"
         onClick={() =>
           header.column.toggleSorting(header.column.getIsSorted() === 'asc')
         }
@@ -101,7 +101,7 @@ const Content: React.FunctionComponent<ContentProps> = ({
             <Table.Row>
               <Table.Cell
                 colSpan={table.getAllColumns().length}
-                className="h-24 text-center"
+                className="core-h-24 core-text-center"
               >
                 {t('noResultsFound')}
               </Table.Cell>

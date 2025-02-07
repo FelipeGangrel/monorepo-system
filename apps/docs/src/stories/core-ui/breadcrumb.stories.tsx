@@ -100,11 +100,14 @@ export const CustomLinks: Story = {
 
 export const StyledBreadcrumb: Story = {
   render: (args) => (
-    <Breadcrumb {...args} className="rounded-md bg-gray-100 p-4">
+    <Breadcrumb
+      {...args}
+      className="docs-rounded-md dark:docs-bg-red-400 docs-p-4"
+    >
       <Breadcrumb.List>
         <Breadcrumb.Item>
           <Breadcrumb.Link
-            className="text-blue-600 hover:underline"
+            className="docs-text-blue-600 hover:docs-underline"
             href="/dashboard"
           >
             Dashboard
@@ -113,7 +116,7 @@ export const StyledBreadcrumb: Story = {
         <Breadcrumb.Separator />
         <Breadcrumb.Item>
           <Breadcrumb.Link
-            className="text-blue-600 hover:underline"
+            className="docs-text-blue-600 hover:docs-underline"
             href="/profile"
           >
             Profile
@@ -121,7 +124,9 @@ export const StyledBreadcrumb: Story = {
         </Breadcrumb.Item>
         <Breadcrumb.Separator />
         <Breadcrumb.Item>
-          <Breadcrumb.Page>Settings</Breadcrumb.Page>
+          <Breadcrumb.Page className="docs-text-foreground">
+            Settings
+          </Breadcrumb.Page>
         </Breadcrumb.Item>
       </Breadcrumb.List>
     </Breadcrumb>
