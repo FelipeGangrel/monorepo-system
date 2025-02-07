@@ -40,20 +40,17 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@eslint/js": "catalog:",
     "@swc/core": "catalog:",
     "@swc/jest": "catalog:",
     "@testing-library/jest-dom": "catalog:",
     "@testing-library/react": "catalog:",
     "@testing-library/user-event": "catalog:",
     "@types/jest": "catalog:",
-    "@types/node": "catalog:",
     "@types/react": "catalog:react19",
     "@types/react-dom": "catalog:react19",
     "autoprefixer": "catalog:",
     "eslint": "catalog:",
     "eslint-config": "workspace:*",
-    "globals": "catalog:",
     "jest": "catalog:",
     "jest-config": "workspace:*",
     "jest-environment-jsdom": "catalog:",
@@ -61,7 +58,6 @@
     "postcss": "catalog:",
     "tailwind-config": "workspace:*",
     "tailwindcss": "catalog:",
-    "ts-node": "catalog:",
     "tsup": "catalog:",
     "typescript-config": "workspace:*",
     "typescript-eslint": "catalog:"
