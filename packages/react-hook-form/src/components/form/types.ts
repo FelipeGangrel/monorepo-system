@@ -1,4 +1,4 @@
-import * as LabelPrimitive from '@radix-ui/react-label';
+import { Label } from '@felipegangrel/core-ui';
 import { Slot } from '@radix-ui/react-slot';
 import * as React from 'react';
 import { JSX } from 'react';
@@ -12,10 +12,8 @@ import {
 export type FormItemRef = HTMLDivElement;
 export type FormItemProps = React.HTMLAttributes<HTMLDivElement>;
 
-export type FormLabelRef = React.ComponentRef<typeof LabelPrimitive.Root>;
-export type FormLabelProps = React.ComponentPropsWithoutRef<
-  typeof LabelPrimitive.Root
->;
+export type FormLabelRef = React.ComponentRef<typeof Label>;
+export type FormLabelProps = React.ComponentPropsWithoutRef<typeof Label>;
 
 export type FormControlRef = React.ComponentRef<typeof Slot>;
 export type FormControlProps = React.ComponentPropsWithoutRef<typeof Slot>;

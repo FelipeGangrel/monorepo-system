@@ -1,9 +1,8 @@
+import { Input } from '@felipegangrel/core-ui';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import React from 'react';
+import * as React from 'react';
 import { useForm } from 'react-hook-form';
-
-import { Input } from '@/components/ui/input';
 
 import { Form } from './form';
 

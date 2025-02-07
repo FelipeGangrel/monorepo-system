@@ -1,3 +1,4 @@
+import { Label } from '@felipegangrel/core-ui';
 import { Slot } from '@radix-ui/react-slot';
 import * as React from 'react';
 import {
@@ -9,7 +10,6 @@ import {
   useFormContext,
 } from 'react-hook-form';
 
-import { Label } from '@/components/ui/label/label';
 import { cn } from '@/lib/utils';
 
 import {
@@ -90,7 +90,7 @@ Form.Item = React.forwardRef<FormItemRef, FormItemProps>(
 
     return (
       <FormItemContext.Provider value={{ id }}>
-        <div ref={ref} className={cn('core-space-y-2', className)} {...props} />
+        <div ref={ref} className={cn('rhf-space-y-2', className)} {...props} />
       </FormItemContext.Provider>
     );
   }
@@ -104,7 +104,7 @@ Form.Label = React.forwardRef<FormLabelRef, FormLabelProps>(
     return (
       <Label
         ref={ref}
-        className={cn(error && 'text-destructive', className)}
+        className={cn(error && 'rhf-text-destructive', className)}
         htmlFor={formItemId}
         {...props}
       />
@@ -143,10 +143,7 @@ Form.Description = React.forwardRef<FormDescriptionRef, FormDescriptionProps>(
       <p
         ref={ref}
         id={formDescriptionId}
-        className={cn(
-          'core-text-[0.8rem] core-text-muted-foreground',
-          className
-        )}
+        className={cn('rhf-text-[0.8rem] rhf-text-muted-foreground', className)}
         {...props}
       />
     );
@@ -168,7 +165,7 @@ Form.Message = React.forwardRef<FormMessageRef, FormMessageProps>(
         ref={ref}
         id={formMessageId}
         className={cn(
-          'core-text-[0.8rem] core-font-medium core-text-destructive',
+          'rhf-text-[0.8rem] rhf-font-medium rhf-text-destructive',
           className
         )}
         {...props}
