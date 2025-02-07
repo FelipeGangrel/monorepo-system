@@ -1,10 +1,11 @@
 {
-  "name": "@felipegangrel/forms-ui",
+  "name": "@felipegangrel/react-hook-form",
   "version": "0.0.0",
   "dependencies": {
     "@felipegangrel/core-ui": "workspace:",
     "@felipegangrel/intl": "workspace:",
     "@hookform/resolvers": "catalog:",
+    "@radix-ui/react-slot": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "date-fns": "catalog:",
@@ -64,7 +65,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/FelipeGangrel/monorepo-system",
-    "directory": "packages/forms-ui"
+    "directory": "packages/react-hook-form"
   },
   "scripts": {
     "build": "tsup",
@@ -72,8 +73,8 @@
     "dev": "tsup --watch",
     "lint": "eslint --fix",
     "lint:check": "eslint",
-    "test": "jest --passWithNoTests",
-    "test:cov": "jest --coverage --passWithNoTests"
+    "test": "jest",
+    "test:cov": "jest --coverage"
   },
   "sideEffects": [
     "**/*.css"

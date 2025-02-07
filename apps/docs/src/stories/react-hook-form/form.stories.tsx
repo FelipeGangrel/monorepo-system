@@ -1,28 +1,22 @@
 import {
   Button,
-  Calendar,
   Checkbox,
-  Form,
   Input,
   Label,
-  Popover,
   Select,
   Switch,
 } from '@felipegangrel/core-ui';
+import { DatePicker, Form } from '@felipegangrel/react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { Meta } from '@storybook/react';
-import { format } from 'date-fns';
-import { CalendarIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-
-import { cn } from '@/lib/utils';
 
 /**
  * Building forms with React Hook Form and Zod.
  */
 const meta: Meta<typeof Form> = {
-  title: 'core-ui/Form',
+  title: 'react-hook-form/Form',
   component: Form,
   tags: ['autodocs'],
   parameters: {
@@ -37,7 +31,7 @@ const meta: Meta<typeof Form> = {
 
 export default meta;
 
-export const WithValidation = () => {
+export const Example = () => {
   const formSchema = z.object({
     populatedInput: z.string().optional(),
     requiredInput: z.string().min(1, {
@@ -46,7 +40,7 @@ export const WithValidation = () => {
     select: z.string().optional(),
     multipleCheckbox: z.array(z.string()).optional(),
     switch: z.boolean(),
-    date: z.date().optional(),
+    date: z.date(),
   });
 
   const form = useForm({
@@ -61,7 +55,7 @@ export const WithValidation = () => {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
+  const onSubmit = (data: Partial<z.infer<typeof formSchema>>) => {
     alert('Submitted value: ' + JSON.stringify(data));
   };
 
@@ -153,40 +147,12 @@ export const WithValidation = () => {
             render={({ field }) => (
               <Form.Item className="docs-flex docs-flex-col docs-gap-2">
                 <Form.Label>Date of birth</Form.Label>
-                <Popover>
-                  <Popover.Trigger asChild>
-                    <Form.Control>
-                      <Button
-                        variant={'outline'}
-                        className={cn(
-                          'docs-pl-3 docs-text-left docs-font-normal',
-                          !field.value && 'docs-text-muted-foreground'
-                        )}
-                      >
-                        {field.value ? (
-                          format(field.value, 'PPP')
-                        ) : (
-                          <span>Pick a date</span>
-                        )}
-                        <CalendarIcon className="docs-ml-auto docs-h-4 docs-w-4 docs-opacity-50" />
-                      </Button>
-                    </Form.Control>
-                  </Popover.Trigger>
-                  <Popover.Content
-                    className="docs-w-auto docs-p-0"
-                    align="start"
-                  >
-                    <Calendar
-                      mode="single"
-                      selected={field.value}
-                      onSelect={field.onChange}
-                      disabled={(date) =>
-                        date > new Date() || date < new Date('1900-01-01')
-                      }
-                      initialFocus
-                    />
-                  </Popover.Content>
-                </Popover>
+                <DatePicker
+                  clearable
+                  language={'en'}
+                  value={field.value}
+                  onChange={field.onChange}
+                />
                 <Form.Description>
                   Your date of birth is used to calculate your age.
                 </Form.Description>
