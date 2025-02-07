@@ -9,7 +9,7 @@ const intl = IntlHelper.create({
     es: 'No se encontraron resultados.',
     de: 'Keine Ergebnisse gefunden.',
   },
-} as const);
+} as const).setFallbackLanguage('pt');
 
 export { intl };
 export type { LanguageOption };

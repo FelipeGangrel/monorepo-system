@@ -1,5 +1,6 @@
 import '@felipegangrel/core-ui/styles.css';
 import '@felipegangrel/example-ui/styles.css';
+import '@felipegangrel/forms-ui/styles.css';
 import './docs.css';
 
 import type { Preview } from '@storybook/react';
