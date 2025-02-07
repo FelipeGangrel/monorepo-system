@@ -95,7 +95,7 @@ const Pagination: React.FunctionComponent<Props> = ({
                 table.setPageSize(Number(value));
               }}
             >
-              <Select.Trigger className="h-8 w-[70px]">
+              <Select.Trigger className="core-h-8 core-w-[70px]">
                 <Select.Value
                   placeholder={table.getState().pagination.pageSize}
                 />
