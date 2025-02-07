@@ -2,6 +2,9 @@ import { Card, Carousel, type CarouselApi } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import * as React from 'react';
 
+/**
+ * A carousel with motion and swipe built using Embla.
+ */
 const meta: Meta<typeof Carousel> = {
   title: 'core-ui/Carousel',
   component: Carousel,
@@ -15,7 +18,7 @@ export default meta;
 
 type Story = StoryObj<typeof Carousel>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     className: 'docs-w-full docs-max-w-sm',
     opts: { align: 'start' },
@@ -81,7 +84,13 @@ export const VerticalOrientationAndLoop: Story = {
   ),
 };
 
-export const WithApi = () => {
+/**
+ * A carousel story showcasing the usage of the Carousel component
+ * along with its API handling. This example demonstrates how to
+ * interface with the Carousel API, track the currently displayed
+ * slide, and total slide count.
+ */
+export const WithCarouselAPI = () => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);

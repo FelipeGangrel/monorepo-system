@@ -1,6 +1,9 @@
 import { Menubar } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
+/**
+ * A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+ */
 const meta: Meta<typeof Menubar> = {
   title: 'core-ui/Menubar',
   component: Menubar,
@@ -14,7 +17,7 @@ export default meta;
 
 type Story = StoryObj<typeof Menubar>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     children: (
       <>

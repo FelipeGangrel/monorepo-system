@@ -8,7 +8,7 @@ class DataTableHelper<TData = any> {
     return {
       id: 'selection',
       cell: ({ row }) => (
-        <div className="flex h-5 w-5 items-center justify-center">
+        <div className="core-flex core-h-5 core-w-5 core-items-center core-justify-center">
           <Checkbox
             checked={row.getIsSelected()}
             onCheckedChange={(value) => row.toggleSelected(!!value)}
@@ -25,7 +25,7 @@ class DataTableHelper<TData = any> {
     return {
       id: 'selection',
       header: ({ table }) => (
-        <div className="flex h-5 w-5 items-center justify-center">
+        <div className="core-flex core-h-5 core-w-5 core-items-center core-justify-center">
           <Checkbox
             checked={
               table.getIsAllPageRowsSelected() ||
@@ -39,7 +39,7 @@ class DataTableHelper<TData = any> {
         </div>
       ),
       cell: ({ row }) => (
-        <div className="flex h-5 w-5 items-center justify-center">
+        <div className="core-flex core-h-5 core-w-5 core-items-center core-justify-center">
           <Checkbox
             checked={row.getIsSelected()}
             onCheckedChange={(value) => row.toggleSelected(!!value)}
@@ -56,7 +56,7 @@ class DataTableHelper<TData = any> {
     return {
       id: 'selection',
       header: ({ table }) => (
-        <div className="flex h-5 w-5 items-center justify-center">
+        <div className="core-flex core-h-5 core-w-5 core-items-center core-justify-center">
           <Checkbox
             checked={
               table.getIsAllRowsSelected() ||
@@ -68,7 +68,7 @@ class DataTableHelper<TData = any> {
         </div>
       ),
       cell: ({ row }) => (
-        <div className="flex h-5 w-5 items-center justify-center">
+        <div className="core-flex core-h-5 core-w-5 core-items-center core-justify-center">
           <Checkbox
             checked={row.getIsSelected()}
             onCheckedChange={(value) => row.toggleSelected(!!value)}

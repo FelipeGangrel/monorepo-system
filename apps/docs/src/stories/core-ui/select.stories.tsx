@@ -1,6 +1,9 @@
 import { Select } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
+/**
+ * Displays a list of options for the user to pick from—triggered by a button.
+ */
 const meta: Meta<typeof Select> = {
   title: 'core-ui/Select',
   component: Select,
@@ -14,7 +17,7 @@ export default meta;
 
 type Story = StoryObj<typeof Select>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     children: (
       <>

@@ -2,7 +2,6 @@ import {
   Button,
   Calendar,
   Checkbox,
-  cn,
   Form,
   Input,
   Label,
@@ -17,6 +16,11 @@ import { CalendarIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { cn } from '@/lib/utils';
+
+/**
+ * Building forms with React Hook Form and Zod.
+ */
 const meta: Meta<typeof Form> = {
   title: 'core-ui/Form',
   component: Form,

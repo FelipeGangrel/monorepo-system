@@ -21,6 +21,9 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('storybook-dark-mode'),
   ],
+  features: {
+    backgroundsStoryGlobals: true,
+  },
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},

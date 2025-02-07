@@ -4,6 +4,9 @@ import { Minus, Plus } from 'lucide-react';
 import * as React from 'react';
 import { Bar, BarChart, ResponsiveContainer } from 'recharts';
 
+/**
+ * A drawer component for React.
+ */
 const meta: Meta<typeof Drawer> = {
   title: 'core-ui/Drawer',
   component: Drawer,
@@ -17,7 +20,7 @@ export default meta;
 
 type Story = StoryObj<typeof Drawer>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     children: (
       <>
@@ -45,45 +48,19 @@ export const Default: Story = {
 
 export const WithChart = () => {
   const data = [
-    {
-      goal: 400,
-    },
-    {
-      goal: 300,
-    },
-    {
-      goal: 200,
-    },
-    {
-      goal: 300,
-    },
-    {
-      goal: 200,
-    },
-    {
-      goal: 278,
-    },
-    {
-      goal: 189,
-    },
-    {
-      goal: 239,
-    },
-    {
-      goal: 300,
-    },
-    {
-      goal: 200,
-    },
-    {
-      goal: 278,
-    },
-    {
-      goal: 189,
-    },
-    {
-      goal: 349,
-    },
+    { goal: 400 },
+    { goal: 300 },
+    { goal: 200 },
+    { goal: 300 },
+    { goal: 200 },
+    { goal: 278 },
+    { goal: 189 },
+    { goal: 239 },
+    { goal: 300 },
+    { goal: 200 },
+    { goal: 278 },
+    { goal: 189 },
+    { goal: 349 },
   ];
 
   const [goal, setGoal] = React.useState(350);

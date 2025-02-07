@@ -2,6 +2,9 @@ import { InputOTP, InputOTPPattern } from '@felipegangrel/core-ui';
 import { Meta, StoryObj } from '@storybook/react';
 import { MinusIcon } from 'lucide-react';
 
+/**
+ * Accessible one-time password component with copy paste functionality.
+ */
 const meta: Meta<typeof InputOTP> = {
   title: 'core-ui/InputOTP',
   component: InputOTP,
@@ -15,7 +18,7 @@ export default meta;
 
 type Story = StoryObj<typeof InputOTP>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     maxLength: 6,
     children: (

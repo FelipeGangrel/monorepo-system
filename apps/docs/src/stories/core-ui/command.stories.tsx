@@ -10,6 +10,9 @@ import {
 } from 'lucide-react';
 import * as React from 'react';
 
+/**
+ * Fast, composable, unstyled command menu for React.
+ */
 const meta: Meta<typeof Command> = {
   title: 'core-ui/Command',
   component: Command,
@@ -23,7 +26,7 @@ export default meta;
 
 type Story = StoryObj<typeof Command>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     className: 'docs-w-screen docs-max-w-[400px]',
     children: (
@@ -48,6 +51,13 @@ export const Default: Story = {
   },
 };
 
+/**
+ * A Command component demonstrating a dialog with keyboard shortcut support.
+ * Features include:
+ * - Shortcut: Press ⌘+J (Mac) or Ctrl+J (Windows) to open/close the command menu.
+ * - Includes input for searching and categorized command groups.
+ * - Interactive list items with icons and shortcuts for quick access.
+ */
 export const WithKeyboardShortcut = () => {
   const [open, setOpen] = React.useState(false);
 

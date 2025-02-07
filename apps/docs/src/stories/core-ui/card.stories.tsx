@@ -2,6 +2,9 @@ import { Button, Card, Switch } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 import { BellRingIcon, CheckIcon } from 'lucide-react';
 
+/**
+ * Displays a card with header, content, and footer.
+ */
 const meta: Meta<typeof Card> = {
   title: 'core-ui/Card',
   component: Card,
@@ -18,7 +21,7 @@ export default meta;
 
 type Story = StoryObj<typeof Card>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     children: (
       <>

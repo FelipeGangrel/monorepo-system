@@ -1,6 +1,9 @@
 import { AlertDialog, Button } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
+/**
+ * A modal dialog that interrupts the user with important content and expects a response.
+ */
 const meta: Meta<typeof AlertDialog> = {
   title: 'core-ui/AlertDialog',
   tags: ['autodocs'],
@@ -14,7 +17,7 @@ export default meta;
 
 type Story = StoryObj<typeof AlertDialog>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     children: (
       <>

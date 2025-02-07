@@ -1,6 +1,9 @@
 import { ContextMenu } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
+/**
+ * Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+ */
 const meta: Meta<typeof ContextMenu> = {
   title: 'core-ui/ContextMenu',
   component: ContextMenu,
@@ -14,7 +17,13 @@ export default meta;
 
 type Story = StoryObj<typeof ContextMenu>;
 
-export const Default: Story = {
+/**
+ * An example usage of the `ContextMenu` component, showcasing various menu items,
+ * submenus, shortcuts, and states (e.g., disabled, checked).
+ *
+ * Right-click to open the context menu
+ */
+export const Example: Story = {
   args: {
     children: (
       <>

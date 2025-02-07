@@ -12,10 +12,14 @@ const dictionary = intl.makeDictionary({
   viewOptionsLabel: {
     en: 'View',
     pt: 'Exibição',
+    es: 'Ver',
+    de: 'Ansicht',
   },
   toggleColumnsLabel: {
     en: 'Toggle columns',
     pt: 'Exibir colunas',
+    es: 'Alternar columnas',
+    de: 'Spalten umschalten',
   },
 } as const);
 
