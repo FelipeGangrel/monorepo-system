@@ -14,6 +14,9 @@ const meta: Meta<typeof DataTable> = {
       </div>
     ),
   ],
+  args: {
+    language: 'pt',
+  },
   argTypes: {
     columns: {
       control: false,
@@ -22,8 +25,8 @@ const meta: Meta<typeof DataTable> = {
       control: false,
     },
     language: {
-      control: { type: 'select' },
-      options: ['en', 'pt'],
+      control: { type: 'radio' },
+      options: ['en', 'pt', 'es', 'de'],
     },
   },
 };
@@ -106,50 +109,70 @@ export const Default: Story = {
   ),
 };
 
-export const WithViewOptions = () => {
-  return (
-    <DataTable columns={columns} data={payments.slice(0, 10)}>
+export const WithViewOptions: Story = {
+  args: {
+    columns,
+    data: payments.slice(0, 10),
+  },
+  render: (args) => (
+    <DataTable {...args}>
       <div className="docs-flex docs-justify-between docs-gap-4">
         <DataTable.ViewOptions />
       </div>
       <DataTable.Content />
     </DataTable>
-  );
+  ),
 };
 
-export const WithPagination = () => {
-  return (
-    <DataTable columns={columns} data={payments}>
+export const WithPagination: Story = {
+  args: {
+    columns,
+    data: payments,
+  },
+  render: (args) => (
+    <DataTable {...args}>
       <DataTable.Content />
       <DataTable.Pagination />
     </DataTable>
-  );
+  ),
 };
 
-export const WithCustomPageSizeAndOptions = () => {
-  return (
-    <DataTable columns={columns} data={payments}>
+export const WithCustomPageSizeAndOptions: Story = {
+  args: {
+    columns,
+    data: payments,
+  },
+  render: (args) => (
+    <DataTable {...args}>
       <DataTable.Content />
       <DataTable.Pagination pageSizeOptions={[5, 10]} pageSize={5} />
     </DataTable>
-  );
+  ),
 };
 
-export const WithFilter = () => {
-  return (
-    <DataTable columns={columns} data={payments}>
+export const WithFilter: Story = {
+  args: {
+    columns,
+    data: payments,
+  },
+  render: (args) => (
+    <DataTable {...args}>
       <div className="docs-flex docs-justify-between docs-gap-4">
         <DataTable.Filter filterBy={'name'} placeholder={'Filter by name'} />
       </div>
       <DataTable.Content />
       <DataTable.Pagination />
     </DataTable>
-  );
+  ),
 };
 
-export const WithFuzzyFilter = () => {
-  return (
-    <DataTable columns={columns} data={payments}>
+export const WithFuzzyFilter: Story = {
+  args: {
+    columns,
+    data: payments,
+  },
+  render: (args) => (
+    <DataTable {...args}>
       <div className="docs-flex docs-justify-between docs-gap-4">
         <DataTable.FuzzyFilter placeholder={'Fuzzy filter'} />
         <DataTable.ViewOptions />
@@ -157,50 +180,74 @@ export const WithFuzzyFilter = () => {
       <DataTable.Content />
       <DataTable.Pagination />
     </DataTable>
-  );
+  ),
 };
 
-export const WithSelectionByRow = () => {
-  return (
-    <DataTable selectionMode="row" columns={columns} data={payments}>
+export const WithSelectionByRow: Story = {
+  args: {
+    columns,
+    data: payments,
+    selectionMode: 'row',
+  },
+  render: (args) => (
+    <DataTable {...args}>
       <DataTable.Content />
       <DataTable.Pagination />
     </DataTable>
-  );
+  ),
 };
 
-export const WithSelectionByPage = () => {
-  return (
-    <DataTable selectionMode="page" columns={columns} data={payments}>
+export const WithSelectionByPage: Story = {
+  args: {
+    columns,
+    data: payments,
+    selectionMode: 'page',
+  },
+  render: (args) => (
+    <DataTable {...args}>
       <DataTable.Content />
       <DataTable.Pagination />
     </DataTable>
-  );
+  ),
 };
 
-export const WithSelectionByTable = () => {
-  return (
-    <DataTable selectionMode="table" columns={columns} data={payments}>
+export const WithSelectionByTable: Story = {
+  args: {
+    columns,
+    data: payments,
+    selectionMode: 'table',
+  },
+  render: (args) => (
+    <DataTable {...args}>
       <DataTable.Content />
       <DataTable.Pagination />
     </DataTable>
-  );
+  ),
 };
 
-export const WithHiddenSelectionInfo = () => {
-  return (
-    <DataTable selectionMode="row" columns={columns} data={payments}>
+export const WithHiddenSelectionInfo: Story = {
+  args: {
+    columns,
+    data: payments,
+    selectionMode: 'row',
+  },
+  render: (args) => (
+    <DataTable {...args}>
       <DataTable.Content />
       <DataTable.Pagination hideSelectionInfo />
     </DataTable>
-  );
+  ),
 };
 
-export const WithHiddenPageSizeSelector = () => {
-  return (
-    <DataTable columns={columns} data={payments}>
+export const WithHiddenPageSizeSelector: Story = {
+  args: {
+    columns,
+    data: payments,
+  },
+  render: (args) => (
+    <DataTable {...args}>
       <DataTable.Content />
       <DataTable.Pagination hidePageSizeSelector />
     </DataTable>
-  );
+  ),
 };
