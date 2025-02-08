@@ -1,3 +1,3 @@
 export * from './date-formater';
-export * from './infer-locale-by-language';
+export * from './infer-locale-from-language';
 export * from './translation-manager';
