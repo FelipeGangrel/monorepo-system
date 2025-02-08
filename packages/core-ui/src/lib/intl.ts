@@ -1,4 +1,5 @@
 import {
+  inferLocaleFromLanguage,
   type LanguageOption,
   makeDateFormatter,
   TranslationManager,
@@ -13,5 +14,5 @@ const intl = TranslationManager.create({
   },
 } as const).setFallbackLanguage('pt');
 
-export { intl, makeDateFormatter };
+export { inferLocaleFromLanguage, intl, makeDateFormatter };
 export type { LanguageOption };

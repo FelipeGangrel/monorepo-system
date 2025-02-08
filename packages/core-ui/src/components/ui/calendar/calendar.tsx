@@ -3,18 +3,27 @@ import * as React from 'react';
 import { DayPicker } from 'react-day-picker';
 
 import { buttonVariants } from '@/components/ui/button';
+import { inferLocaleFromLanguage, type LanguageOption } from '@/lib/intl';
 import { cn } from '@/lib/utils';
 
-type CalendarProps = React.ComponentProps<typeof DayPicker>;
+type CalendarProps = React.ComponentProps<typeof DayPicker> & {
+  /**
+   * Optional language parameter to infer the locale property
+   * for the Calendar
+   */
+  language?: LanguageOption;
+};
 
 function Calendar({
   className,
   classNames,
   showOutsideDays = true,
+  language,
   ...props
 }: CalendarProps) {
   return (
     <DayPicker
+      locale={language && inferLocaleFromLanguage(language)}
       showOutsideDays={showOutsideDays}
       className={cn('core-p-3', className)}
       classNames={{
