@@ -1,10 +1,14 @@
 import { Button, Calendar, Popover } from '@felipegangrel/core-ui';
-import { format } from 'date-fns';
 import { CalendarIcon, XIcon } from 'lucide-react';
 import * as React from 'react';
 
 import { Form } from '@/components/form';
-import { intl, LanguageOption } from '@/lib/intl';
+import {
+  inferLocaleFromLanguage,
+  intl,
+  LanguageOption,
+  makeDateFormatter,
+} from '@/lib/intl';
 import { cn } from '@/lib/utils';
 
 const dictionary = intl.makeDictionary({
@@ -27,17 +31,19 @@ type DatePickerProps = React.HTMLAttributes<HTMLElement> & {
 
 const DatePicker = ({
   className,
-  language,
   placeholder,
   clearable,
-  value: selected,
   onChange,
+  value: selected,
+  language = 'pt',
   dateFormat = 'PPP',
 }: DatePickerProps) => {
   const t = intl.makeTranslator({
     dictionary,
     language,
   });
+
+  const d = makeDateFormatter(language);
 
   const onClear = React.useCallback(
     (event: React.MouseEvent) => {
@@ -60,9 +66,7 @@ const DatePicker = ({
             )}
           >
             <CalendarIcon className="rhf-mr-2 rhf-h-4 rhf-w-4" />
-            {selected
-              ? format(selected, dateFormat)
-              : placeholder || t('pickADate')}
+            {selected ? d(selected, dateFormat) : placeholder || t('pickADate')}
             {clearable && selected && (
               <span className="rhf-ml-auto" onClick={onClear}>
                 <XIcon className="rhf-ml-2 rhf-h-4 rhf-w-4 rhf-text-muted-foreground hover:rhf-text-foreground" />
@@ -74,6 +78,7 @@ const DatePicker = ({
       </Popover.Trigger>
       <Popover.Content className="rhf-w-auto rhf-p-0">
         <Calendar
+          locale={inferLocaleFromLanguage(language)}
           mode="single"
           selected={selected}
           onSelect={onChange}

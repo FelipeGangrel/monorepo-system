@@ -22,7 +22,6 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "catalog:",
     "@eslint/js": "catalog:",
     "@storybook/addon-a11y": "catalog:",
     "@storybook/addon-essentials": "catalog:",

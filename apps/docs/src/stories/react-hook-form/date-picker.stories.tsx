@@ -1,7 +1,8 @@
 import { Button } from '@felipegangrel/core-ui';
 import { DatePicker, Form } from '@felipegangrel/react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { Meta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
+import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -12,6 +13,10 @@ const meta: Meta<typeof DatePicker> = {
   title: 'react-hook-form/DatePicker',
   component: DatePicker,
   tags: ['autodocs'],
+  argTypes: {
+    language: { control: 'select', options: ['en', 'pt', 'es', 'de'] },
+    clearable: { control: 'boolean' },
+  },
   parameters: {
     layout: 'centered',
     docs: {
@@ -24,7 +29,9 @@ const meta: Meta<typeof DatePicker> = {
 
 export default meta;
 
-export const Example = () => {
+type Story = StoryObj<typeof DatePicker>;
+
+const Template = (args: React.ComponentProps<typeof DatePicker>) => {
   const formSchema = z.object({
     date: z.date(),
   });
@@ -51,7 +58,7 @@ export const Example = () => {
               <Form.Item>
                 <Form.Label>Date</Form.Label>
                 <DatePicker
-                  clearable
+                  {...args}
                   value={field.value}
                   onChange={field.onChange}
                 />
@@ -64,4 +71,12 @@ export const Example = () => {
       </Form>
     </div>
   );
+};
+
+export const Example: Story = {
+  args: {
+    language: 'en',
+    clearable: true,
+  },
+  render: (args) => <Template {...args} />,
 };

@@ -16,6 +16,10 @@ const meta: Meta<typeof Calendar> = {
   tags: ['autodocs'],
   args: {
     showOutsideDays: true,
+    language: 'pt',
+  },
+  argTypes: {
+    language: { control: 'select', options: ['en', 'pt', 'es', 'de'] },
   },
   parameters: {
     layout: 'centered',
@@ -31,9 +35,7 @@ const today = new Date();
 export const Example: Story = {
   args: {
     mode: 'single',
-    onSelect: (value) => {
-      console.log(value);
-    },
+    onSelect: console.log,
   },
 };
 
