@@ -243,6 +243,9 @@ catalogs:
     tailwindcss-animate:
       specifier: ^1.0.7
       version: 1.0.7
+    timezone-mock:
+      specifier: ^1.3.6
+      version: 1.3.6
     ts-node:
       specifier: ^10.9.2
       version: 10.9.2
@@ -781,6 +784,9 @@ importers:
       jest-environment-node:
         specifier: 'catalog:'
         version: 29.7.0
+      timezone-mock:
+        specifier: 'catalog:'
+        version: 1.3.6
       ts-node:
         specifier: 'catalog:'
         version: 10.9.2(@swc/core@1.10.14)(@types/node@22.13.1)(typescript@5.6.3)
@@ -5452,6 +5458,9 @@ packages:
   tightrope@0.2.0:
     resolution: {integrity: sha512-Kw36UHxJEELq2VUqdaSGR2/8cAsPgMtvX8uGVU6Jk26O66PhXec0A5ZnRYs47btbtwPDpXXF66+Fo3vimCM9aQ==}
     engines: {node: '>=16'}
+
+  timezone-mock@1.3.6:
+    resolution: {integrity: sha512-YcloWmZfLD9Li5m2VcobkCDNVaLMx8ohAb/97l/wYS3m+0TIEK5PFNMZZfRcusc6sFjIfxu8qcJT0CNnOdpqmg==}
 
   tiny-invariant@1.3.3:
     resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
@@ -10995,6 +11004,8 @@ snapshots:
       any-promise: 1.3.0
 
   tightrope@0.2.0: {}
+
+  timezone-mock@1.3.6: {}
 
   tiny-invariant@1.3.3: {}
 

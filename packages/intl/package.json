@@ -1,6 +1,9 @@
 {
   "name": "@felipegangrel/intl",
   "version": "0.0.0",
+  "dependencies": {
+    "date-fns": "catalog:"
+  },
   "devDependencies": {
     "@eslint/js": "catalog:",
     "@swc/core": "catalog:",
@@ -13,6 +16,7 @@
     "jest": "catalog:",
     "jest-config": "workspace:*",
     "jest-environment-node": "catalog:",
+    "timezone-mock": "catalog:",
     "ts-node": "catalog:",
     "tsup": "catalog:",
     "typescript-config": "workspace:*",
@@ -49,8 +53,5 @@
     "test:cov": "jest --coverage"
   },
   "type": "module",
-  "types": "dist/index.d.ts",
-  "dependencies": {
-    "date-fns": "catalog:"
-  }
+  "types": "dist/index.d.ts"
 }
