@@ -29,11 +29,10 @@
     "embla-carousel-react": "catalog:",
     "input-otp": "catalog:",
     "lucide-react": "catalog:",
-    "react": "catalog:react19",
     "react-day-picker": "catalog:",
-    "react-dom": "catalog:react19",
     "react-hook-form": "catalog:",
     "recharts": "catalog:",
+    "sonner": "catalog:",
     "tailwind-merge": "catalog:",
     "tailwindcss-animate": "catalog:",
     "vaul": "catalog:",
@@ -56,6 +55,8 @@
     "jest-environment-jsdom": "catalog:",
     "jest-matchmedia-mock": "catalog:",
     "postcss": "catalog:",
+    "react": "catalog:react19",
+    "react-dom": "catalog:react19",
     "tailwind-config": "workspace:*",
     "tailwindcss": "catalog:",
     "tsup": "catalog:",
@@ -75,6 +76,11 @@
   ],
   "main": "dist/index.cjs",
   "module": "dist/index.js",
+  "peerDependencies": {
+    "react": ">= 19",
+    "react-dom": ">= 19",
+    "sonner": "catalog:"
+  },
   "publishConfig": {
     "access": "restricted",
     "registry": "https://npm.pkg.github.com/FelipeGangrel"

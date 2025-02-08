@@ -10,9 +10,7 @@
     "clsx": "catalog:",
     "date-fns": "catalog:",
     "lucide-react": "catalog:",
-    "react": "catalog:react19",
     "react-day-picker": "catalog:",
-    "react-dom": "catalog:react19",
     "react-hook-form": "catalog:",
     "tailwind-merge": "catalog:",
     "tailwindcss-animate": "catalog:",
@@ -36,6 +34,8 @@
     "jest-environment-jsdom": "catalog:",
     "jest-matchmedia-mock": "catalog:",
     "postcss": "catalog:",
+    "react": "catalog:react19",
+    "react-dom": "catalog:react19",
     "tailwind-config": "workspace:*",
     "tailwindcss": "catalog:",
     "tsup": "catalog:",
@@ -56,7 +56,9 @@
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "peerDependencies": {
-    "@felipegangrel/core-ui": "workspace:"
+    "@felipegangrel/core-ui": "workspace:",
+    "react": ">= 19",
+    "react-dom": ">= 19"
   },
   "publishConfig": {
     "access": "restricted",
