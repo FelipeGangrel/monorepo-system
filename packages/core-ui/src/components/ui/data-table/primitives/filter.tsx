@@ -14,7 +14,7 @@ const Filter: React.FunctionComponent<Props> = ({
   filterBy,
   ...props
 }) => {
-  const { table } = React.useContext(DataTableContext);
+  const { table } = React.use(DataTableContext);
 
   return (
     <Input

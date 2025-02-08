@@ -1,8 +1,10 @@
-import { DictionaryEntry, IntlHelper } from '@felipegangrel/intl';
+import {
+  type LanguageOption,
+  makeDateFormatter,
+  TranslationManager,
+} from '@felipegangrel/intl';
 
-type LanguageOption = keyof DictionaryEntry;
-
-const intl = IntlHelper.create({
+const intl = TranslationManager.create({
   noResultsFound: {
     en: 'No results found.',
     pt: 'Nenhum resultado encontrado.',
@@ -11,5 +13,5 @@ const intl = IntlHelper.create({
   },
 } as const).setFallbackLanguage('pt');
 
-export { intl };
+export { intl, makeDateFormatter };
 export type { LanguageOption };

@@ -27,7 +27,7 @@ const ViewOptions: React.FunctionComponent<ButtonProps> = ({
   className,
   ...props
 }) => {
-  const { table, language } = React.useContext(DataTableContext);
+  const { table, language } = React.use(DataTableContext);
   const t = intl.makeTranslator({
     dictionary,
     language,

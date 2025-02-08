@@ -5,27 +5,30 @@ interface DictionaryEntry {
   de?: string;
 }
 
+type LanguageOption = keyof DictionaryEntry;
+
 type Dictionary = {
   readonly [key: string]: Readonly<DictionaryEntry>;
 };
 
-class IntlHelper<T extends Dictionary> {
-  private fallbackLanguage: keyof DictionaryEntry = 'en';
-  private constructor(private readonly _baseDictionary: T) {}
+class TranslationManager<T extends Dictionary> {
+  private fallbackLanguage: LanguageOption = 'en';
+
+  private constructor(private readonly _baseDictionary: T = {} as T) {}
 
   /**
    * Creates an instance of IntlHelper initializing the default dictionary
    */
   public static create<T extends Dictionary>(
-    defaultDictionary: T
-  ): IntlHelper<T> {
-    return new IntlHelper(defaultDictionary);
+    defaultDictionary?: T
+  ): TranslationManager<T> {
+    return new TranslationManager(defaultDictionary);
   }
 
   /**
    * Sets the fallback language
    */
-  public setFallbackLanguage(language: keyof DictionaryEntry) {
+  public setFallbackLanguage(language: LanguageOption) {
     this.fallbackLanguage = language;
     return this;
   }
@@ -61,7 +64,7 @@ class IntlHelper<T extends Dictionary> {
    */
   public makeTranslator<T extends Dictionary>(options: {
     dictionary: T;
-    language?: keyof DictionaryEntry;
+    language?: LanguageOption;
   }) {
     const { dictionary, language = this.fallbackLanguage } = options;
 
@@ -91,5 +94,5 @@ class IntlHelper<T extends Dictionary> {
   }
 }
 
-export { IntlHelper };
-export type { Dictionary, DictionaryEntry };
+export { TranslationManager };
+export type { Dictionary, DictionaryEntry, LanguageOption };

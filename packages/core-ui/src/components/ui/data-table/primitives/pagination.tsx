@@ -54,7 +54,7 @@ const Pagination: React.FunctionComponent<Props> = ({
   hidePageSizeSelector = false,
   ...props
 }) => {
-  const { table, language, selectionMode } = React.useContext(DataTableContext);
+  const { table, language, selectionMode } = React.use(DataTableContext);
   const t = intl.makeTranslator({
     dictionary,
     language,
