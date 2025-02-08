@@ -743,6 +743,10 @@ importers:
         version: 8.23.0(eslint@9.19.0(jiti@1.21.7))(typescript@5.6.3)
 
   packages/intl:
+    dependencies:
+      date-fns:
+        specifier: 'catalog:'
+        version: 4.1.0
     devDependencies:
       '@eslint/js':
         specifier: 'catalog:'

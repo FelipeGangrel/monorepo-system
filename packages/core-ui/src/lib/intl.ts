@@ -1,4 +1,8 @@
-import { type LanguageOption, TranslationManager } from '@felipegangrel/intl';
+import {
+  type LanguageOption,
+  makeDateFormatter,
+  TranslationManager,
+} from '@felipegangrel/intl';
 
 const intl = TranslationManager.create({
   noResultsFound: {
@@ -9,5 +13,5 @@ const intl = TranslationManager.create({
   },
 } as const).setFallbackLanguage('pt');
 
-export { intl };
+export { intl, makeDateFormatter };
 export type { LanguageOption };

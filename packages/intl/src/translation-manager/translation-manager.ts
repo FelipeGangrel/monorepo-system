@@ -13,6 +13,7 @@ type Dictionary = {
 
 class TranslationManager<T extends Dictionary> {
   private fallbackLanguage: LanguageOption = 'en';
+
   private constructor(private readonly _baseDictionary: T = {} as T) {}
 
   /**

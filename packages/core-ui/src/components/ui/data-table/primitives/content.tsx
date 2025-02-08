@@ -14,7 +14,7 @@ const Content: React.FunctionComponent<ContentProps> = ({
   className,
   ...props
 }) => {
-  const { table, language } = React.useContext(DataTableContext);
+  const { table, language } = React.use(DataTableContext);
 
   const t = intl.makeTranslator({
     dictionary: intl.baseDictionary,

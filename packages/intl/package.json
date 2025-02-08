@@ -49,5 +49,8 @@
     "test:cov": "jest --coverage"
   },
   "type": "module",
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "date-fns": "catalog:"
+  }
 }
