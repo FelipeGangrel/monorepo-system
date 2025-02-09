@@ -6,7 +6,7 @@ import { toast } from 'sonner';
  * An opinionated toast component for React.
  */
 const meta = {
-  title: 'core-ui/Toast',
+  title: 'Core UI/Toast',
   decorators: [
     (Story: React.FC) => (
       <div>

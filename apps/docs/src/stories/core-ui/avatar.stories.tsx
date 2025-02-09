@@ -5,7 +5,7 @@ import { Meta } from '@storybook/react';
  * An image element with a fallback for representing the user.
  */
 const meta: Meta<typeof Avatar> = {
-  title: 'core-ui/Avatar',
+  title: 'Core UI/Avatar',
   component: Avatar,
   tags: ['autodocs'],
   parameters: {

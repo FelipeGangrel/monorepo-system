@@ -6,7 +6,7 @@ import * as React from 'react';
  * Displays a menu to the user — such as a set of actions or functions — triggered by a button.
  */
 const meta: Meta<typeof DropdownMenu> = {
-  title: 'core-ui/DropdownMenu',
+  title: 'Core UI/DropdownMenu',
   component: DropdownMenu,
   tags: ['autodocs'],
   parameters: {

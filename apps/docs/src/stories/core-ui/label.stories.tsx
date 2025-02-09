@@ -5,7 +5,7 @@ import { Meta, StoryObj } from '@storybook/react';
  * Renders an accessible label associated with controls.
  */
 const meta: Meta<typeof Label> = {
-  title: 'core-ui/Label',
+  title: 'Core UI/Label',
   component: Label,
   tags: ['autodocs'],
   parameters: {

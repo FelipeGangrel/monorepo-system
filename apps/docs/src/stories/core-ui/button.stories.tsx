@@ -6,7 +6,7 @@ import { SmileIcon } from 'lucide-react';
  * Displays a button or a component that looks like a button.
  */
 const meta: Meta<typeof Button> = {
-  title: 'core-ui/Button',
+  title: 'Core UI/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {

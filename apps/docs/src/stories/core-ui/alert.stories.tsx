@@ -6,7 +6,7 @@ import { AlertTriangleIcon } from 'lucide-react';
  * Displays a callout for user attention.
  */
 const meta: Meta<typeof Alert> = {
-  title: 'core-ui/Alert',
+  title: 'Core UI/Alert',
   component: Alert,
   tags: ['autodocs'],
   argTypes: {

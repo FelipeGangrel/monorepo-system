@@ -5,7 +5,7 @@ import { Meta, StoryObj } from '@storybook/react';
  * Displays content within a desired ratio.
  */
 const meta: Meta<typeof AspectRatio> = {
-  title: 'core-ui/AspectRatio',
+  title: 'Core UI/AspectRatio',
   component: AspectRatio,
   tags: ['autodocs'],
   decorators: [

@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * Displays a menu to the user — such as a set of actions or functions — triggered by a button.
  */
 const meta: Meta<typeof ContextMenu> = {
-  title: 'core-ui/ContextMenu',
+  title: 'Core UI/ContextMenu',
   component: ContextMenu,
   tags: ['autodocs'],
   parameters: {

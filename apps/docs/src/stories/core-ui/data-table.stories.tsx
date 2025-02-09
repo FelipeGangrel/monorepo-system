@@ -7,7 +7,7 @@ import { ColumnDef } from '@tanstack/react-table';
  * Powerful table and datagrids built using TanStack Table.
  */
 const meta: Meta<typeof DataTable> = {
-  title: 'core-ui/DataTable',
+  title: 'Core UI/DataTable',
   component: DataTable,
   tags: ['autodocs'],
   decorators: [

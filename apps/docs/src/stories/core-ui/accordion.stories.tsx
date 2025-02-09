@@ -5,7 +5,7 @@ import { Meta, StoryObj } from '@storybook/react';
  * A vertically stacked set of interactive headings that each reveal a section of content.
  */
 const meta: Meta<typeof Accordion> = {
-  title: 'core-ui/Accordion',
+  title: 'Core UI/Accordion',
   component: Accordion,
   tags: ['autodocs'],
   args: {

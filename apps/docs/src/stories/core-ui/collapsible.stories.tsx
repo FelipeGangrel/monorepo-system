@@ -6,7 +6,7 @@ import { ChevronsUpDown } from 'lucide-react';
  * An interactive component which expands/collapses a panel.
  */
 const meta: Meta<typeof Collapsible> = {
-  title: 'core-ui/Collapsible',
+  title: 'Core UI/Collapsible',
   component: Collapsible,
   tags: ['autodocs'],
   parameters: {

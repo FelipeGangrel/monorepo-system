@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * A responsive table component.
  */
 const meta: Meta<typeof Table> = {
-  title: 'core-ui/Table',
+  title: 'Core UI/Table',
   component: Table,
   tags: ['autodocs'],
   parameters: {

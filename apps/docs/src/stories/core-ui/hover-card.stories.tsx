@@ -6,7 +6,7 @@ import { CalendarDaysIcon } from 'lucide-react';
  * For sighted users to preview content available behind a link.
  */
 const meta: Meta<typeof HoverCard> = {
-  title: 'core-ui/HoverCard',
+  title: 'Core UI/HoverCard',
   component: HoverCard,
   tags: ['autodocs'],
   parameters: {

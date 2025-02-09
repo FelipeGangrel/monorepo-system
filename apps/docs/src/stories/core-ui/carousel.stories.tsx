@@ -6,7 +6,7 @@ import * as React from 'react';
  * A carousel with motion and swipe built using Embla.
  */
 const meta: Meta<typeof Carousel> = {
-  title: 'core-ui/Carousel',
+  title: 'Core UI/Carousel',
   component: Carousel,
   tags: ['autodocs'],
   parameters: {

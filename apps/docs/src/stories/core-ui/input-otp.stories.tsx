@@ -6,7 +6,7 @@ import { MinusIcon } from 'lucide-react';
  * Accessible one-time password component with copy paste functionality.
  */
 const meta: Meta<typeof InputOTP> = {
-  title: 'core-ui/InputOTP',
+  title: 'Core UI/InputOTP',
   component: InputOTP,
   tags: ['autodocs'],
   parameters: {

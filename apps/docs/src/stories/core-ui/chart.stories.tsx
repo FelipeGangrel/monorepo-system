@@ -6,7 +6,7 @@ import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts';
  * Beautiful charts. Built using Recharts. Copy and paste into your apps.
  */
 const meta: Meta<typeof Chart> = {
-  title: 'core-ui/Chart',
+  title: 'Core UI/Chart',
   component: Chart,
   tags: ['autodocs'],
   parameters: {

@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
  */
 const meta: Meta<typeof Menubar> = {
-  title: 'core-ui/Menubar',
+  title: 'Core UI/Menubar',
   component: Menubar,
   tags: ['autodocs'],
   parameters: {

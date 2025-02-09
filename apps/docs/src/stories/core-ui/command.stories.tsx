@@ -14,7 +14,7 @@ import * as React from 'react';
  * Fast, composable, unstyled command menu for React.
  */
 const meta: Meta<typeof Command> = {
-  title: 'core-ui/Command',
+  title: 'Core UI/Command',
   component: Command,
   tags: ['autodocs'],
   parameters: {

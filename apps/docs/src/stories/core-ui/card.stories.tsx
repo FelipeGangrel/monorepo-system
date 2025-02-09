@@ -6,7 +6,7 @@ import { BellRingIcon, CheckIcon } from 'lucide-react';
  * Displays a card with header, content, and footer.
  */
 const meta: Meta<typeof Card> = {
-  title: 'core-ui/Card',
+  title: 'Core UI/Card',
   component: Card,
   tags: ['autodocs'],
   args: {

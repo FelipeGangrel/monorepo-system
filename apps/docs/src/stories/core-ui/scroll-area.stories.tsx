@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * Augments native scroll functionality for custom, cross-browser styling.
  */
 const meta: Meta<typeof ScrollArea> = {
-  title: 'core-ui/ScrollArea',
+  title: 'Core UI/ScrollArea',
   component: ScrollArea,
   tags: ['autodocs'],
   parameters: {

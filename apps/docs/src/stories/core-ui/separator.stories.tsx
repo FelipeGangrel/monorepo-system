@@ -5,7 +5,7 @@ import type { Meta } from '@storybook/react';
  * Visually or semantically separates content.
  */
 const meta: Meta<typeof Separator> = {
-  title: 'core-ui/Separator',
+  title: 'Core UI/Separator',
   component: Separator,
   tags: ['autodocs'],
   argTypes: {

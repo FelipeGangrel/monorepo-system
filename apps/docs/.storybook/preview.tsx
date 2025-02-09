@@ -2,8 +2,10 @@ import '@felipegangrel/core-ui/styles.css';
 import '@felipegangrel/react-hook-form/styles.css';
 import './docs.css';
 
+import { Toaster } from '@felipegangrel/core-ui';
 import type { Preview } from '@storybook/react';
 import { themes } from '@storybook/theming';
+import * as React from 'react';
 
 import { DocsContainer } from './docs-container';
 
@@ -31,5 +33,14 @@ const preview: Preview = {
     },
   },
 };
+
+export const decorators = [
+  (Story: React.FunctionComponent) => (
+    <>
+      <Story />
+      <Toaster />
+    </>
+  ),
+];
 
 export default preview;

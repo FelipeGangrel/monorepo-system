@@ -8,7 +8,7 @@ import { Bar, BarChart, ResponsiveContainer } from 'recharts';
  * A drawer component for React.
  */
 const meta: Meta<typeof Drawer> = {
-  title: 'core-ui/Drawer',
+  title: 'Core UI/Drawer',
   component: Drawer,
   tags: ['autodocs'],
   parameters: {

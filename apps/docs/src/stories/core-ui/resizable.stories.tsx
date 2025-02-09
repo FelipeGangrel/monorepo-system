@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * Accessible resizable panel groups and layouts with keyboard support.
  */
 const meta: Meta<typeof Resizable> = {
-  title: 'core-ui/Resizable',
+  title: 'Core UI/Resizable',
   component: Resizable,
   tags: ['autodocs'],
   argTypes: {

@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * Displays the path to the current resource using a hierarchy of links.
  */
 const meta: Meta<typeof Breadcrumb> = {
-  title: 'core-ui/Breadcrumb',
+  title: 'Core UI/Breadcrumb',
   component: Breadcrumb,
   tags: ['autodocs'],
   parameters: {

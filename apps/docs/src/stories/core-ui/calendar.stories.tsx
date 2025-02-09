@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
  * A date field component that allows users to enter and edit date.
  */
 const meta: Meta<typeof Calendar> = {
-  title: 'core-ui/Calendar',
+  title: 'Core UI/Calendar',
   component: Calendar,
   tags: ['autodocs'],
   args: {
