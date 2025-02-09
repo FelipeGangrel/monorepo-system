@@ -17,7 +17,7 @@
     "react-dom": "catalog:react19",
     "react-hook-form": "catalog:",
     "recharts": "catalog:",
-    "sonner": "^1.7.4",
+    "sonner": "catalog:",
     "tailwind-merge": "catalog:",
     "zod": "catalog:"
   },
