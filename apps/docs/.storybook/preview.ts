@@ -1,5 +1,4 @@
 import '@felipegangrel/core-ui/styles.css';
-import '@felipegangrel/example-ui/styles.css';
 import '@felipegangrel/react-hook-form/styles.css';
 import './docs.css';
 

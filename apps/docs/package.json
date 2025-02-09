@@ -4,7 +4,6 @@
   "dependencies": {
     "@faker-js/faker": "catalog:",
     "@felipegangrel/core-ui": "workspace:*",
-    "@felipegangrel/example-ui": "workspace:*",
     "@felipegangrel/react-hook-form": "workspace:*",
     "@hookform/resolvers": "catalog:",
     "@storybook/preview-api": "catalog:",
