@@ -28,7 +28,7 @@ const meta: Meta<typeof DataTable> = {
       control: false,
     },
     language: {
-      control: { type: 'radio' },
+      control: { type: 'select' },
       options: ['en', 'pt', 'es', 'de'],
     },
   },
