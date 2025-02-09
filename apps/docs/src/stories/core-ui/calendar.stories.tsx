@@ -69,15 +69,15 @@ export const DatePicker = () => {
         <Button
           variant={'outline'}
           className={cn(
-            'docs-w-[280px] docs-justify-start docs-text-left docs-font-normal',
+            'w-[280px] justify-start text-left font-normal',
             !date && 'text-muted-foreground'
           )}
         >
-          <CalendarIcon className="docs-mr-2 docs-h-4 w-4" />
+          <CalendarIcon className="mr-2 h-4 w-4" />
           {date ? format(date, 'PPP') : <span>Pick a date</span>}
         </Button>
       </Popover.Trigger>
-      <Popover.Content className="docs-w-auto docs-p-0">
+      <Popover.Content className="w-auto p-0">
         <Calendar
           mode="single"
           selected={date}
@@ -96,15 +96,15 @@ export const DateRangePicker = () => {
   });
 
   return (
-    <div className="docs-grid docs-gap-2">
+    <div className="grid gap-2">
       <Popover>
         <Popover.Trigger asChild>
           <Button
             id="date"
             variant={'outline'}
             className={cn(
-              'docs-w-[300px] docs-justify-start docs-text-left docs-font-normal',
-              !date && 'docs-text-muted-foreground'
+              'w-[300px] justify-start text-left font-normal',
+              !date && 'text-muted-foreground'
             )}
           >
             <CalendarIcon />
@@ -122,7 +122,7 @@ export const DateRangePicker = () => {
             )}
           </Button>
         </Popover.Trigger>
-        <Popover.Content className="docs-w-auto docs-p-0" align="start">
+        <Popover.Content className="w-auto p-0" align="start">
           <Calendar
             initialFocus
             mode="range"
@@ -146,15 +146,15 @@ export const DatePickerWithPresets = () => {
         <Button
           variant={'outline'}
           className={cn(
-            'docs-w-[280px] docs-justify-start docs-text-left docs-font-normal',
-            !date && 'docs-text-muted-foreground'
+            'w-[280px] justify-start text-left font-normal',
+            !date && 'text-muted-foreground'
           )}
         >
           <CalendarIcon />
           {date ? format(date, 'PPP') : <span>Pick a date</span>}
         </Button>
       </Popover.Trigger>
-      <Popover.Content className="docs-flex docs-flex-col docs-space-y-2 docs-p-2 w-auto">
+      <Popover.Content className="flex w-auto flex-col space-y-2 p-2">
         <Select
           onValueChange={(value) =>
             setDate(addDays(new Date(), parseInt(value)))
@@ -170,7 +170,7 @@ export const DatePickerWithPresets = () => {
             <Select.Item value="7">In a week</Select.Item>
           </Select.Content>
         </Select>
-        <div className="docs-rounded-md docs-border">
+        <div className="rounded-md border">
           <Calendar mode="single" selected={date} onSelect={setDate} />
         </div>
       </Popover.Content>

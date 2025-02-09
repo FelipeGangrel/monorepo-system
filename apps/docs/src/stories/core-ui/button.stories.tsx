@@ -97,12 +97,12 @@ export const Custom: Story = {
     variant: 'ghost',
     className: 'core-bg-transparent hover:core-bg-transparent',
     children: (
-      <button className="docs-relative docs-group docs-h-12">
-        <div className="docs-absolute docs-transitiona-all docs-duration-1000 docs-opacity-70 docs--inset-px docs-bg-gradient-to-r docs-from-[#44BCFF] docs-via-[#FF44EC] docs-to-[#FF675E] docs-rounded-xl docs-blur-lg group-hover:docs-opacity-100 group-hover:docs--inset-1 group-hover:docs-duration-200"></div>
+      <button className="group relative h-12">
+        <div className="transitiona-all absolute -inset-px rounded-xl bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] opacity-70 blur-lg duration-1000 group-hover:-inset-1 group-hover:opacity-100 group-hover:duration-200"></div>
         <a
           href="#"
           title="Get quote now"
-          className="docs-relative docs-inline-flex docs-items-center docs-justify-center docs-px-8 docs-py-4 docs-text-lg docs-font-bold docs-text-white docs-transition-all docs-duration-200 docs-bg-gray-900 docs-rounded-xl focus:docs-outline-none focus:docs-ring-2 focus:docs-ring-offset-2 focus:docs-ring-gray-900"
+          className="relative inline-flex items-center justify-center rounded-xl bg-gray-900 px-8 py-4 text-lg font-bold text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
           role="button"
         >
           Get it now

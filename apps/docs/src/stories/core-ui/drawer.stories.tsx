@@ -75,45 +75,45 @@ export const WithChart = () => {
         <Button variant="outline">Open Drawer</Button>
       </Drawer.Trigger>
       <Drawer.Content>
-        <div className="docs-mx-auto docs-w-full docs-max-w-sm">
+        <div className="mx-auto w-full max-w-sm">
           <Drawer.Header>
             <Drawer.Title>Move Goal</Drawer.Title>
             <Drawer.Description>
               Set your daily activity goal.
             </Drawer.Description>
           </Drawer.Header>
-          <div className="docs-p-4 docs-pb-0">
-            <div className="docs-flex docs-items-center docs-justify-center docs-space-x-2">
+          <div className="p-4 pb-0">
+            <div className="flex items-center justify-center space-x-2">
               <Button
                 variant="outline"
                 size="icon"
-                className="docs-h-8 docs-w-8 docs-shrink-0 docs-rounded-full"
+                className="h-8 w-8 shrink-0 rounded-full"
                 onClick={() => onClick(-10)}
                 disabled={goal <= 200}
               >
                 <Minus />
-                <span className="docs-sr-only">Decrease</span>
+                <span className="sr-only">Decrease</span>
               </Button>
-              <div className="docs-flex-1 docs-text-center">
-                <div className="docs-text-7xl docs-font-bold docs-tracking-tighter">
+              <div className="flex-1 text-center">
+                <div className="text-7xl font-bold tracking-tighter">
                   {goal}
                 </div>
-                <div className="docs-text-muted-foreground docs-text-[0.70rem] docs-uppercase">
+                <div className="text-[0.70rem] uppercase text-muted-foreground">
                   Calories/day
                 </div>
               </div>
               <Button
                 variant="outline"
                 size="icon"
-                className="docs-h-8 docs-w-8 docs-shrink-0 docs-rounded-full"
+                className="h-8 w-8 shrink-0 rounded-full"
                 onClick={() => onClick(10)}
                 disabled={goal >= 400}
               >
                 <Plus />
-                <span className="docs-sr-only">Increase</span>
+                <span className="sr-only">Increase</span>
               </Button>
             </div>
-            <div className="docs-mt-3 docs-h-[120px]">
+            <div className="mt-3 h-[120px]">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data}>
                   <Bar

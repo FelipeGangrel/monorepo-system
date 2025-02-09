@@ -27,10 +27,10 @@ export const Example: Story = {
   args: {
     children: (
       <>
-        <ContextMenu.Trigger className="docs-flex docs-h-[150px] docs-w-[300px] docs-items-center docs-justify-center docs-rounded-md docs-border docs-border-dashed docs-text-sm">
+        <ContextMenu.Trigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm">
           Right click here
         </ContextMenu.Trigger>
-        <ContextMenu.Content className="docs-w-64">
+        <ContextMenu.Content className="w-64">
           <ContextMenu.Item inset>
             Back
             <ContextMenu.Shortcut>⌘[</ContextMenu.Shortcut>
@@ -45,7 +45,7 @@ export const Example: Story = {
           </ContextMenu.Item>
           <ContextMenu.Sub>
             <ContextMenu.SubTrigger inset>More Tools</ContextMenu.SubTrigger>
-            <ContextMenu.SubContent className="docs-w-48">
+            <ContextMenu.SubContent className="w-48">
               <ContextMenu.Item>
                 Save Page As...
                 <ContextMenu.Shortcut>⇧⌘S</ContextMenu.Shortcut>

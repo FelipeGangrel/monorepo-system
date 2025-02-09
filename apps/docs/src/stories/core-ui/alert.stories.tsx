@@ -55,7 +55,7 @@ export const Destructive: Story = {
 export const WithCustomStyles: Story = {
   args: {
     variant: 'default',
-    className: 'docs-bg-blue-100 docs-text-blue-900 docs-border-blue-300',
+    className: 'bg-blue-100 text-blue-900 border-blue-300',
     children: (
       <>
         <Alert.Title>Custom Styled Alert</Alert.Title>
@@ -84,8 +84,8 @@ export const WithIcon: Story = {
   args: {
     variant: 'default',
     children: (
-      <div className="docs-flex docs-items-center">
-        <AlertTriangleIcon className="docs-h-4 docs-w-4 docs-mr-4" />
+      <div className="flex items-center">
+        <AlertTriangleIcon className="mr-4 h-4 w-4" />
         <div>
           <Alert.Title>Alert with icon</Alert.Title>
           <Alert.Description>This is a alert with icon.</Alert.Description>

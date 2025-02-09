@@ -10,7 +10,7 @@ const meta: Meta<typeof AspectRatio> = {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <div className="docs-w-[400px]">
+      <div className="w-[400px]">
         <Story />
       </div>
     ),

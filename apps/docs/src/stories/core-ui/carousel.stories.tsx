@@ -20,22 +20,17 @@ type Story = StoryObj<typeof Carousel>;
 
 export const Example: Story = {
   args: {
-    className: 'docs-w-full docs-max-w-sm',
+    className: 'w-full max-w-sm',
     opts: { align: 'start' },
     children: (
       <>
         <Carousel.Content>
           {Array.from({ length: 5 }).map((_, index) => (
-            <Carousel.Item
-              key={index}
-              className="md:docs-basis-1/2 lg:docs-basis-1/3"
-            >
-              <div className="docs-p-1">
+            <Carousel.Item key={index} className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-1">
                 <Card>
-                  <Card.Content className="docs-flex docs-aspect-square docs-items-center docs-justify-center docs-p-6">
-                    <span className="docs-text-3xl docs-font-semibold">
-                      {index + 1}
-                    </span>
+                  <Card.Content className="flex aspect-square items-center justify-center p-6">
+                    <span className="text-3xl font-semibold">{index + 1}</span>
                   </Card.Content>
                 </Card>
               </div>
@@ -53,19 +48,17 @@ export const Example: Story = {
 export const VerticalOrientationAndLoop: Story = {
   args: {
     orientation: 'vertical',
-    className: 'docs-w-full docs-max-w-sm',
+    className: 'w-full max-w-sm',
     opts: { align: 'start', loop: true },
     children: (
       <>
-        <Carousel.Content className="docs-max-h-[200px]">
+        <Carousel.Content className="max-h-[200px]">
           {Array.from({ length: 5 }).map((_, index) => (
-            <Carousel.Item key={index} className="docs-pt-1 md:docs-basis-1/2">
-              <div className="docs-p-1">
+            <Carousel.Item key={index} className="pt-1 md:basis-1/2">
+              <div className="p-1">
                 <Card>
-                  <Card.Content className="docs-flex docs-items-center docs-justify-center docs-p-6">
-                    <span className="docs-text-3xl docs-font-semibold">
-                      {index + 1}
-                    </span>
+                  <Card.Content className="flex items-center justify-center p-6">
+                    <span className="text-3xl font-semibold">{index + 1}</span>
                   </Card.Content>
                 </Card>
               </div>
@@ -78,7 +71,7 @@ export const VerticalOrientationAndLoop: Story = {
     ),
   },
   render: (args) => (
-    <div className="docs-my-6">
+    <div className="my-6">
       <Carousel {...args} />
     </div>
   ),
@@ -109,16 +102,14 @@ export const WithCarouselAPI = () => {
   }, [api]);
 
   return (
-    <div className="docs-mx-auto docs-max-w-xs">
-      <Carousel setApi={setApi} className="docs-w-full docs-max-w-xs">
+    <div className="mx-auto max-w-xs">
+      <Carousel setApi={setApi} className="w-full max-w-xs">
         <Carousel.Content>
           {Array.from({ length: 5 }).map((_, index) => (
             <Carousel.Item key={index}>
               <Card>
-                <Card.Content className="docs-flex docs-aspect-square docs-items-center docs-justify-center docs-p-6">
-                  <span className="docs-text-4xl docs-font-semibold">
-                    {index + 1}
-                  </span>
+                <Card.Content className="flex aspect-square items-center justify-center p-6">
+                  <span className="text-4xl font-semibold">{index + 1}</span>
                 </Card.Content>
               </Card>
             </Carousel.Item>
@@ -127,7 +118,7 @@ export const WithCarouselAPI = () => {
         <Carousel.Previous />
         <Carousel.Next />
       </Carousel>
-      <div className="docs-text-muted-foreground docs-py-2 docs-text-center docs-text-sm">
+      <div className="py-2 text-center text-sm text-muted-foreground">
         Slide {current} of {count}
       </div>
     </div>

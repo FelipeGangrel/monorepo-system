@@ -49,7 +49,7 @@ export const WithArrowAndClose: Story = {
           </p>
           <Popover.Arrow />
           <Popover.Close asChild>
-            <Button variant="secondary" className="docs-mt-2">
+            <Button variant="secondary" className="mt-2">
               Close
             </Button>
           </Popover.Close>

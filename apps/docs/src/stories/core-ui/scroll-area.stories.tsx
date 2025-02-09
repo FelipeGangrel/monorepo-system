@@ -1,6 +1,9 @@
 import { ScrollArea, Separator } from '@felipegangrel/core-ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
+/**
+ * Augments native scroll functionality for custom, cross-browser styling.
+ */
 const meta: Meta<typeof ScrollArea> = {
   title: 'core-ui/ScrollArea',
   component: ScrollArea,
@@ -20,14 +23,12 @@ const TagsComponent = () => {
   );
 
   return (
-    <div className="docs-p-4">
-      <h4 className="docs-mb-4 docs-text-sm docs-font-medium docs-leading-none">
-        Tags
-      </h4>
+    <div className="p-4">
+      <h4 className="mb-4 text-sm font-medium leading-none">Tags</h4>
       {tags.map((tag) => (
         <div key={tag}>
-          <div className="docs-text-sm">{tag}</div>
-          <Separator className="docs-my-2" />
+          <div className="text-sm">{tag}</div>
+          <Separator className="my-2" />
         </div>
       ))}
     </div>
@@ -56,21 +57,21 @@ const ArtworksComponent = () => {
   ];
 
   return (
-    <div className="docs-flex docs-w-max docs-space-x-4 docs-p-4">
+    <div className="flex w-max space-x-4 p-4">
       {works.map((artwork) => (
-        <figure key={artwork.artist} className="docs-shrink-0">
-          <div className="docs-overflow-hidden docs-rounded-md">
+        <figure key={artwork.artist} className="shrink-0">
+          <div className="overflow-hidden rounded-md">
             <img
               src={artwork.art}
               alt={`Photo by ${artwork.artist}`}
-              className="docs-aspect-[3/4] docs-h-fit docs-w-fit docs-object-cover"
+              className="aspect-[3/4] h-fit w-fit object-cover"
               width={300}
               height={400}
             />
           </div>
-          <figcaption className="docs-pt-2 docs-text-xs docs-text-muted-foreground">
+          <figcaption className="pt-2 text-xs text-muted-foreground">
             Photo by{' '}
-            <span className="docs-font-semibold docs-text-foreground">
+            <span className="font-semibold text-foreground">
               {artwork.artist}
             </span>
           </figcaption>
@@ -82,7 +83,7 @@ const ArtworksComponent = () => {
 
 export const Example: Story = {
   args: {
-    className: 'docs-h-72 docs-w-48 docs-rounded-md docs-border',
+    className: 'h-72 w-48 rounded-md border',
     children: (
       <>
         <TagsComponent />
@@ -94,11 +95,11 @@ export const Example: Story = {
 
 export const WithCustomScrollbar: Story = {
   args: {
-    className: 'docs-h-72 docs-w-48 docs-rounded-md docs-border',
+    className: 'h-72 w-48 rounded-md border',
     children: (
       <>
         <TagsComponent />
-        <ScrollArea.ScrollBar className="docs-bg-foreground" />
+        <ScrollArea.ScrollBar className="bg-foreground" />
       </>
     ),
   },
@@ -106,12 +107,12 @@ export const WithCustomScrollbar: Story = {
 
 export const WithCustomThumb: Story = {
   args: {
-    className: 'docs-h-72 docs-w-48 docs-rounded-md docs-border',
+    className: 'h-72 w-48 rounded-md border',
     children: (
       <>
         <TagsComponent />
         <ScrollArea.ScrollBar>
-          <ScrollArea.ScrollBarThumb className="docs-bg-foreground" />
+          <ScrollArea.ScrollBarThumb className="bg-foreground" />
         </ScrollArea.ScrollBar>
       </>
     ),
@@ -120,7 +121,7 @@ export const WithCustomThumb: Story = {
 
 export const WithHorizontalScroll: Story = {
   args: {
-    className: 'docs-w-96 docs-whitespace-nowrap docs-rounded-md docs-border',
+    className: 'w-96 whitespace-nowrap rounded-md border',
     children: (
       <>
         <ArtworksComponent />

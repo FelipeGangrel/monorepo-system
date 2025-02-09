@@ -60,10 +60,10 @@ export const Example = () => {
   };
 
   return (
-    <div className="docs-w-screen docs-max-w-[400px]">
+    <div className="w-screen max-w-[400px]">
       <Form {...form}>
         <form
-          className="docs-flex docs-flex-col docs-gap-4"
+          className="flex flex-col gap-4"
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <Form.Field
@@ -119,7 +119,7 @@ export const Example = () => {
                 {['web', 'mobile', 'desktop'].map((value) => (
                   <Label
                     key={value}
-                    className="docs-flex docs-items-center docs-gap-2 docs-font-normal"
+                    className="flex items-center gap-2 font-normal"
                   >
                     <Checkbox
                       id={`${field.name}-${value}`}
@@ -145,7 +145,7 @@ export const Example = () => {
             control={form.control}
             name="date"
             render={({ field }) => (
-              <Form.Item className="docs-flex docs-flex-col docs-gap-2">
+              <Form.Item className="flex flex-col gap-2">
                 <Form.Label>Date of birth</Form.Label>
                 <DatePicker
                   clearable
@@ -166,10 +166,8 @@ export const Example = () => {
             render={({ field }) => (
               <Form.Item>
                 <Label>Switch</Label>
-                <div className="docs-flex docs-items-center docs-gap-2">
-                  <span className="docs-w-10">
-                    {field.value ? 'ON' : 'OFF'}
-                  </span>
+                <div className="flex items-center gap-2">
+                  <span className="w-10">{field.value ? 'ON' : 'OFF'}</span>
                   <Switch
                     value="on"
                     checked={field.value}

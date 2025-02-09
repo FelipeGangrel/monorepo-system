@@ -56,7 +56,7 @@ export const Example: Story = {
               <Table.Cell>{user.name}</Table.Cell>
               <Table.Cell>{user.email}</Table.Cell>
               <Table.Cell>{user.role}</Table.Cell>
-              <Table.Cell className="docs-flex docs-justify-end docs-gap-2">
+              <Table.Cell className="flex justify-end gap-2">
                 <Button
                   variant={'outline'}
                   size={'sm'}

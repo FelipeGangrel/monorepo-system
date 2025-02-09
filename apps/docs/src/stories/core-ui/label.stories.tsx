@@ -29,7 +29,7 @@ export const ForInput: Story = {
     htmlFor: 'input',
   },
   render: (args) => (
-    <div className="docs-space-y-2">
+    <div className="space-y-2">
       <Label {...args}>Label</Label>
       <Input id="input" />
     </div>
