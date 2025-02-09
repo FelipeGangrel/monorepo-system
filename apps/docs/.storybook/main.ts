@@ -31,6 +31,12 @@ const config: StorybookConfig = {
     // Merge custom configuration into the default config
     const { mergeConfig } = await import('vite');
 
+    config.server = {
+      watch: {
+        ignored: ['**/node_modules/@felipegangrel/**/styles.css'],
+      },
+    };
+
     return mergeConfig(config, {
       // Add dependencies to pre-optimization
       optimizeDeps: {

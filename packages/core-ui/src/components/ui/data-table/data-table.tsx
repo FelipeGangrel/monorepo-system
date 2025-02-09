@@ -10,6 +10,7 @@ import {
 } from '@tanstack/react-table';
 import * as React from 'react';
 
+import { getChildrenDisplayNames } from '@/lib/utils';
 import { DataTableHelper } from '@/utils/data-table';
 
 import { DataTableContext } from './context';
@@ -21,7 +22,7 @@ import {
   ViewOptions,
 } from './primitives';
 import type { DataTableComponent, DataTableProps } from './types';
-import { fuzzyFilter, fuzzySort, getChildrenDisplayNames } from './utils';
+import { fuzzyFilter, fuzzySort } from './utils';
 
 const DataTable = Object.assign(
   <TData, TValue>({

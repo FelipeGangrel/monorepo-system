@@ -63,7 +63,6 @@
   "scripts": {
     "build-storybook": "storybook build",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf storybook-static",
-    "dev": "storybook dev -p 6006",
     "lint": "eslint --fix",
     "lint:check": "eslint",
     "storybook": "storybook dev -p 6006"
