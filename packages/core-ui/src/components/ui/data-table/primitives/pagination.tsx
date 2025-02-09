@@ -17,14 +17,20 @@ const dictionary = intl.makeDictionary({
   countOfTotalRowsSelected: {
     en: '{count} of {total} row(s) selected',
     pt: '{count} de {total} linha(s) selecionada(s)',
+    es: '{count} de {total} fila(s) seleccionada(s)',
+    de: '{count} von {total} Zeile(n) ausgewählt',
   },
   rowsPerPage: {
     en: 'Rows per page',
     pt: 'Linhas por página',
+    es: 'Filas por página',
+    de: 'Zeilen pro Seite',
   },
   currentPageOfTotal: {
     en: 'Page {current} of {total}',
     pt: 'Página {current} de {total}',
+    es: 'Página {current} de {total}',
+    de: 'Seite {current} von {total}',
   },
 } as const);
 
