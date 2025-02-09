@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * Displays the path to the current resource using a hierarchy of links.
  */
 const meta: Meta<typeof Breadcrumb> = {
-  title: 'core-ui/Breadcrumb',
+  title: 'Core UI/Breadcrumb',
   component: Breadcrumb,
   tags: ['autodocs'],
   parameters: {
@@ -103,14 +103,11 @@ export const CustomLinks: Story = {
 
 export const StyledBreadcrumb: Story = {
   render: (args) => (
-    <Breadcrumb
-      {...args}
-      className="docs-rounded-md dark:docs-bg-red-400 docs-p-4"
-    >
+    <Breadcrumb {...args} className="rounded-md p-4 dark:bg-red-400">
       <Breadcrumb.List>
         <Breadcrumb.Item>
           <Breadcrumb.Link
-            className="docs-text-blue-600 hover:docs-underline"
+            className="text-blue-600 hover:underline"
             href="/dashboard"
           >
             Dashboard
@@ -119,7 +116,7 @@ export const StyledBreadcrumb: Story = {
         <Breadcrumb.Separator />
         <Breadcrumb.Item>
           <Breadcrumb.Link
-            className="docs-text-blue-600 hover:docs-underline"
+            className="text-blue-600 hover:underline"
             href="/profile"
           >
             Profile
@@ -127,7 +124,7 @@ export const StyledBreadcrumb: Story = {
         </Breadcrumb.Item>
         <Breadcrumb.Separator />
         <Breadcrumb.Item>
-          <Breadcrumb.Page className="docs-text-foreground">
+          <Breadcrumb.Page className="text-foreground">
             Settings
           </Breadcrumb.Page>
         </Breadcrumb.Item>

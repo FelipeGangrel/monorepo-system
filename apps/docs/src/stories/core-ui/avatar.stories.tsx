@@ -5,7 +5,7 @@ import { Meta } from '@storybook/react';
  * An image element with a fallback for representing the user.
  */
 const meta: Meta<typeof Avatar> = {
-  title: 'core-ui/Avatar',
+  title: 'Core UI/Avatar',
   component: Avatar,
   tags: ['autodocs'],
   parameters: {
@@ -32,7 +32,7 @@ export const WithFallback = () => (
 );
 
 export const CustomSize = () => (
-  <Avatar className="docs-h-16 docs-w-16">
+  <Avatar className="h-16 w-16">
     <Avatar.Image
       src="https://avatar.iran.liara.run/public"
       alt="Custom Size Avatar"

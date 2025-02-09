@@ -5,7 +5,7 @@ import { Meta, StoryObj } from '@storybook/react';
  * Renders an accessible label associated with controls.
  */
 const meta: Meta<typeof Label> = {
-  title: 'core-ui/Label',
+  title: 'Core UI/Label',
   component: Label,
   tags: ['autodocs'],
   parameters: {
@@ -29,7 +29,7 @@ export const ForInput: Story = {
     htmlFor: 'input',
   },
   render: (args) => (
-    <div className="docs-space-y-2">
+    <div className="space-y-2">
       <Label {...args}>Label</Label>
       <Input id="input" />
     </div>

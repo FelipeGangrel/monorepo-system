@@ -1,11 +1,7 @@
 import { type ClassValue, clsx } from 'clsx';
 import { extendTailwindMerge } from 'tailwind-merge';
 
-import twConfig from '../../tailwind.config';
-
-const twMerge = extendTailwindMerge({
-  prefix: twConfig.prefix,
-});
+const twMerge = extendTailwindMerge();
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

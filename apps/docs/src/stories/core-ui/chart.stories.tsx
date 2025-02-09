@@ -6,7 +6,7 @@ import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts';
  * Beautiful charts. Built using Recharts. Copy and paste into your apps.
  */
 const meta: Meta<typeof Chart> = {
-  title: 'core-ui/Chart',
+  title: 'Core UI/Chart',
   component: Chart,
   tags: ['autodocs'],
   parameters: {
@@ -46,7 +46,7 @@ type Story = StoryObj<typeof Chart>;
 export const BarChartExample: Story = {
   args: {
     config: barChartConfig,
-    className: 'docs-min-h-[200px] docs-w-screen docs-max-w-[400px]',
+    className: 'min-h-[200px] w-screen max-w-[400px]',
     children: (
       <BarChart accessibilityLayer data={barChartData}>
         <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
@@ -66,7 +66,7 @@ export const BarChartExample: Story = {
 export const BarChartExampleWithGrid: Story = {
   args: {
     config: barChartConfig,
-    className: 'docs-min-h-[200px] docs-w-screen docs-max-w-[400px]',
+    className: 'min-h-[200px] w-screen max-w-[400px]',
     children: (
       <BarChart accessibilityLayer data={barChartData}>
         <CartesianGrid vertical={false} />
@@ -86,7 +86,7 @@ export const BarChartExampleWithGrid: Story = {
 export const BarChartExampleWithXAxis: Story = {
   args: {
     config: barChartConfig,
-    className: 'docs-min-h-[200px] docs-w-screen docs-max-w-[400px]',
+    className: 'min-h-[200px] w-screen max-w-[400px]',
     children: (
       <BarChart accessibilityLayer data={barChartData}>
         <CartesianGrid vertical={false} />
@@ -114,7 +114,7 @@ export const BarChartExampleWithXAxis: Story = {
 export const BarChartExampleWithTooltip: Story = {
   args: {
     config: barChartConfig,
-    className: 'docs-min-h-[200px] docs-w-screen docs-max-w-[400px]',
+    className: 'min-h-[200px] w-screen max-w-[400px]',
     children: (
       <BarChart accessibilityLayer data={barChartData}>
         <CartesianGrid vertical={false} />
@@ -144,7 +144,7 @@ export const BarChartExampleWithTooltip: Story = {
 export const BarChartExampleWithLegend: Story = {
   args: {
     config: barChartConfig,
-    className: 'docs-min-h-[200px] docs-w-screen docs-max-w-[400px]',
+    className: 'min-h-[200px] w-screen max-w-[400px]',
     children: (
       <BarChart accessibilityLayer data={barChartData}>
         <CartesianGrid vertical={false} />

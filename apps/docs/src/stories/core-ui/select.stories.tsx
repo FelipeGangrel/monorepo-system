@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * Displays a list of options for the user to pick from—triggered by a button.
  */
 const meta: Meta<typeof Select> = {
-  title: 'core-ui/Select',
+  title: 'Core UI/Select',
   component: Select,
   tags: ['autodocs'],
   parameters: {
@@ -21,7 +21,7 @@ export const Example: Story = {
   args: {
     children: (
       <>
-        <Select.Trigger className="docs-w-screen docs-max-w-[240px]">
+        <Select.Trigger className="w-screen max-w-[240px]">
           <Select.Value placeholder="Theme" />
         </Select.Trigger>
         <Select.Content>
@@ -38,7 +38,7 @@ export const Scrollable: Story = {
   args: {
     children: (
       <>
-        <Select.Trigger className="docs-w-screen docs-max-w-[240px]">
+        <Select.Trigger className="w-screen max-w-[240px]">
           <Select.Value placeholder="Select a timezone" />
         </Select.Trigger>
         <Select.Content>

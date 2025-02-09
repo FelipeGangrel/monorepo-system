@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * A modal dialog that interrupts the user with important content and expects a response.
  */
 const meta: Meta<typeof AlertDialog> = {
-  title: 'core-ui/AlertDialog',
+  title: 'Core UI/AlertDialog',
   tags: ['autodocs'],
   component: AlertDialog,
   parameters: {

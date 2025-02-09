@@ -45,10 +45,10 @@ const Template = (args: React.ComponentProps<typeof DatePicker>) => {
   };
 
   return (
-    <div className="docs-w-screen docs-max-w-[400px]">
+    <div className="w-screen max-w-[400px]">
       <Form {...form}>
         <form
-          className="docs-flex docs-flex-col docs-gap-4"
+          className="flex flex-col gap-4"
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <Form.Field

@@ -6,7 +6,7 @@ import * as React from 'react';
  * A control that allows the user to toggle between checked and not checked.
  */
 const meta: Meta<typeof Checkbox> = {
-  title: 'core-ui/Checkbox',
+  title: 'Core UI/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
   argTypes: {
@@ -43,7 +43,7 @@ export const Disabled: Story = {
 export const WithCustomStyles: Story = {
   args: {
     className:
-      'docs-bg-gray-100 docs-border-gray-500 data-[state=checked]:docs-bg-blue-500 data-[state=checked]:docs-border-blue-500',
+      'bg-gray-100 border-gray-500 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500',
   },
   render: (args) => <Checkbox {...args} />,
 };

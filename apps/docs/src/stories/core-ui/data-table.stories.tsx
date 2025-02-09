@@ -7,12 +7,12 @@ import { ColumnDef } from '@tanstack/react-table';
  * Powerful table and datagrids built using TanStack Table.
  */
 const meta: Meta<typeof DataTable> = {
-  title: 'core-ui/DataTable',
+  title: 'Core UI/DataTable',
   component: DataTable,
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <div className="docs-flex docs-flex-col docs-gap-4">
+      <div className="flex flex-col gap-4">
         <Story />
       </div>
     ),
@@ -63,7 +63,7 @@ const columns: ColumnDef<Payment>[] = [
     accessorKey: 'amount',
     header: 'Amount',
     meta: DataTableMetaHelper.makeColumnMeta({
-      headerClassName: 'docs-text-right',
+      headerClassName: 'text-right',
     }),
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue('amount'));
@@ -72,7 +72,7 @@ const columns: ColumnDef<Payment>[] = [
         currency: 'USD',
       }).format(amount);
 
-      return <div className="docs-text-right">{content}</div>;
+      return <div className="text-right">{content}</div>;
     },
   },
 ];
@@ -108,7 +108,7 @@ export const Example: Story = {
   },
   render: (args) => (
     <DataTable {...args}>
-      <div className="docs-flex docs-justify-between docs-gap-4">
+      <div className="flex justify-between gap-4">
         <DataTable.Filter filterBy={'name'} placeholder={'Filter by name'} />
         <DataTable.ViewOptions />
       </div>
@@ -125,7 +125,7 @@ export const WithViewOptions: Story = {
   },
   render: (args) => (
     <DataTable {...args}>
-      <div className="docs-flex docs-justify-between docs-gap-4">
+      <div className="flex justify-between gap-4">
         <DataTable.ViewOptions />
       </div>
       <DataTable.Content />
@@ -166,7 +166,7 @@ export const WithFilter: Story = {
   },
   render: (args) => (
     <DataTable {...args}>
-      <div className="docs-flex docs-justify-between docs-gap-4">
+      <div className="flex justify-between gap-4">
         <DataTable.Filter filterBy={'name'} placeholder={'Filter by name'} />
       </div>
       <DataTable.Content />
@@ -182,7 +182,7 @@ export const WithFuzzyFilter: Story = {
   },
   render: (args) => (
     <DataTable {...args}>
-      <div className="docs-flex docs-justify-between docs-gap-4">
+      <div className="flex justify-between gap-4">
         <DataTable.FuzzyFilter placeholder={'Fuzzy filter'} />
         <DataTable.ViewOptions />
       </div>

@@ -5,12 +5,12 @@ import type { Meta, StoryObj } from '@storybook/react';
  * A control that allows the user to toggle between checked and not checked.
  */
 const meta: Meta<typeof Switch> = {
-  title: 'core-ui/Switch',
+  title: 'Core UI/Switch',
   component: Switch,
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <div className="docs-flex docs-items-center docs-space-x-2">
+      <div className="flex items-center space-x-2">
         <Story />
       </div>
     ),

@@ -6,7 +6,7 @@ import * as React from 'react';
  * Displays a menu to the user — such as a set of actions or functions — triggered by a button.
  */
 const meta: Meta<typeof DropdownMenu> = {
-  title: 'core-ui/DropdownMenu',
+  title: 'Core UI/DropdownMenu',
   component: DropdownMenu,
   tags: ['autodocs'],
   parameters: {
@@ -50,7 +50,7 @@ export const Checkboxes = () => {
       <DropdownMenu.Trigger asChild>
         <Button variant="outline">Open</Button>
       </DropdownMenu.Trigger>
-      <DropdownMenu.Content className="docs-w-56">
+      <DropdownMenu.Content className="w-56">
         <DropdownMenu.Label>Appearance</DropdownMenu.Label>
         <DropdownMenu.Separator />
         <DropdownMenu.CheckboxItem
@@ -85,7 +85,7 @@ export const RadioGroup = () => {
       <DropdownMenu.Trigger asChild>
         <Button variant="outline">Open</Button>
       </DropdownMenu.Trigger>
-      <DropdownMenu.Content className="docs-w-56">
+      <DropdownMenu.Content className="w-56">
         <DropdownMenu.Label>Panel Position</DropdownMenu.Label>
         <DropdownMenu.Separator />
         <DropdownMenu.RadioGroup value={position} onValueChange={setPosition}>

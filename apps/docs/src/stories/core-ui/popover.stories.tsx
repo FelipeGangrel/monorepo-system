@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
  * Displays rich content in a portal, triggered by a button.
  */
 const meta: Meta<typeof Popover> = {
-  title: 'core-ui/Popover',
+  title: 'Core UI/Popover',
   component: Popover,
   tags: ['autodocs'],
   parameters: {
@@ -49,7 +49,7 @@ export const WithArrowAndClose: Story = {
           </p>
           <Popover.Arrow />
           <Popover.Close asChild>
-            <Button variant="secondary" className="docs-mt-2">
+            <Button variant="secondary" className="mt-2">
               Close
             </Button>
           </Popover.Close>

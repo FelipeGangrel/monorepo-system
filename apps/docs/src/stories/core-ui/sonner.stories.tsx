@@ -6,7 +6,7 @@ import { toast } from 'sonner';
  * An opinionated toast component for React.
  */
 const meta = {
-  title: 'core-ui/Toast',
+  title: 'Core UI/Toast',
   decorators: [
     (Story: React.FC) => (
       <div>
@@ -132,11 +132,10 @@ export const LoadingExample = () => {
 export const CustomExample = () => {
   const onClick = () => {
     toast('Custom toast', {
-      className:
-        'docs-bg-yellow-100 docs-text-black docs-border docs-border-yellow-200',
+      className: 'bg-yellow-100 text-black border border-yellow-200',
       description: 'Custom description',
       action: (
-        <Button variant="ghost" className="docs-ml-auto">
+        <Button variant="ghost" className="ml-auto">
           Action
         </Button>
       ),
