@@ -59,6 +59,7 @@ const ScrollBarThumb = React.forwardRef<ScrollBarThumbRef, ScrollBarThumbProps>(
   ({ className, ...props }, ref) => {
     return (
       <ScrollAreaPrimitive.ScrollAreaThumb
+        ref={ref}
         className={cn(
           'core-relative core-flex-1 core-rounded-full core-bg-border',
           className

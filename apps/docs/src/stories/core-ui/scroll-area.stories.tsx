@@ -10,6 +10,11 @@ const meta: Meta<typeof ScrollArea> = {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+    docs: {
+      source: {
+        language: 'tsx',
+      },
+    },
   },
 };
 

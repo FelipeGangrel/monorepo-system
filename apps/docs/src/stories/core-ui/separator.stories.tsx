@@ -16,6 +16,11 @@ const meta: Meta<typeof Separator> = {
   },
   parameters: {
     layout: 'centered',
+    docs: {
+      source: {
+        language: 'tsx',
+      },
+    },
   },
 };
 
