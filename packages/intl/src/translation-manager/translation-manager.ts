@@ -68,28 +68,35 @@ class TranslationManager<T extends Dictionary> {
   }) {
     const { dictionary, language = this.fallbackLanguage } = options;
 
+    const findValue = (key: keyof T) => {
+      return (dictionary[key] as DictionaryEntry)[language]
+        ? (dictionary[key] as DictionaryEntry)[language]
+        : (dictionary[key] as DictionaryEntry)[this.fallbackLanguage];
+    };
+
+    const replaceValue = (
+      value: string,
+      replacer: Record<string, string | number>
+    ) => {
+      return value.replace(/\{(\w+)}/g, (match, replacerKey) => {
+        if (replacerKey in replacer) {
+          return String(replacer[replacerKey]);
+        }
+        return match;
+      });
+    };
+
     return (
       key: keyof T,
       replacer?: Record<string, string | number>
     ): string => {
-      const value = (dictionary[key] as DictionaryEntry)[language]
-        ? (dictionary[key] as DictionaryEntry)[language]
-        : (dictionary[key] as DictionaryEntry)[this.fallbackLanguage];
+      const value = findValue(key);
 
       if (!value) {
         return '';
       }
 
-      if (replacer) {
-        return value.replace(/\{(\w+)}/g, (match, replacerKey) => {
-          if (replacerKey in replacer) {
-            return String(replacer[replacerKey]);
-          }
-          return match;
-        });
-      }
-
-      return value;
+      return replacer ? replaceValue(value, replacer) : value;
     };
   }
 }

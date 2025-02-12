@@ -339,6 +339,9 @@ importers:
       '@felipegangrel/core-ui':
         specifier: workspace:*
         version: link:../../packages/core-ui
+      '@felipegangrel/intl':
+        specifier: workspace:*
+        version: link:../../packages/intl
       '@felipegangrel/react-hook-form':
         specifier: workspace:*
         version: link:../../packages/react-hook-form
