@@ -1,0 +1,305 @@
+import { Meta, Markdown } from '@storybook/blocks';
+
+<Meta title="INTL/Make Date Formatter" />
+
+# Make Date Formatter
+
+The **makeDateFormatter** utility allows developers to format dates for any language, making it ideal for internationalized applications. It builds on the `date-fns` library for flexible formatting.
+
+
+## Examples
+
+### Example: Basic Usage
+
+Use `makeDateFormatter` to create a formatter for English (`'en'`) and use it to format the current date:
+
+
+```typescript
+import { makeDateFormatter } from '@felipegangrel/intl';
+
+const formatDate = makeDateFormatter('en');
+
+// Format today's date using the formatter
+const today = new Date();
+const formattedDate = formatDate(today, 'MMMM dd, yyyy');
+
+console.log(formattedDate); // e.g., "October 30, 2023"
+```
+
+### Example: Using Format Options
+
+Format dates with optional `date-fns` options for greater customization:
+
+  ```typescript
+import {makeDateFormatter} from '@felipegangrel/intl';
+
+const formatDate = makeDateFormatter('en');
+
+// Use additional formatting options
+const formattedDate = formatDate(new Date(), 'MMMM dd, yyyy', {
+  useAdditionalDayOfYearTokens: true,
+});
+
+console.log(formattedDate); // e.g., "October 30, 2023"
+  ```
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><strong><code>language</code></strong></td>
+    <td><code>LanguageOption</code></td>
+    <td>Language option (e.g., <code>'en'</code>, <code>'pt'</code>). Used to infer the locale.</td>
+  </tr>
+  <tr>
+    <td><strong><code>date</code></strong></td>
+    <td><code>number | string | Date</code></td>
+    <td>The date to be formatted.</td>
+  </tr>
+  <tr>
+    <td><strong><code>dateStr</code></strong></td>
+    <td><code>string</code></td>
+    <td>Format string for the date (compatible with <code>date-fns</code> format tokens).</td>
+  </tr>
+  <tr>
+    <td><strong><code>options</code></strong></td>
+    <td><code>FormatOptions</code> (optional)</td>
+    <td>Additional formatting options (passed to <code>date-fns</code>).</td>
+  </tr>
+  </tbody>
+</table>
+
+## Notes
+
+- The `makeDateFormatter` relies on `date-fns` for formatting. Ensure the relevant `date-fns` locale is included in your project.
+- The `inferLocaleFromLanguage` helper determines how locale strings (like `'en'` or `'pt'`) map to `date-fns` locales.
+- If incorrectly configured, using an unsupported locale may cause runtime errors.
+
+## Dependencies
+
+Ensure `date-fns` is installed and properly configured with locale imports.
+
+## date-fns available formats
+
+<table>
+  <thead>
+  <tr>
+    <th>Token</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>yyyy</code></td>
+    <td>Year</td>
+    <td>Four-digit year</td>
+    <td>2023</td>
+  </tr>
+  <tr>
+    <td><code>yy</code></td>
+    <td>Year</td>
+    <td>Two-digit year</td>
+    <td>23</td>
+  </tr>
+  <tr>
+    <td><code>MMMM</code></td>
+    <td>Month</td>
+    <td>Full month name</td>
+    <td>October</td>
+  </tr>
+  <tr>
+    <td><code>MMM</code></td>
+    <td>Month</td>
+    <td>Abbreviated month name</td>
+    <td>Oct</td>
+  </tr>
+  <tr>
+    <td><code>MM</code></td>
+    <td>Month</td>
+    <td>Two-digit month</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td><code>M</code></td>
+    <td>Month</td>
+    <td>Month number without zero-padding</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td><code>dd</code></td>
+    <td>Day</td>
+    <td>Two-digit day of the month</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td><code>d</code></td>
+    <td>Day</td>
+    <td>Day of the month without zero-padding</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td><code>do</code></td>
+    <td>Day</td>
+    <td>Ordinal day of the month</td>
+    <td>30th</td>
+  </tr>
+  <tr>
+    <td><code>EEEE</code></td>
+    <td>Day of Week</td>
+    <td>Full day of the week</td>
+    <td>Monday</td>
+  </tr>
+  <tr>
+    <td><code>EEE</code></td>
+    <td>Day of Week</td>
+    <td>Abbreviated day of the week</td>
+    <td>Mon</td>
+  </tr>
+  <tr>
+    <td><code>EE</code></td>
+    <td>Day of Week</td>
+    <td>Short day of the week</td>
+    <td>Mo</td>
+  </tr>
+  <tr>
+    <td><code>HH</code></td>
+    <td>Hour</td>
+    <td>Two-digit hour (24-hour clock)</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td><code>H</code></td>
+    <td>Hour</td>
+    <td>Hour (24-hour clock) without zero-padding</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td><code>hh</code></td>
+    <td>Hour</td>
+    <td>Two-digit hour (12-hour clock)</td>
+    <td>02</td>
+  </tr>
+  <tr>
+    <td><code>h</code></td>
+    <td>Hour</td>
+    <td>Hour (12-hour clock) without zero-padding</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td><code>mm</code></td>
+    <td>Minute</td>
+    <td>Two-digit minutes</td>
+    <td>45</td>
+  </tr>
+  <tr>
+    <td><code>m</code></td>
+    <td>Minute</td>
+    <td>Minutes without zero-padding</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td><code>ss</code></td>
+    <td>Second</td>
+    <td>Two-digit seconds</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td><code>s</code></td>
+    <td>Second</td>
+    <td>Seconds without zero-padding</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td><code>a</code></td>
+    <td>Period</td>
+    <td>AM/PM</td>
+    <td>PM</td>
+  </tr>
+  <tr>
+    <td><code>aa</code></td>
+    <td>Period</td>
+    <td>Lowercase am/pm</td>
+    <td>pm</td>
+  </tr>
+  <tr>
+    <td><code>Z</code></td>
+    <td>Timezone</td>
+    <td>GMT offset with colon</td>
+    <td>+05:00</td>
+  </tr>
+  <tr>
+    <td><code>ZZ</code></td>
+    <td>Timezone</td>
+    <td>GMT offset without colon</td>
+    <td>+0500</td>
+  </tr>
+  <tr>
+    <td><code>zzz</code></td>
+    <td>Timezone</td>
+    <td>Abbreviated timezone</td>
+    <td>EST</td>
+  </tr>
+  <tr>
+    <td><code>OOOO</code></td>
+    <td>Timezone</td>
+    <td>GMT with formatting</td>
+    <td>GMT+5</td>
+  </tr>
+  <tr>
+    <td><code>P</code></td>
+    <td>Localized</td>
+    <td>Short localized date format</td>
+    <td>10/30/2023</td>
+  </tr>
+  <tr>
+    <td><code>PP</code></td>
+    <td>Localized</td>
+    <td>Medium localized date format</td>
+    <td>Oct 30, 2023</td>
+  </tr>
+  <tr>
+    <td><code>PPP</code></td>
+    <td>Localized</td>
+    <td>Long localized date format</td>
+    <td>October 30, 2023</td>
+  </tr>
+  <tr>
+    <td><code>PPPP</code></td>
+    <td>Localized</td>
+    <td>Full localized date format (including day of week)</td>
+    <td>Monday, October 30, 2023</td>
+  </tr>
+  <tr>
+    <td><code>p</code></td>
+    <td>Localized</td>
+    <td>Short localized time format</td>
+    <td>2:45 PM</td>
+  </tr>
+  <tr>
+    <td><code>pp</code></td>
+    <td>Localized</td>
+    <td>Medium localized time format</td>
+    <td>2:45:30 PM</td>
+  </tr>
+  <tr>
+    <td><code>ppp</code></td>
+    <td>Localized</td>
+    <td>Long localized time format</td>
+    <td>2:45 PM UTC+5</td>
+  </tr>
+  <tr>
+    <td><code>pppp</code></td>
+    <td>Localized</td>
+    <td>Full localized time format (with timezone)</td>
+    <td>2:45 PM GMT+5</td>
+  </tr>
+  </tbody>
+</table>
