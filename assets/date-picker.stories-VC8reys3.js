@@ -1,0 +1,7 @@
+import{j as e}from"./index-B6zMoDbo.js";import{B as u}from"./index-MWPviQxN.js";import{D as i,z as n,u as x,t as g,F as r}from"./index-MJAPglt_.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./index-DrFkskS4.js";import"./index-Dxs5m6lS.js";import"./calendar-DT8zRPVc.js";const v={title:"react-hook-form/DatePicker",component:i,tags:["autodocs"],argTypes:{language:{control:"select",options:["en","pt","es","de"]},clearable:{control:"boolean"}},parameters:{layout:"centered",docs:{source:{language:"tsx"},description:{component:"Date picker to be used inside the Form component."}}}},j=t=>{const p=n.object({date:n.date()}),s=x({resolver:g(p)}),d=o=>{console.log(o)};return e.jsx("div",{className:"w-screen max-w-[400px]",children:e.jsx(r,{...s,children:e.jsxs("form",{className:"flex flex-col gap-4",onSubmit:s.handleSubmit(d),children:[e.jsx(r.Field,{control:s.control,name:"date",render:({field:o})=>e.jsxs(r.Item,{children:[e.jsx(r.Label,{children:"Date"}),e.jsx(i,{...t,value:o.value,onChange:o.onChange}),e.jsx(r.Message,{})]})}),e.jsx(u,{type:"submit",children:"Submit"})]})})})},a={args:{language:"en",clearable:!0},render:t=>e.jsx(j,{...t})};var c,m,l;a.parameters={...a.parameters,docs:{...(c=a.parameters)==null?void 0:c.docs,source:{originalSource:`{
+  args: {
+    language: 'en',
+    clearable: true
+  },
+  render: args => <Template {...args} />
+}`,...(l=(m=a.parameters)==null?void 0:m.docs)==null?void 0:l.source}}};const E=["Example"];export{a as Example,E as __namedExportsOrder,v as default};
