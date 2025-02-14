@@ -1,7 +1,7 @@
 import { useReactTable } from '@tanstack/react-table';
 import * as React from 'react';
 
-import type { LanguageOption } from '@/lib/intl';
+import type { LanguageOption } from '#/lib/intl';
 
 import type { SelectionMode } from './types';
 

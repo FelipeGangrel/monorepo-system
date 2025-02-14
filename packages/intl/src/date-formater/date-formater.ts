@@ -1,7 +1,7 @@
 import { format, type FormatOptions } from 'date-fns';
 
-import { inferLocaleFromLanguage } from '@/infer-locale-from-language';
-import type { LanguageOption } from '@/translation-manager';
+import { inferLocaleFromLanguage } from '#/infer-locale-from-language';
+import type { LanguageOption } from '#/translation-manager';
 
 /**
  * Creates a date formatter function specific to a given language.

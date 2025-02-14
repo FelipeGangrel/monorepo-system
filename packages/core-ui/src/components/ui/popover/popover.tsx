@@ -7,8 +7,8 @@ import type {
   PopoverComponent,
   PopoverContentProps,
   PopoverContentRef,
-} from '@/components/ui/popover/types';
-import { cn } from '@/lib/utils';
+} from '#/components/ui/popover/types';
+import { cn } from '#/lib/utils';
 
 const Popover = PopoverPrimitive.Root as PopoverComponent;
 Popover.displayName = 'Popover';

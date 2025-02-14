@@ -6,10 +6,10 @@ import {
 } from 'lucide-react';
 import * as React from 'react';
 
-import { Button } from '@/components/ui/button';
-import { Select } from '@/components/ui/select';
-import { intl } from '@/lib/intl';
-import { cn } from '@/lib/utils';
+import { Button } from '#/components/ui/button';
+import { Select } from '#/components/ui/select';
+import { intl } from '#/lib/intl';
+import { cn } from '#/lib/utils';
 
 import { DataTableContext } from '../context';
 

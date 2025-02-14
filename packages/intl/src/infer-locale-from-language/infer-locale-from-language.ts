@@ -1,6 +1,6 @@
 import { de, enUS as en, es, Locale, ptBR as pt } from 'date-fns/locale';
 
-import type { LanguageOption } from '@/translation-manager';
+import type { LanguageOption } from '#/translation-manager';
 
 /**
  * Infers the date-fns locale object based on the provided language option.

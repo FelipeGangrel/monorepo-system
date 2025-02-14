@@ -2,6 +2,8 @@ import '@felipegangrel/core-ui/styles.css';
 import '@felipegangrel/react-hook-form/styles.css';
 import './docs.css';
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import { Toaster } from '@felipegangrel/core-ui';
 import type { Preview } from '@storybook/react';
 import { themes } from '@storybook/theming';

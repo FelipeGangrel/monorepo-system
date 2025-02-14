@@ -1,9 +1,9 @@
 import { flexRender } from '@tanstack/react-table';
 import * as React from 'react';
 
-import { Table } from '@/components/ui/table';
-import { intl } from '@/lib/intl';
-import { cn } from '@/lib/utils';
+import { Table } from '#/components/ui/table';
+import { intl } from '#/lib/intl';
+import { cn } from '#/lib/utils';
 
 import { DataTableContext } from '../context';
 import { SortableHead } from './sortable-head';

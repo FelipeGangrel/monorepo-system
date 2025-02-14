@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Input } from '@/components/ui/input';
+import { Input } from '#/components/ui/input';
 
 type Props = Omit<React.ComponentProps<typeof Input>, 'onChange'> & {
   value: string | number;

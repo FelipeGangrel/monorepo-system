@@ -19,7 +19,7 @@
       "persistent": true
     },
     "storybook": {
-      "cache": false,
+      "cache": true,
       "persistent": true
     },
     "test": {},

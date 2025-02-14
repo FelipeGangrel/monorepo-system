@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "dependencies": {
     "@faker-js/faker": "catalog:",
-    "@felipegangrel/core-ui": "workspace:*",
-    "@felipegangrel/intl": "workspace:*",
-    "@felipegangrel/react-hook-form": "workspace:*",
     "@hookform/resolvers": "catalog:",
     "@storybook/preview-api": "catalog:",
     "@tanstack/react-table": "catalog:",
