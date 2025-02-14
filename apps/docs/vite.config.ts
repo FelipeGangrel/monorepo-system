@@ -30,4 +30,16 @@ export default defineConfig({
       ...packages,
     },
   },
+  server: {
+    watch: {
+      ignored: ['!**/node_modules/@felipegangrel/**'],
+    },
+  },
+  optimizeDeps: {
+    exclude: [
+      '@felipegangrel/core-ui',
+      '@felipegangrel/react-hook-form',
+      '@felipegangrel/intl',
+    ],
+  },
 });
