@@ -1,10 +1,10 @@
 import { Settings2 } from 'lucide-react';
 import * as React from 'react';
 
-import { Button, ButtonProps } from '@/components/ui/button';
-import { DropdownMenu } from '@/components/ui/dropdown-menu';
-import { intl } from '@/lib/intl';
-import { cn } from '@/lib/utils';
+import { Button, ButtonProps } from '#/components/ui/button';
+import { DropdownMenu } from '#/components/ui/dropdown-menu';
+import { intl } from '#/lib/intl';
+import { cn } from '#/lib/utils';
 
 import { DataTableContext } from '../context';
 

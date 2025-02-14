@@ -156,7 +156,7 @@ export const DatePickerWithPresets = () => {
       </Popover.Trigger>
       <Popover.Content className="flex w-auto flex-col space-y-2 p-2">
         <Select
-          onValueChange={(value) =>
+          onValueChange={(value: string) =>
             setDate(addDays(new Date(), parseInt(value)))
           }
         >

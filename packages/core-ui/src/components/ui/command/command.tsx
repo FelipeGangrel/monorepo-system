@@ -2,8 +2,8 @@ import { Command as CommandPrimitive } from 'cmdk';
 import { Search } from 'lucide-react';
 import * as React from 'react';
 
-import { Dialog } from '@/components/ui/dialog';
-import { cn } from '@/lib/utils';
+import { Dialog } from '#/components/ui/dialog';
+import { cn } from '#/lib/utils';
 
 import type {
   CommandComponent,

@@ -2,14 +2,14 @@ import { Button, Calendar, Popover } from '@felipegangrel/core-ui';
 import { CalendarIcon, XIcon } from 'lucide-react';
 import * as React from 'react';
 
-import { Form } from '@/components/form';
+import { Form } from '#/components/form';
 import {
   inferLocaleFromLanguage,
   intl,
   LanguageOption,
   makeDateFormatter,
-} from '@/lib/intl';
-import { cn } from '@/lib/utils';
+} from '#/lib/intl';
+import { cn } from '#/lib/utils';
 
 const dictionary = intl.makeDictionary({
   pickADate: {

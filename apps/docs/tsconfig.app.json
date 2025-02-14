@@ -26,7 +26,12 @@
     /* Paths */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
+      "@felipegangrel/core-ui/styles.css": ["../../packages/core-ui/dist/index.css"],
+      "@felipegangrel/core-ui": ["../../packages/core-ui/src/index.ts"],
+      "@felipegangrel/react-hook-form/styles.css": ["../../packages/react-hook-form/dist/index.css"],
+      "@felipegangrel/react-hook-form": ["../../packages/react-hook-form/src/index.ts"],
+      "@felipegangrel/intl": ["../../packages/react-hook-form/src/index.ts"],
+      "@/*": ["./src/*"]
     }
   },
   "include": ["."],

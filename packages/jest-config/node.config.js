@@ -16,7 +16,7 @@ const config = {
     '^.+\\.(ts|tsx)$': '@swc/jest',
   },
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
+    '^#/(.*)$': '<rootDir>/src/$1',
   },
 };
 

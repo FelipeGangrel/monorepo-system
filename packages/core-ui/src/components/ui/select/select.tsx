@@ -18,8 +18,8 @@ import {
   SelectSeparatorRef,
   SelectTriggerProps,
   SelectTriggerRef,
-} from '@/components/ui/select/types';
-import { cn } from '@/lib/utils';
+} from '#/components/ui/select/types';
+import { cn } from '#/lib/utils';
 
 const Select = SelectPrimitive.Root as SelectComponent;
 Select.displayName = 'Select';

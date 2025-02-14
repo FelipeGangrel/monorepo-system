@@ -1,7 +1,7 @@
 import type { ColumnDef } from '@tanstack/react-table';
 import * as React from 'react';
 
-import { Checkbox } from '@/components/ui/checkbox';
+import { Checkbox } from '#/components/ui/checkbox';
 
 class DataTableHelper<TData = any> {
   public buildSelectionByRowColumn(): ColumnDef<TData> {

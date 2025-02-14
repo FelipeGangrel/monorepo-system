@@ -2,7 +2,7 @@ import sharedConfig from 'tailwind-config';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  darkMode: ['class', '[class*="dark"]'],
+  darkMode: ['class'],
   content: ['./.storybook/*.tsx', './src/**/*.tsx'],
   presets: [sharedConfig],
 };

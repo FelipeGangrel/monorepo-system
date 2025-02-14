@@ -10,8 +10,8 @@ import {
 } from '@tanstack/react-table';
 import * as React from 'react';
 
-import { getChildrenDisplayNames } from '@/lib/utils';
-import { DataTableHelper } from '@/utils/data-table';
+import { getChildrenDisplayNames } from '#/lib/utils';
+import { DataTableHelper } from '#/utils/data-table';
 
 import { DataTableContext } from './context';
 import {
